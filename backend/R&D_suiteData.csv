@@ -1,0 +1,1001 @@
+﻿Id,Report_Id,Total_Test_Cases,Total_Test_Passed,Total_Test_Failed,Suite_Name,Time_Stamp
+1,1,1,1,0,Robot TestSuites.Balance Transaction.DynamicAccounts SubAccount TestSuite.DynamicAccounts SubAccount TestSuite,20210108 06:30:49.418
+2,1,13,13,0,Robot TestSuites.Balance Transaction.Good TestSuite.Good TestSuite,20210108 06:30:49.418
+3,1,5,5,0,Robot TestSuites.Balance Transaction.HostDenial TestSuite.HostDenial TestSuite,20210108 06:30:49.418
+4,1,5,5,0,Robot TestSuites.Build Sanity Suite.Chaining TestSuite.Chaining TestSuite,20210108 06:30:49.418
+5,1,11,10,1,Robot TestSuites.Build Sanity Suite.ClearOpcode TestSuite.ClearOpcode  TestSuite,20210108 06:30:49.418
+6,1,1,0,1,Robot TestSuites.Build Sanity Suite.DepositContinuation TestSuite.DepositContinuation TestSuite,20210108 06:30:49.418
+7,1,24,13,11,Robot TestSuites.Build Sanity Suite.Good TestSuite.Good TestSuite,20210108 06:30:49.418
+8,1,2,2,0,Robot TestSuites.Build Sanity Suite.IB TestSuite.IB TestSuite,20210108 06:30:49.418
+9,1,2,2,0,Robot TestSuites.Build Sanity Suite.Multilanguage TestSuite.Multilanguage TestSuite,20210108 06:30:49.418
+10,1,19,19,0,Robot TestSuites.CashDeposit Transaction.Good TestSuite.Good TestSuite,20210108 06:30:49.418
+11,1,1,1,0,Robot TestSuites.CashDeposit Transaction.HostDenials TestSuite.HostDenials TestSuite,20210108 06:30:49.418
+12,1,15,15,0,Robot TestSuites.FastCash Transaction.Good TestSuite.Good TestSuite,20210108 06:30:49.418
+13,1,3,3,0,Robot TestSuites.FastCash Transaction.HostDenials TestSuite.HostDenials TestSuite,20210108 06:30:49.418
+14,1,16,16,0,Robot TestSuites.Transfer Transaction.Good TestSuite.Good TestSuite,20210108 06:30:49.418
+15,1,5,4,1,Robot TestSuites.Transfer Transaction.HostDenialUnchained TestSuite.HostDenialUnchained TestSuite,20210108 06:30:49.418
+16,1,4,4,0,Robot TestSuites.Withdrawal Transaction.HostDenial TestSuite.HostDenial TestSuite,20210108 06:30:49.418
+17,1,2,0,2,Robot TestSuites.Withdrawal Transaction.Hybridbillmix Good TestSuite.Hybridbillmix Good TestSuite,20210108 06:30:49.418
+18,1,14,14,0,Robot TestSuites.Withdrawal Transaction.Withdrawal Good TestSuite.Withdrawal Good TestSuite,20210108 06:30:49.418
+19,2,1,1,0,Robot TestSuites.Balance Transaction.DynamicAccounts SubAccount TestSuite.DynamicAccounts SubAccount TestSuite,20210108 14:49:32.943
+20,2,13,13,0,Robot TestSuites.Balance Transaction.Good TestSuite.Good TestSuite,20210108 14:49:32.943
+21,2,5,5,0,Robot TestSuites.Balance Transaction.HostDenial TestSuite.HostDenial TestSuite,20210108 14:49:32.943
+22,2,5,5,0,Robot TestSuites.Build Sanity Suite.Chaining TestSuite.Chaining TestSuite,20210108 14:49:32.943
+23,2,11,10,1,Robot TestSuites.Build Sanity Suite.ClearOpcode TestSuite.ClearOpcode  TestSuite,20210108 14:49:32.943
+24,2,1,0,1,Robot TestSuites.Build Sanity Suite.DepositContinuation TestSuite.DepositContinuation TestSuite,20210108 14:49:32.943
+25,2,24,14,10,Robot TestSuites.Build Sanity Suite.Good TestSuite.Good TestSuite,20210108 14:49:32.943
+26,2,2,2,0,Robot TestSuites.Build Sanity Suite.IB TestSuite.IB TestSuite,20210108 14:49:32.943
+27,2,2,2,0,Robot TestSuites.Build Sanity Suite.Multilanguage TestSuite.Multilanguage TestSuite,20210108 14:49:32.943
+28,2,19,19,0,Robot TestSuites.CashDeposit Transaction.Good TestSuite.Good TestSuite,20210108 14:49:32.943
+29,2,1,1,0,Robot TestSuites.CashDeposit Transaction.HostDenials TestSuite.HostDenials TestSuite,20210108 14:49:32.943
+30,2,15,14,1,Robot TestSuites.FastCash Transaction.Good TestSuite.Good TestSuite,20210108 14:49:32.943
+31,2,3,2,1,Robot TestSuites.FastCash Transaction.HostDenials TestSuite.HostDenials TestSuite,20210108 14:49:32.943
+32,2,16,16,0,Robot TestSuites.Transfer Transaction.Good TestSuite.Good TestSuite,20210108 14:49:32.943
+33,2,5,5,0,Robot TestSuites.Transfer Transaction.HostDenialUnchained TestSuite.HostDenialUnchained TestSuite,20210108 14:49:32.943
+34,2,4,4,0,Robot TestSuites.Withdrawal Transaction.HostDenial TestSuite.HostDenial TestSuite,20210108 14:49:32.943
+35,2,2,0,2,Robot TestSuites.Withdrawal Transaction.Hybridbillmix Good TestSuite.Hybridbillmix Good TestSuite,20210108 14:49:32.943
+36,2,14,14,0,Robot TestSuites.Withdrawal Transaction.Withdrawal Good TestSuite.Withdrawal Good TestSuite,20210108 14:49:32.943
+37,3,1,1,0,Robot TestSuites.Balance Transaction.DynamicAccounts SubAccount TestSuite.DynamicAccounts SubAccount TestSuite,20210109 02:00:01.774
+38,3,13,13,0,Robot TestSuites.Balance Transaction.Good TestSuite.Good TestSuite,20210109 02:00:01.774
+39,3,5,5,0,Robot TestSuites.Balance Transaction.HostDenial TestSuite.HostDenial TestSuite,20210109 02:00:01.774
+40,3,5,5,0,Robot TestSuites.Build Sanity Suite.Chaining TestSuite.Chaining TestSuite,20210109 02:00:01.774
+41,3,11,10,1,Robot TestSuites.Build Sanity Suite.ClearOpcode TestSuite.ClearOpcode  TestSuite,20210109 02:00:01.774
+42,3,1,0,1,Robot TestSuites.Build Sanity Suite.DepositContinuation TestSuite.DepositContinuation TestSuite,20210109 02:00:01.774
+43,3,24,13,11,Robot TestSuites.Build Sanity Suite.Good TestSuite.Good TestSuite,20210109 02:00:01.774
+44,3,2,2,0,Robot TestSuites.Build Sanity Suite.IB TestSuite.IB TestSuite,20210109 02:00:01.774
+45,3,2,2,0,Robot TestSuites.Build Sanity Suite.Multilanguage TestSuite.Multilanguage TestSuite,20210109 02:00:01.774
+46,3,19,19,0,Robot TestSuites.CashDeposit Transaction.Good TestSuite.Good TestSuite,20210109 02:00:01.774
+47,3,1,1,0,Robot TestSuites.CashDeposit Transaction.HostDenials TestSuite.HostDenials TestSuite,20210109 02:00:01.774
+48,3,15,15,0,Robot TestSuites.FastCash Transaction.Good TestSuite.Good TestSuite,20210109 02:00:01.774
+49,3,3,3,0,Robot TestSuites.FastCash Transaction.HostDenials TestSuite.HostDenials TestSuite,20210109 02:00:01.774
+50,3,16,16,0,Robot TestSuites.Transfer Transaction.Good TestSuite.Good TestSuite,20210109 02:00:01.774
+51,3,5,4,1,Robot TestSuites.Transfer Transaction.HostDenialUnchained TestSuite.HostDenialUnchained TestSuite,20210109 02:00:01.774
+52,3,4,4,0,Robot TestSuites.Withdrawal Transaction.HostDenial TestSuite.HostDenial TestSuite,20210109 02:00:01.774
+53,3,2,0,2,Robot TestSuites.Withdrawal Transaction.Hybridbillmix Good TestSuite.Hybridbillmix Good TestSuite,20210109 02:00:01.774
+54,3,14,14,0,Robot TestSuites.Withdrawal Transaction.Withdrawal Good TestSuite.Withdrawal Good TestSuite,20210109 02:00:01.774
+55,4,1,1,0,Robot TestSuites.Balance Transaction.DynamicAccounts SubAccount TestSuite.DynamicAccounts SubAccount TestSuite,20210109 06:19:03.454
+56,4,13,13,0,Robot TestSuites.Balance Transaction.Good TestSuite.Good TestSuite,20210109 06:19:03.454
+57,4,5,5,0,Robot TestSuites.Balance Transaction.HostDenial TestSuite.HostDenial TestSuite,20210109 06:19:03.454
+58,4,5,4,1,Robot TestSuites.Build Sanity Suite.Chaining TestSuite.Chaining TestSuite,20210109 06:19:03.454
+59,4,11,8,3,Robot TestSuites.Build Sanity Suite.ClearOpcode TestSuite.ClearOpcode  TestSuite,20210109 06:19:03.454
+60,4,1,0,1,Robot TestSuites.Build Sanity Suite.DepositContinuation TestSuite.DepositContinuation TestSuite,20210109 06:19:03.454
+61,4,24,13,11,Robot TestSuites.Build Sanity Suite.Good TestSuite.Good TestSuite,20210109 06:19:03.454
+62,4,2,2,0,Robot TestSuites.Build Sanity Suite.IB TestSuite.IB TestSuite,20210109 06:19:03.454
+63,4,2,2,0,Robot TestSuites.Build Sanity Suite.Multilanguage TestSuite.Multilanguage TestSuite,20210109 06:19:03.454
+64,4,19,19,0,Robot TestSuites.CashDeposit Transaction.Good TestSuite.Good TestSuite,20210109 06:19:03.454
+65,4,1,1,0,Robot TestSuites.CashDeposit Transaction.HostDenials TestSuite.HostDenials TestSuite,20210109 06:19:03.454
+66,4,15,15,0,Robot TestSuites.FastCash Transaction.Good TestSuite.Good TestSuite,20210109 06:19:03.454
+67,4,3,3,0,Robot TestSuites.FastCash Transaction.HostDenials TestSuite.HostDenials TestSuite,20210109 06:19:03.454
+68,4,16,16,0,Robot TestSuites.Transfer Transaction.Good TestSuite.Good TestSuite,20210109 06:19:03.454
+69,4,5,4,1,Robot TestSuites.Transfer Transaction.HostDenialUnchained TestSuite.HostDenialUnchained TestSuite,20210109 06:19:03.454
+70,4,4,4,0,Robot TestSuites.Withdrawal Transaction.HostDenial TestSuite.HostDenial TestSuite,20210109 06:19:03.454
+71,4,2,0,2,Robot TestSuites.Withdrawal Transaction.Hybridbillmix Good TestSuite.Hybridbillmix Good TestSuite,20210109 06:19:03.454
+72,4,14,14,0,Robot TestSuites.Withdrawal Transaction.Withdrawal Good TestSuite.Withdrawal Good TestSuite,20210109 06:19:03.454
+73,5,1,1,0,Robot TestSuites.Balance Transaction.DynamicAccounts SubAccount TestSuite.DynamicAccounts SubAccount TestSuite,20210110 22:06:38.625
+74,5,13,13,0,Robot TestSuites.Balance Transaction.Good TestSuite.Good TestSuite,20210110 22:06:38.625
+75,5,5,5,0,Robot TestSuites.Balance Transaction.HostDenial TestSuite.HostDenial TestSuite,20210110 22:06:38.625
+76,5,5,5,0,Robot TestSuites.Build Sanity Suite.Chaining TestSuite.Chaining TestSuite,20210110 22:06:38.625
+77,5,11,10,1,Robot TestSuites.Build Sanity Suite.ClearOpcode TestSuite.ClearOpcode  TestSuite,20210110 22:06:38.625
+78,5,1,0,1,Robot TestSuites.Build Sanity Suite.DepositContinuation TestSuite.DepositContinuation TestSuite,20210110 22:06:38.625
+79,5,24,12,12,Robot TestSuites.Build Sanity Suite.Good TestSuite.Good TestSuite,20210110 22:06:38.625
+80,5,2,2,0,Robot TestSuites.Build Sanity Suite.IB TestSuite.IB TestSuite,20210110 22:06:38.625
+81,5,2,2,0,Robot TestSuites.Build Sanity Suite.Multilanguage TestSuite.Multilanguage TestSuite,20210110 22:06:38.625
+82,5,19,19,0,Robot TestSuites.CashDeposit Transaction.Good TestSuite.Good TestSuite,20210110 22:06:38.625
+83,5,1,0,1,Robot TestSuites.CashDeposit Transaction.HostDenials TestSuite.HostDenials TestSuite,20210110 22:06:38.625
+84,5,15,14,1,Robot TestSuites.FastCash Transaction.Good TestSuite.Good TestSuite,20210110 22:06:38.625
+85,5,3,3,0,Robot TestSuites.FastCash Transaction.HostDenials TestSuite.HostDenials TestSuite,20210110 22:06:38.625
+86,5,16,16,0,Robot TestSuites.Transfer Transaction.Good TestSuite.Good TestSuite,20210110 22:06:38.625
+87,5,5,4,1,Robot TestSuites.Transfer Transaction.HostDenialUnchained TestSuite.HostDenialUnchained TestSuite,20210110 22:06:38.625
+88,5,4,4,0,Robot TestSuites.Withdrawal Transaction.HostDenial TestSuite.HostDenial TestSuite,20210110 22:06:38.625
+89,5,2,0,2,Robot TestSuites.Withdrawal Transaction.Hybridbillmix Good TestSuite.Hybridbillmix Good TestSuite,20210110 22:06:38.625
+90,5,14,14,0,Robot TestSuites.Withdrawal Transaction.Withdrawal Good TestSuite.Withdrawal Good TestSuite,20210110 22:06:38.625
+91,6,1,1,0,Robot TestSuites.Balance Transaction.DynamicAccounts SubAccount TestSuite.DynamicAccounts SubAccount TestSuite,20210118 15:40:11.373
+92,6,13,13,0,Robot TestSuites.Balance Transaction.Good TestSuite.Good TestSuite,20210118 15:40:11.373
+93,6,5,1,4,Robot TestSuites.Balance Transaction.HostDenial TestSuite.HostDenial TestSuite,20210118 15:40:11.373
+94,6,5,5,0,Robot TestSuites.Build Sanity Suite.Chaining TestSuite.Chaining TestSuite,20210118 15:40:11.373
+95,6,11,11,0,Robot TestSuites.Build Sanity Suite.ClearOpcode TestSuite.ClearOpcode  TestSuite,20210118 15:40:11.373
+96,6,1,0,1,Robot TestSuites.Build Sanity Suite.DepositContinuation TestSuite.DepositContinuation TestSuite,20210118 15:40:11.373
+97,6,24,13,11,Robot TestSuites.Build Sanity Suite.Good TestSuite.Good TestSuite,20210118 15:40:11.373
+98,6,2,2,0,Robot TestSuites.Build Sanity Suite.IB TestSuite.IB TestSuite,20210118 15:40:11.373
+99,6,2,2,0,Robot TestSuites.Build Sanity Suite.Multilanguage TestSuite.Multilanguage TestSuite,20210118 15:40:11.373
+100,6,19,18,1,Robot TestSuites.CashDeposit Transaction.Good TestSuite.Good TestSuite,20210118 15:40:11.373
+101,6,1,1,0,Robot TestSuites.CashDeposit Transaction.HostDenials TestSuite.HostDenials TestSuite,20210118 15:40:11.373
+102,6,15,15,0,Robot TestSuites.FastCash Transaction.Good TestSuite.Good TestSuite,20210118 15:40:11.373
+103,6,3,3,0,Robot TestSuites.FastCash Transaction.HostDenials TestSuite.HostDenials TestSuite,20210118 15:40:11.373
+104,6,16,16,0,Robot TestSuites.Transfer Transaction.Good TestSuite.Good TestSuite,20210118 15:40:11.373
+105,6,5,5,0,Robot TestSuites.Transfer Transaction.HostDenialUnchained TestSuite.HostDenialUnchained TestSuite,20210118 15:40:11.373
+106,6,4,3,1,Robot TestSuites.Withdrawal Transaction.HostDenial TestSuite.HostDenial TestSuite,20210118 15:40:11.373
+107,6,2,2,0,Robot TestSuites.Withdrawal Transaction.Hybridbillmix Good TestSuite.Hybridbillmix Good TestSuite,20210118 15:40:11.373
+108,6,14,14,0,Robot TestSuites.Withdrawal Transaction.Withdrawal Good TestSuite.Withdrawal Good TestSuite,20210118 15:40:11.373
+109,7,1,1,0,Robot TestSuites.Balance Transaction.DynamicAccounts SubAccount TestSuite.DynamicAccounts SubAccount TestSuite,20210119 09:57:04.921
+110,7,13,13,0,Robot TestSuites.Balance Transaction.Good TestSuite.Good TestSuite,20210119 09:57:04.921
+111,7,5,3,2,Robot TestSuites.Balance Transaction.HostDenial TestSuite.HostDenial TestSuite,20210119 09:57:04.921
+112,7,5,4,1,Robot TestSuites.Build Sanity Suite.Chaining TestSuite.Chaining TestSuite,20210119 09:57:04.921
+113,7,11,10,1,Robot TestSuites.Build Sanity Suite.ClearOpcode TestSuite.ClearOpcode  TestSuite,20210119 09:57:04.921
+114,7,1,0,1,Robot TestSuites.Build Sanity Suite.DepositContinuation TestSuite.DepositContinuation TestSuite,20210119 09:57:04.921
+115,7,24,13,11,Robot TestSuites.Build Sanity Suite.Good TestSuite.Good TestSuite,20210119 09:57:04.921
+116,7,2,1,1,Robot TestSuites.Build Sanity Suite.IB TestSuite.IB TestSuite,20210119 09:57:04.921
+117,7,2,2,0,Robot TestSuites.Build Sanity Suite.Multilanguage TestSuite.Multilanguage TestSuite,20210119 09:57:04.921
+118,7,19,19,0,Robot TestSuites.CashDeposit Transaction.Good TestSuite.Good TestSuite,20210119 09:57:04.921
+119,7,1,1,0,Robot TestSuites.CashDeposit Transaction.HostDenials TestSuite.HostDenials TestSuite,20210119 09:57:04.921
+120,7,15,15,0,Robot TestSuites.FastCash Transaction.Good TestSuite.Good TestSuite,20210119 09:57:04.921
+121,7,3,3,0,Robot TestSuites.FastCash Transaction.HostDenials TestSuite.HostDenials TestSuite,20210119 09:57:04.921
+122,7,16,16,0,Robot TestSuites.Transfer Transaction.Good TestSuite.Good TestSuite,20210119 09:57:04.921
+123,7,5,4,1,Robot TestSuites.Transfer Transaction.HostDenialUnchained TestSuite.HostDenialUnchained TestSuite,20210119 09:57:04.921
+124,7,4,3,1,Robot TestSuites.Withdrawal Transaction.HostDenial TestSuite.HostDenial TestSuite,20210119 09:57:04.921
+125,7,2,0,2,Robot TestSuites.Withdrawal Transaction.Hybridbillmix Good TestSuite.Hybridbillmix Good TestSuite,20210119 09:57:04.921
+126,7,14,14,0,Robot TestSuites.Withdrawal Transaction.Withdrawal Good TestSuite.Withdrawal Good TestSuite,20210119 09:57:04.921
+127,8,1,1,0,Robot TestSuites.Balance Transaction.DynamicAccounts SubAccount TestSuite.DynamicAccounts SubAccount TestSuite,20210119 19:49:27.230
+128,8,13,13,0,Robot TestSuites.Balance Transaction.Good TestSuite.Good TestSuite,20210119 19:49:27.230
+129,8,5,5,0,Robot TestSuites.Balance Transaction.HostDenial TestSuite.HostDenial TestSuite,20210119 19:49:27.230
+130,8,5,4,1,Robot TestSuites.Build Sanity Suite.Chaining TestSuite.Chaining TestSuite,20210119 19:49:27.230
+131,8,11,10,1,Robot TestSuites.Build Sanity Suite.ClearOpcode TestSuite.ClearOpcode  TestSuite,20210119 19:49:27.230
+132,8,1,0,1,Robot TestSuites.Build Sanity Suite.DepositContinuation TestSuite.DepositContinuation TestSuite,20210119 19:49:27.230
+133,8,24,13,11,Robot TestSuites.Build Sanity Suite.Good TestSuite.Good TestSuite,20210119 19:49:27.230
+134,8,2,1,1,Robot TestSuites.Build Sanity Suite.IB TestSuite.IB TestSuite,20210119 19:49:27.230
+135,8,2,2,0,Robot TestSuites.Build Sanity Suite.Multilanguage TestSuite.Multilanguage TestSuite,20210119 19:49:27.230
+136,8,19,19,0,Robot TestSuites.CashDeposit Transaction.Good TestSuite.Good TestSuite,20210119 19:49:27.230
+137,8,1,1,0,Robot TestSuites.CashDeposit Transaction.HostDenials TestSuite.HostDenials TestSuite,20210119 19:49:27.230
+138,8,15,15,0,Robot TestSuites.FastCash Transaction.Good TestSuite.Good TestSuite,20210119 19:49:27.230
+139,8,3,3,0,Robot TestSuites.FastCash Transaction.HostDenials TestSuite.HostDenials TestSuite,20210119 19:49:27.230
+140,8,16,16,0,Robot TestSuites.Transfer Transaction.Good TestSuite.Good TestSuite,20210119 19:49:27.230
+141,8,5,3,2,Robot TestSuites.Transfer Transaction.HostDenialUnchained TestSuite.HostDenialUnchained TestSuite,20210119 19:49:27.230
+142,8,4,3,1,Robot TestSuites.Withdrawal Transaction.HostDenial TestSuite.HostDenial TestSuite,20210119 19:49:27.230
+143,8,2,0,2,Robot TestSuites.Withdrawal Transaction.Hybridbillmix Good TestSuite.Hybridbillmix Good TestSuite,20210119 19:49:27.230
+144,8,14,14,0,Robot TestSuites.Withdrawal Transaction.Withdrawal Good TestSuite.Withdrawal Good TestSuite,20210119 19:49:27.230
+145,9,1,1,0,Robot TestSuites.Balance Transaction.DynamicAccounts SubAccount TestSuite.DynamicAccounts SubAccount TestSuite,20210121 13:36:05.741
+146,9,13,13,0,Robot TestSuites.Balance Transaction.Good TestSuite.Good TestSuite,20210121 13:36:05.741
+147,9,5,4,1,Robot TestSuites.Balance Transaction.HostDenial TestSuite.HostDenial TestSuite,20210121 13:36:05.741
+148,9,5,5,0,Robot TestSuites.Build Sanity Suite.Chaining TestSuite.Chaining TestSuite,20210121 13:36:05.741
+149,9,11,10,1,Robot TestSuites.Build Sanity Suite.ClearOpcode TestSuite.ClearOpcode  TestSuite,20210121 13:36:05.741
+150,9,1,0,1,Robot TestSuites.Build Sanity Suite.DepositContinuation TestSuite.DepositContinuation TestSuite,20210121 13:36:05.741
+151,9,24,14,10,Robot TestSuites.Build Sanity Suite.Good TestSuite.Good TestSuite,20210121 13:36:05.741
+152,9,2,2,0,Robot TestSuites.Build Sanity Suite.IB TestSuite.IB TestSuite,20210121 13:36:05.741
+153,9,2,2,0,Robot TestSuites.Build Sanity Suite.Multilanguage TestSuite.Multilanguage TestSuite,20210121 13:36:05.741
+154,9,29,29,0,Robot TestSuites.CashDeposit Transaction.Good TestSuite.Good TestSuite,20210121 13:36:05.741
+155,9,3,2,1,Robot TestSuites.CashDeposit Transaction.HostDenials TestSuite.HostDenials TestSuite,20210121 13:36:05.741
+156,9,2,2,0,Robot TestSuites.FastCash Transaction.CardBeforeCash TestSuite.CardBeforeCash TestSuite,20210121 13:36:05.741
+157,9,4,4,0,Robot TestSuites.FastCash Transaction.DCC GoodFlow TestSuite.DCC GoodFlow TestSuite,20210121 13:36:05.741
+158,9,2,2,0,Robot TestSuites.FastCash Transaction.DCC HostDenials TestSuite.DCC HostDenials TestSuite,20210121 13:36:05.741
+159,9,3,3,0,Robot TestSuites.FastCash Transaction.DCCVISA GoodFlow TestSuite.DCCVISA GoodFlow TestSuite,20210121 13:36:05.741
+160,9,1,1,0,Robot TestSuites.FastCash Transaction.DCCVISA InvalidHostData TestSuite.DCCVISA InvalidHostData TestSuite,20210121 13:36:05.741
+161,9,1,0,1,Robot TestSuites.FastCash Transaction.Good NonGrouping TestSuite.Good NonGrouping TestSuite,20210121 13:36:05.741
+162,9,27,27,0,Robot TestSuites.FastCash Transaction.Good TestSuite.Good TestSuite,20210121 13:36:05.741
+163,9,3,2,1,Robot TestSuites.FastCash Transaction.HostDenials TestSuite.HostDenials TestSuite,20210121 13:36:05.741
+164,9,2,2,0,Robot TestSuites.Transfer Transaction.DynamicAccounts SubAccount TestSuite.DynamicAccounts SubAccount TestSuite,20210121 13:36:05.741
+165,9,14,14,0,Robot TestSuites.Transfer Transaction.Good TestSuite.Good TestSuite,20210121 13:36:05.741
+166,9,4,3,1,Robot TestSuites.Transfer Transaction.HostDenialUnchained TestSuite.HostDenialUnchained TestSuite,20210121 13:36:05.741
+167,9,1,0,1,Robot TestSuites.Withdrawal Transaction.Basic Custom Billmix TestSuite.Basic Custom BillMix Good TestSuite,20210121 13:36:05.741
+168,9,3,3,0,Robot TestSuites.Withdrawal Transaction.CardBeforeCash TestSuite.CardBeforeCash TestSuite,20210121 13:36:05.741
+169,9,4,4,0,Robot TestSuites.Withdrawal Transaction.DCC GoodFlow TestSuite.DCC GoodFlow TestSuite,20210121 13:36:05.741
+170,9,3,3,0,Robot TestSuites.Withdrawal Transaction.DCC HostDenials TestSuite.DCC HostDenials TestSuite,20210121 13:36:05.741
+171,9,5,5,0,Robot TestSuites.Withdrawal Transaction.DCCVISA TestSuite.DCCVISA TestSuite,20210121 13:36:05.741
+172,9,4,3,1,Robot TestSuites.Withdrawal Transaction.HostDenial TestSuite.HostDenial TestSuite,20210121 13:36:05.741
+173,9,2,0,2,Robot TestSuites.Withdrawal Transaction.Hybridbillmix Good TestSuite.Hybridbillmix Good TestSuite,20210121 13:36:05.741
+174,9,55,55,0,Robot TestSuites.Withdrawal Transaction.Withdrawal Good TestSuite.Withdrawal Good TestSuite,20210121 13:36:05.741
+175,10,1,1,0,Robot TestSuites.Balance Transaction.DynamicAccounts SubAccount TestSuite.DynamicAccounts SubAccount TestSuite,20210122 05:41:23.097
+176,10,13,13,0,Robot TestSuites.Balance Transaction.Good TestSuite.Good TestSuite,20210122 05:41:23.097
+177,10,5,2,3,Robot TestSuites.Balance Transaction.HostDenial TestSuite.HostDenial TestSuite,20210122 05:41:23.097
+178,10,5,5,0,Robot TestSuites.Build Sanity Suite.Chaining TestSuite.Chaining TestSuite,20210122 05:41:23.097
+179,10,11,10,1,Robot TestSuites.Build Sanity Suite.ClearOpcode TestSuite.ClearOpcode  TestSuite,20210122 05:41:23.097
+180,10,1,0,1,Robot TestSuites.Build Sanity Suite.DepositContinuation TestSuite.DepositContinuation TestSuite,20210122 05:41:23.097
+181,10,22,11,11,Robot TestSuites.Build Sanity Suite.Good TestSuite.Good TestSuite,20210122 05:41:23.097
+182,10,2,2,0,Robot TestSuites.Build Sanity Suite.IB TestSuite.IB TestSuite,20210122 05:41:23.097
+183,10,2,2,0,Robot TestSuites.Build Sanity Suite.Multilanguage TestSuite.Multilanguage TestSuite,20210122 05:41:23.097
+184,10,29,29,0,Robot TestSuites.CashDeposit Transaction.Good TestSuite.Good TestSuite,20210122 05:41:23.097
+185,10,3,2,1,Robot TestSuites.CashDeposit Transaction.HostDenials TestSuite.HostDenials TestSuite,20210122 05:41:23.097
+186,10,2,2,0,Robot TestSuites.FastCash Transaction.CardBeforeCash TestSuite.CardBeforeCash TestSuite,20210122 05:41:23.097
+187,10,4,4,0,Robot TestSuites.FastCash Transaction.DCC GoodFlow TestSuite.DCC GoodFlow TestSuite,20210122 05:41:23.097
+188,10,2,1,1,Robot TestSuites.FastCash Transaction.DCC HostDenials TestSuite.DCC HostDenials TestSuite,20210122 05:41:23.097
+189,10,3,3,0,Robot TestSuites.FastCash Transaction.DCCVISA GoodFlow TestSuite.DCCVISA GoodFlow TestSuite,20210122 05:41:23.097
+190,10,1,1,0,Robot TestSuites.FastCash Transaction.DCCVISA InvalidHostData TestSuite.DCCVISA InvalidHostData TestSuite,20210122 05:41:23.097
+191,10,1,1,0,Robot TestSuites.FastCash Transaction.Good NonGrouping TestSuite.Good NonGrouping TestSuite,20210122 05:41:23.097
+192,10,27,27,0,Robot TestSuites.FastCash Transaction.Good TestSuite.Good TestSuite,20210122 05:41:23.097
+193,10,3,3,0,Robot TestSuites.FastCash Transaction.HostDenials TestSuite.HostDenials TestSuite,20210122 05:41:23.097
+194,10,2,2,0,Robot TestSuites.Transfer Transaction.DynamicAccounts SubAccount TestSuite.DynamicAccounts SubAccount TestSuite,20210122 05:41:23.097
+195,10,14,14,0,Robot TestSuites.Transfer Transaction.Good TestSuite.Good TestSuite,20210122 05:41:23.097
+196,10,4,3,1,Robot TestSuites.Transfer Transaction.HostDenialUnchained TestSuite.HostDenialUnchained TestSuite,20210122 05:41:23.097
+197,10,1,0,1,Robot TestSuites.Withdrawal Transaction.Basic Custom Billmix TestSuite.Basic Custom BillMix Good TestSuite,20210122 05:41:23.097
+198,10,3,3,0,Robot TestSuites.Withdrawal Transaction.CardBeforeCash TestSuite.CardBeforeCash TestSuite,20210122 05:41:23.097
+199,10,4,4,0,Robot TestSuites.Withdrawal Transaction.DCC GoodFlow TestSuite.DCC GoodFlow TestSuite,20210122 05:41:23.097
+200,10,3,3,0,Robot TestSuites.Withdrawal Transaction.DCC HostDenials TestSuite.DCC HostDenials TestSuite,20210122 05:41:23.097
+201,10,5,5,0,Robot TestSuites.Withdrawal Transaction.DCCVISA TestSuite.DCCVISA TestSuite,20210122 05:41:23.097
+202,10,4,4,0,Robot TestSuites.Withdrawal Transaction.HostDenial TestSuite.HostDenial TestSuite,20210122 05:41:23.097
+203,10,2,2,0,Robot TestSuites.Withdrawal Transaction.Hybridbillmix Good TestSuite.Hybridbillmix Good TestSuite,20210122 05:41:23.097
+204,10,55,55,0,Robot TestSuites.Withdrawal Transaction.Withdrawal Good TestSuite.Withdrawal Good TestSuite,20210122 05:41:23.097
+205,11,1,1,0,Robot TestSuites.Balance Transaction.DynamicAccounts SubAccount TestSuite.DynamicAccounts SubAccount TestSuite,20210123 12:23:46.343
+206,11,13,13,0,Robot TestSuites.Balance Transaction.Good TestSuite.Good TestSuite,20210123 12:23:46.343
+207,11,5,5,0,Robot TestSuites.Balance Transaction.HostDenial TestSuite.HostDenial TestSuite,20210123 12:23:46.343
+208,11,5,4,1,Robot TestSuites.Build Sanity Suite.Chaining TestSuite.Chaining TestSuite,20210123 12:23:46.343
+209,11,11,11,0,Robot TestSuites.Build Sanity Suite.ClearOpcode TestSuite.ClearOpcode  TestSuite,20210123 12:23:46.343
+210,11,1,0,1,Robot TestSuites.Build Sanity Suite.DepositContinuation TestSuite.DepositContinuation TestSuite,20210123 12:23:46.343
+211,11,2,0,2,Robot TestSuites.Build Sanity Suite.EMV TestSuite.EMV TestSuite,20210123 12:23:46.343
+212,11,22,12,10,Robot TestSuites.Build Sanity Suite.Good TestSuite.Good TestSuite,20210123 12:23:46.343
+213,11,2,2,0,Robot TestSuites.Build Sanity Suite.IB TestSuite.IB TestSuite,20210123 12:23:46.343
+214,11,2,2,0,Robot TestSuites.Build Sanity Suite.Multilanguage TestSuite.Multilanguage TestSuite,20210123 12:23:46.343
+215,11,29,29,0,Robot TestSuites.CashDeposit Transaction.Good TestSuite.Good TestSuite,20210123 12:23:46.343
+216,11,3,3,0,Robot TestSuites.CashDeposit Transaction.HostDenials TestSuite.HostDenials TestSuite,20210123 12:23:46.343
+217,11,2,2,0,Robot TestSuites.FastCash Transaction.CardBeforeCash TestSuite.CardBeforeCash TestSuite,20210123 12:23:46.343
+218,11,4,4,0,Robot TestSuites.FastCash Transaction.DCC GoodFlow TestSuite.DCC GoodFlow TestSuite,20210123 12:23:46.343
+219,11,2,2,0,Robot TestSuites.FastCash Transaction.DCC HostDenials TestSuite.DCC HostDenials TestSuite,20210123 12:23:46.343
+220,11,3,3,0,Robot TestSuites.FastCash Transaction.DCCVISA GoodFlow TestSuite.DCCVISA GoodFlow TestSuite,20210123 12:23:46.343
+221,11,2,2,0,Robot TestSuites.FastCash Transaction.DCCVISA InvalidHostData TestSuite.DCCVISA InvalidHostData TestSuite,20210123 12:23:46.343
+222,11,1,1,0,Robot TestSuites.FastCash Transaction.Good NonGrouping TestSuite.Good NonGrouping TestSuite,20210123 12:23:46.343
+223,11,27,27,0,Robot TestSuites.FastCash Transaction.Good TestSuite.Good TestSuite,20210123 12:23:46.343
+224,11,3,3,0,Robot TestSuites.FastCash Transaction.HostDenials TestSuite.HostDenials TestSuite,20210123 12:23:46.343
+225,11,2,2,0,Robot TestSuites.Transfer Transaction.DynamicAccounts SubAccount TestSuite.DynamicAccounts SubAccount TestSuite,20210123 12:23:46.343
+226,11,14,13,1,Robot TestSuites.Transfer Transaction.Good TestSuite.Good TestSuite,20210123 12:23:46.343
+227,11,3,2,1,Robot TestSuites.Transfer Transaction.HostDenialChained TestSuite.HostDenialChained TestSuite,20210123 12:23:46.343
+228,11,4,2,2,Robot TestSuites.Transfer Transaction.HostDenialUnchained TestSuite.HostDenialUnchained TestSuite,20210123 12:23:46.343
+229,11,1,0,1,Robot TestSuites.Withdrawal Transaction.Basic Custom Billmix TestSuite.Basic Custom BillMix Good TestSuite,20210123 12:23:46.343
+230,11,3,3,0,Robot TestSuites.Withdrawal Transaction.CardBeforeCash TestSuite.CardBeforeCash TestSuite,20210123 12:23:46.343
+231,11,4,4,0,Robot TestSuites.Withdrawal Transaction.DCC GoodFlow TestSuite.DCC GoodFlow TestSuite,20210123 12:23:46.343
+232,11,3,3,0,Robot TestSuites.Withdrawal Transaction.DCC HostDenials TestSuite.DCC HostDenials TestSuite,20210123 12:23:46.343
+233,11,5,5,0,Robot TestSuites.Withdrawal Transaction.DCCVISA TestSuite.DCCVISA TestSuite,20210123 12:23:46.343
+234,11,4,4,0,Robot TestSuites.Withdrawal Transaction.HostDenial TestSuite.HostDenial TestSuite,20210123 12:23:46.343
+235,11,2,0,2,Robot TestSuites.Withdrawal Transaction.Hybridbillmix Good TestSuite.Hybridbillmix Good TestSuite,20210123 12:23:46.343
+236,11,55,55,0,Robot TestSuites.Withdrawal Transaction.Withdrawal Good TestSuite.Withdrawal Good TestSuite,20210123 12:23:46.343
+237,12,1,1,0,Robot TestSuites.Balance Transaction.DynamicAccounts SubAccount TestSuite.DynamicAccounts SubAccount TestSuite,20210124 08:03:19.398
+238,12,13,13,0,Robot TestSuites.Balance Transaction.Good TestSuite.Good TestSuite,20210124 08:03:19.398
+239,12,5,3,2,Robot TestSuites.Balance Transaction.HostDenial TestSuite.HostDenial TestSuite,20210124 08:03:19.398
+240,12,5,4,1,Robot TestSuites.Build Sanity Suite.Chaining TestSuite.Chaining TestSuite,20210124 08:03:19.398
+241,12,11,10,1,Robot TestSuites.Build Sanity Suite.ClearOpcode TestSuite.ClearOpcode  TestSuite,20210124 08:03:19.398
+242,12,1,0,1,Robot TestSuites.Build Sanity Suite.DepositContinuation TestSuite.DepositContinuation TestSuite,20210124 08:03:19.398
+243,12,2,0,2,Robot TestSuites.Build Sanity Suite.EMV TestSuite.EMV TestSuite,20210124 08:03:19.398
+244,12,24,14,10,Robot TestSuites.Build Sanity Suite.Good TestSuite.Good TestSuite,20210124 08:03:19.398
+245,12,2,2,0,Robot TestSuites.Build Sanity Suite.IB TestSuite.IB TestSuite,20210124 08:03:19.398
+246,12,2,2,0,Robot TestSuites.Build Sanity Suite.Multilanguage TestSuite.Multilanguage TestSuite,20210124 08:03:19.398
+247,12,29,29,0,Robot TestSuites.CashDeposit Transaction.Good TestSuite.Good TestSuite,20210124 08:03:19.398
+248,12,3,3,0,Robot TestSuites.CashDeposit Transaction.HostDenials TestSuite.HostDenials TestSuite,20210124 08:03:19.398
+249,12,2,2,0,Robot TestSuites.FastCash Transaction.CardBeforeCash TestSuite.CardBeforeCash TestSuite,20210124 08:03:19.398
+250,12,4,4,0,Robot TestSuites.FastCash Transaction.DCC GoodFlow TestSuite.DCC GoodFlow TestSuite,20210124 08:03:19.398
+251,12,2,2,0,Robot TestSuites.FastCash Transaction.DCC HostDenials TestSuite.DCC HostDenials TestSuite,20210124 08:03:19.398
+252,12,3,3,0,Robot TestSuites.FastCash Transaction.DCCVISA GoodFlow TestSuite.DCCVISA GoodFlow TestSuite,20210124 08:03:19.398
+253,12,2,2,0,Robot TestSuites.FastCash Transaction.DCCVISA InvalidHostData TestSuite.DCCVISA InvalidHostData TestSuite,20210124 08:03:19.398
+254,12,1,0,1,Robot TestSuites.FastCash Transaction.Good NonGrouping TestSuite.Good NonGrouping TestSuite,20210124 08:03:19.398
+255,12,27,27,0,Robot TestSuites.FastCash Transaction.Good TestSuite.Good TestSuite,20210124 08:03:19.398
+256,12,3,2,1,Robot TestSuites.FastCash Transaction.HostDenials TestSuite.HostDenials TestSuite,20210124 08:03:19.398
+257,12,2,2,0,Robot TestSuites.Transfer Transaction.DynamicAccounts SubAccount TestSuite.DynamicAccounts SubAccount TestSuite,20210124 08:03:19.398
+258,12,14,14,0,Robot TestSuites.Transfer Transaction.Good TestSuite.Good TestSuite,20210124 08:03:19.398
+259,12,3,2,1,Robot TestSuites.Transfer Transaction.HostDenialChained TestSuite.HostDenialChained TestSuite,20210124 08:03:19.398
+260,12,4,2,2,Robot TestSuites.Transfer Transaction.HostDenialUnchained TestSuite.HostDenialUnchained TestSuite,20210124 08:03:19.398
+261,12,1,0,1,Robot TestSuites.Withdrawal Transaction.Basic Custom Billmix TestSuite.Basic Custom BillMix Good TestSuite,20210124 08:03:19.398
+262,12,3,3,0,Robot TestSuites.Withdrawal Transaction.CardBeforeCash TestSuite.CardBeforeCash TestSuite,20210124 08:03:19.398
+263,12,4,4,0,Robot TestSuites.Withdrawal Transaction.DCC GoodFlow TestSuite.DCC GoodFlow TestSuite,20210124 08:03:19.398
+264,12,3,3,0,Robot TestSuites.Withdrawal Transaction.DCC HostDenials TestSuite.DCC HostDenials TestSuite,20210124 08:03:19.398
+265,12,5,5,0,Robot TestSuites.Withdrawal Transaction.DCCVISA TestSuite.DCCVISA TestSuite,20210124 08:03:19.398
+266,12,4,3,1,Robot TestSuites.Withdrawal Transaction.HostDenial TestSuite.HostDenial TestSuite,20210124 08:03:19.398
+267,12,2,0,2,Robot TestSuites.Withdrawal Transaction.Hybridbillmix Good TestSuite.Hybridbillmix Good TestSuite,20210124 08:03:19.398
+268,12,55,55,0,Robot TestSuites.Withdrawal Transaction.Withdrawal Good TestSuite.Withdrawal Good TestSuite,20210124 08:03:19.398
+269,13,1,1,0,Robot TestSuites.Balance Transaction.DynamicAccounts SubAccount TestSuite.DynamicAccounts SubAccount TestSuite,20210124 22:14:33.537
+270,13,13,13,0,Robot TestSuites.Balance Transaction.Good TestSuite.Good TestSuite,20210124 22:14:33.537
+271,13,5,5,0,Robot TestSuites.Balance Transaction.HostDenial TestSuite.HostDenial TestSuite,20210124 22:14:33.537
+272,13,5,5,0,Robot TestSuites.Build Sanity Suite.Chaining TestSuite.Chaining TestSuite,20210124 22:14:33.537
+273,13,11,10,1,Robot TestSuites.Build Sanity Suite.ClearOpcode TestSuite.ClearOpcode  TestSuite,20210124 22:14:33.537
+274,13,1,0,1,Robot TestSuites.Build Sanity Suite.DepositContinuation TestSuite.DepositContinuation TestSuite,20210124 22:14:33.537
+275,13,2,0,2,Robot TestSuites.Build Sanity Suite.EMV TestSuite.EMV TestSuite,20210124 22:14:33.537
+276,13,24,14,10,Robot TestSuites.Build Sanity Suite.Good TestSuite.Good TestSuite,20210124 22:14:33.537
+277,13,2,2,0,Robot TestSuites.Build Sanity Suite.IB TestSuite.IB TestSuite,20210124 22:14:33.537
+278,13,2,2,0,Robot TestSuites.Build Sanity Suite.Multilanguage TestSuite.Multilanguage TestSuite,20210124 22:14:33.537
+279,13,29,29,0,Robot TestSuites.CashDeposit Transaction.Good TestSuite.Good TestSuite,20210124 22:14:33.537
+280,13,3,3,0,Robot TestSuites.CashDeposit Transaction.HostDenials TestSuite.HostDenials TestSuite,20210124 22:14:33.537
+281,13,2,2,0,Robot TestSuites.FastCash Transaction.CardBeforeCash TestSuite.CardBeforeCash TestSuite,20210124 22:14:33.537
+282,13,4,4,0,Robot TestSuites.FastCash Transaction.DCC GoodFlow TestSuite.DCC GoodFlow TestSuite,20210124 22:14:33.537
+283,13,2,2,0,Robot TestSuites.FastCash Transaction.DCC HostDenials TestSuite.DCC HostDenials TestSuite,20210124 22:14:33.537
+284,13,3,3,0,Robot TestSuites.FastCash Transaction.DCCVISA GoodFlow TestSuite.DCCVISA GoodFlow TestSuite,20210124 22:14:33.537
+285,13,2,2,0,Robot TestSuites.FastCash Transaction.DCCVISA InvalidHostData TestSuite.DCCVISA InvalidHostData TestSuite,20210124 22:14:33.537
+286,13,1,1,0,Robot TestSuites.FastCash Transaction.Good NonGrouping TestSuite.Good NonGrouping TestSuite,20210124 22:14:33.537
+287,13,27,27,0,Robot TestSuites.FastCash Transaction.Good TestSuite.Good TestSuite,20210124 22:14:33.537
+288,13,3,3,0,Robot TestSuites.FastCash Transaction.HostDenials TestSuite.HostDenials TestSuite,20210124 22:14:33.537
+289,13,2,2,0,Robot TestSuites.Transfer Transaction.DynamicAccounts SubAccount TestSuite.DynamicAccounts SubAccount TestSuite,20210124 22:14:33.537
+290,13,14,14,0,Robot TestSuites.Transfer Transaction.Good TestSuite.Good TestSuite,20210124 22:14:33.537
+291,13,3,2,1,Robot TestSuites.Transfer Transaction.HostDenialChained TestSuite.HostDenialChained TestSuite,20210124 22:14:33.537
+292,13,4,4,0,Robot TestSuites.Transfer Transaction.HostDenialUnchained TestSuite.HostDenialUnchained TestSuite,20210124 22:14:33.537
+293,13,1,0,1,Robot TestSuites.Withdrawal Transaction.Basic Custom Billmix TestSuite.Basic Custom BillMix Good TestSuite,20210124 22:14:33.537
+294,13,3,3,0,Robot TestSuites.Withdrawal Transaction.CardBeforeCash TestSuite.CardBeforeCash TestSuite,20210124 22:14:33.537
+295,13,4,4,0,Robot TestSuites.Withdrawal Transaction.DCC GoodFlow TestSuite.DCC GoodFlow TestSuite,20210124 22:14:33.537
+296,13,3,2,1,Robot TestSuites.Withdrawal Transaction.DCC HostDenials TestSuite.DCC HostDenials TestSuite,20210124 22:14:33.537
+297,13,5,5,0,Robot TestSuites.Withdrawal Transaction.DCCVISA TestSuite.DCCVISA TestSuite,20210124 22:14:33.537
+298,13,4,2,2,Robot TestSuites.Withdrawal Transaction.HostDenial TestSuite.HostDenial TestSuite,20210124 22:14:33.537
+299,13,2,0,2,Robot TestSuites.Withdrawal Transaction.Hybridbillmix Good TestSuite.Hybridbillmix Good TestSuite,20210124 22:14:33.537
+300,13,55,55,0,Robot TestSuites.Withdrawal Transaction.Withdrawal Good TestSuite.Withdrawal Good TestSuite,20210124 22:14:33.537
+301,14,1,1,0,Robot TestSuites.Balance Transaction.DynamicAccounts SubAccount TestSuite.DynamicAccounts SubAccount TestSuite,20210125 19:39:50.737
+302,14,13,13,0,Robot TestSuites.Balance Transaction.Good TestSuite.Good TestSuite,20210125 19:39:50.737
+303,14,5,2,3,Robot TestSuites.Balance Transaction.HostDenial TestSuite.HostDenial TestSuite,20210125 19:39:50.737
+304,14,5,5,0,Robot TestSuites.Build Sanity Suite.Chaining TestSuite.Chaining TestSuite,20210125 19:39:50.737
+305,14,11,10,1,Robot TestSuites.Build Sanity Suite.ClearOpcode TestSuite.ClearOpcode  TestSuite,20210125 19:39:50.737
+306,14,1,0,1,Robot TestSuites.Build Sanity Suite.DepositContinuation TestSuite.DepositContinuation TestSuite,20210125 19:39:50.737
+307,14,2,0,2,Robot TestSuites.Build Sanity Suite.EMV TestSuite.EMV TestSuite,20210125 19:39:50.737
+308,14,24,14,10,Robot TestSuites.Build Sanity Suite.Good TestSuite.Good TestSuite,20210125 19:39:50.737
+309,14,2,1,1,Robot TestSuites.Build Sanity Suite.IB TestSuite.IB TestSuite,20210125 19:39:50.737
+310,14,2,2,0,Robot TestSuites.Build Sanity Suite.Multilanguage TestSuite.Multilanguage TestSuite,20210125 19:39:50.737
+311,14,29,29,0,Robot TestSuites.CashDeposit Transaction.Good TestSuite.Good TestSuite,20210125 19:39:50.737
+312,14,3,2,1,Robot TestSuites.CashDeposit Transaction.HostDenials TestSuite.HostDenials TestSuite,20210125 19:39:50.737
+313,14,2,2,0,Robot TestSuites.FastCash Transaction.CardBeforeCash TestSuite.CardBeforeCash TestSuite,20210125 19:39:50.737
+314,14,4,4,0,Robot TestSuites.FastCash Transaction.DCC GoodFlow TestSuite.DCC GoodFlow TestSuite,20210125 19:39:50.737
+315,14,2,2,0,Robot TestSuites.FastCash Transaction.DCC HostDenials TestSuite.DCC HostDenials TestSuite,20210125 19:39:50.737
+316,14,3,3,0,Robot TestSuites.FastCash Transaction.DCCVISA GoodFlow TestSuite.DCCVISA GoodFlow TestSuite,20210125 19:39:50.737
+317,14,2,2,0,Robot TestSuites.FastCash Transaction.DCCVISA InvalidHostData TestSuite.DCCVISA InvalidHostData TestSuite,20210125 19:39:50.737
+318,14,1,0,1,Robot TestSuites.FastCash Transaction.Good NonGrouping TestSuite.Good NonGrouping TestSuite,20210125 19:39:50.737
+319,14,27,27,0,Robot TestSuites.FastCash Transaction.Good TestSuite.Good TestSuite,20210125 19:39:50.737
+320,14,3,3,0,Robot TestSuites.FastCash Transaction.HostDenials TestSuite.HostDenials TestSuite,20210125 19:39:50.737
+321,14,2,2,0,Robot TestSuites.Transfer Transaction.DynamicAccounts SubAccount TestSuite.DynamicAccounts SubAccount TestSuite,20210125 19:39:50.737
+322,14,14,14,0,Robot TestSuites.Transfer Transaction.Good TestSuite.Good TestSuite,20210125 19:39:50.737
+323,14,3,3,0,Robot TestSuites.Transfer Transaction.HostDenialChained TestSuite.HostDenialChained TestSuite,20210125 19:39:50.737
+324,14,4,4,0,Robot TestSuites.Transfer Transaction.HostDenialUnchained TestSuite.HostDenialUnchained TestSuite,20210125 19:39:50.737
+325,14,1,0,1,Robot TestSuites.Withdrawal Transaction.Basic Custom Billmix TestSuite.Basic Custom BillMix Good TestSuite,20210125 19:39:50.737
+326,14,3,3,0,Robot TestSuites.Withdrawal Transaction.CardBeforeCash TestSuite.CardBeforeCash TestSuite,20210125 19:39:50.737
+327,14,4,4,0,Robot TestSuites.Withdrawal Transaction.DCC GoodFlow TestSuite.DCC GoodFlow TestSuite,20210125 19:39:50.737
+328,14,3,2,1,Robot TestSuites.Withdrawal Transaction.DCC HostDenials TestSuite.DCC HostDenials TestSuite,20210125 19:39:50.737
+329,14,5,4,1,Robot TestSuites.Withdrawal Transaction.DCCVISA TestSuite.DCCVISA TestSuite,20210125 19:39:50.737
+330,14,4,4,0,Robot TestSuites.Withdrawal Transaction.HostDenial TestSuite.HostDenial TestSuite,20210125 19:39:50.737
+331,14,2,0,2,Robot TestSuites.Withdrawal Transaction.Hybridbillmix Good TestSuite.Hybridbillmix Good TestSuite,20210125 19:39:50.737
+332,14,55,54,1,Robot TestSuites.Withdrawal Transaction.Withdrawal Good TestSuite.Withdrawal Good TestSuite,20210125 19:39:50.737
+333,15,1,1,0,Robot TestSuites.Balance Transaction.DynamicAccounts SubAccount TestSuite.DynamicAccounts SubAccount TestSuite,20210126 08:19:15.061
+334,15,13,10,3,Robot TestSuites.Balance Transaction.Good TestSuite.Good TestSuite,20210126 08:19:15.061
+335,15,5,3,2,Robot TestSuites.Balance Transaction.HostDenial TestSuite.HostDenial TestSuite,20210126 08:19:15.061
+336,15,5,1,4,Robot TestSuites.Build Sanity Suite.Chaining TestSuite.Chaining TestSuite,20210126 08:19:15.061
+337,15,11,0,11,Robot TestSuites.Build Sanity Suite.ClearOpcode TestSuite.ClearOpcode  TestSuite,20210126 08:19:15.061
+338,15,1,0,1,Robot TestSuites.Build Sanity Suite.DepositContinuation TestSuite.DepositContinuation TestSuite,20210126 08:19:15.061
+339,15,2,0,2,Robot TestSuites.Build Sanity Suite.EMV TestSuite.EMV TestSuite,20210126 08:19:15.061
+340,15,24,0,24,Robot TestSuites.Build Sanity Suite.Good TestSuite.Good TestSuite,20210126 08:19:15.061
+341,15,2,0,2,Robot TestSuites.Build Sanity Suite.IB TestSuite.IB TestSuite,20210126 08:19:15.061
+342,15,2,0,2,Robot TestSuites.Build Sanity Suite.Multilanguage TestSuite.Multilanguage TestSuite,20210126 08:19:15.061
+343,15,29,28,1,Robot TestSuites.CashDeposit Transaction.Good TestSuite.Good TestSuite,20210126 08:19:15.061
+344,15,3,3,0,Robot TestSuites.CashDeposit Transaction.HostDenials TestSuite.HostDenials TestSuite,20210126 08:19:15.061
+345,15,2,2,0,Robot TestSuites.FastCash Transaction.CardBeforeCash TestSuite.CardBeforeCash TestSuite,20210126 08:19:15.061
+346,15,4,4,0,Robot TestSuites.FastCash Transaction.DCC GoodFlow TestSuite.DCC GoodFlow TestSuite,20210126 08:19:15.061
+347,15,2,2,0,Robot TestSuites.FastCash Transaction.DCC HostDenials TestSuite.DCC HostDenials TestSuite,20210126 08:19:15.061
+348,15,3,3,0,Robot TestSuites.FastCash Transaction.DCCVISA GoodFlow TestSuite.DCCVISA GoodFlow TestSuite,20210126 08:19:15.061
+349,15,2,2,0,Robot TestSuites.FastCash Transaction.DCCVISA InvalidHostData TestSuite.DCCVISA InvalidHostData TestSuite,20210126 08:19:15.061
+350,15,1,0,1,Robot TestSuites.FastCash Transaction.Good NonGrouping TestSuite.Good NonGrouping TestSuite,20210126 08:19:15.061
+351,15,27,26,1,Robot TestSuites.FastCash Transaction.Good TestSuite.Good TestSuite,20210126 08:19:15.061
+352,15,3,3,0,Robot TestSuites.FastCash Transaction.HostDenials TestSuite.HostDenials TestSuite,20210126 08:19:15.061
+353,15,2,2,0,Robot TestSuites.Transfer Transaction.DynamicAccounts SubAccount TestSuite.DynamicAccounts SubAccount TestSuite,20210126 08:19:15.061
+354,15,14,12,2,Robot TestSuites.Transfer Transaction.Good TestSuite.Good TestSuite,20210126 08:19:15.061
+355,15,3,3,0,Robot TestSuites.Transfer Transaction.HostDenialChained TestSuite.HostDenialChained TestSuite,20210126 08:19:15.061
+356,15,4,2,2,Robot TestSuites.Transfer Transaction.HostDenialUnchained TestSuite.HostDenialUnchained TestSuite,20210126 08:19:15.061
+357,15,1,0,1,Robot TestSuites.Withdrawal Transaction.Basic Custom Billmix TestSuite.Basic Custom BillMix Good TestSuite,20210126 08:19:15.061
+358,15,3,3,0,Robot TestSuites.Withdrawal Transaction.CardBeforeCash TestSuite.CardBeforeCash TestSuite,20210126 08:19:15.061
+359,15,4,4,0,Robot TestSuites.Withdrawal Transaction.DCC GoodFlow TestSuite.DCC GoodFlow TestSuite,20210126 08:19:15.061
+360,15,3,3,0,Robot TestSuites.Withdrawal Transaction.DCC HostDenials TestSuite.DCC HostDenials TestSuite,20210126 08:19:15.061
+361,15,5,5,0,Robot TestSuites.Withdrawal Transaction.DCCVISA TestSuite.DCCVISA TestSuite,20210126 08:19:15.061
+362,15,4,2,2,Robot TestSuites.Withdrawal Transaction.HostDenial TestSuite.HostDenial TestSuite,20210126 08:19:15.061
+363,15,2,0,2,Robot TestSuites.Withdrawal Transaction.Hybridbillmix Good TestSuite.Hybridbillmix Good TestSuite,20210126 08:19:15.061
+364,15,55,54,1,Robot TestSuites.Withdrawal Transaction.Withdrawal Good TestSuite.Withdrawal Good TestSuite,20210126 08:19:15.061
+365,16,1,1,0,Robot TestSuites.Balance Transaction.DynamicAccounts SubAccount TestSuite.DynamicAccounts SubAccount TestSuite,20210127 21:40:56.120
+366,16,13,10,3,Robot TestSuites.Balance Transaction.Good TestSuite.Good TestSuite,20210127 21:40:56.120
+367,16,5,2,3,Robot TestSuites.Balance Transaction.HostDenial TestSuite.HostDenial TestSuite,20210127 21:40:56.120
+368,16,5,1,4,Robot TestSuites.Build Sanity Suite.Chaining TestSuite.Chaining TestSuite,20210127 21:40:56.120
+369,16,11,0,11,Robot TestSuites.Build Sanity Suite.ClearOpcode TestSuite.ClearOpcode  TestSuite,20210127 21:40:56.120
+370,16,1,0,1,Robot TestSuites.Build Sanity Suite.DepositContinuation TestSuite.DepositContinuation TestSuite,20210127 21:40:56.120
+371,16,2,0,2,Robot TestSuites.Build Sanity Suite.EMV TestSuite.EMV TestSuite,20210127 21:40:56.120
+372,16,24,0,24,Robot TestSuites.Build Sanity Suite.Good TestSuite.Good TestSuite,20210127 21:40:56.120
+373,16,2,0,2,Robot TestSuites.Build Sanity Suite.IB TestSuite.IB TestSuite,20210127 21:40:56.120
+374,16,2,0,2,Robot TestSuites.Build Sanity Suite.Multilanguage TestSuite.Multilanguage TestSuite,20210127 21:40:56.120
+375,16,29,27,2,Robot TestSuites.CashDeposit Transaction.Good TestSuite.Good TestSuite,20210127 21:40:56.120
+376,16,3,3,0,Robot TestSuites.CashDeposit Transaction.HostDenials TestSuite.HostDenials TestSuite,20210127 21:40:56.120
+377,16,2,1,1,Robot TestSuites.FastCash Transaction.CardBeforeCash TestSuite.CardBeforeCash TestSuite,20210127 21:40:56.120
+378,16,4,4,0,Robot TestSuites.FastCash Transaction.DCC GoodFlow TestSuite.DCC GoodFlow TestSuite,20210127 21:40:56.120
+379,16,2,2,0,Robot TestSuites.FastCash Transaction.DCC HostDenials TestSuite.DCC HostDenials TestSuite,20210127 21:40:56.120
+380,16,3,3,0,Robot TestSuites.FastCash Transaction.DCCVISA GoodFlow TestSuite.DCCVISA GoodFlow TestSuite,20210127 21:40:56.120
+381,16,2,2,0,Robot TestSuites.FastCash Transaction.DCCVISA InvalidHostData TestSuite.DCCVISA InvalidHostData TestSuite,20210127 21:40:56.120
+382,16,1,0,1,Robot TestSuites.FastCash Transaction.Good NonGrouping TestSuite.Good NonGrouping TestSuite,20210127 21:40:56.120
+383,16,27,26,1,Robot TestSuites.FastCash Transaction.Good TestSuite.Good TestSuite,20210127 21:40:56.120
+384,16,3,1,2,Robot TestSuites.FastCash Transaction.HostDenials TestSuite.HostDenials TestSuite,20210127 21:40:56.120
+385,16,2,2,0,Robot TestSuites.Transfer Transaction.DynamicAccounts SubAccount TestSuite.DynamicAccounts SubAccount TestSuite,20210127 21:40:56.120
+386,16,14,12,2,Robot TestSuites.Transfer Transaction.Good TestSuite.Good TestSuite,20210127 21:40:56.120
+387,16,3,1,2,Robot TestSuites.Transfer Transaction.HostDenialChained TestSuite.HostDenialChained TestSuite,20210127 21:40:56.120
+388,16,4,3,1,Robot TestSuites.Transfer Transaction.HostDenialUnchained TestSuite.HostDenialUnchained TestSuite,20210127 21:40:56.120
+389,16,1,0,1,Robot TestSuites.Withdrawal Transaction.Basic Custom Billmix TestSuite.Basic Custom BillMix Good TestSuite,20210127 21:40:56.120
+390,16,3,3,0,Robot TestSuites.Withdrawal Transaction.CardBeforeCash TestSuite.CardBeforeCash TestSuite,20210127 21:40:56.120
+391,16,4,4,0,Robot TestSuites.Withdrawal Transaction.DCC GoodFlow TestSuite.DCC GoodFlow TestSuite,20210127 21:40:56.120
+392,16,3,2,1,Robot TestSuites.Withdrawal Transaction.DCC HostDenials TestSuite.DCC HostDenials TestSuite,20210127 21:40:56.120
+393,16,5,5,0,Robot TestSuites.Withdrawal Transaction.DCCVISA TestSuite.DCCVISA TestSuite,20210127 21:40:56.120
+394,16,4,3,1,Robot TestSuites.Withdrawal Transaction.HostDenial TestSuite.HostDenial TestSuite,20210127 21:40:56.120
+395,16,2,0,2,Robot TestSuites.Withdrawal Transaction.Hybridbillmix Good TestSuite.Hybridbillmix Good TestSuite,20210127 21:40:56.120
+396,16,55,54,1,Robot TestSuites.Withdrawal Transaction.Withdrawal Good TestSuite.Withdrawal Good TestSuite,20210127 21:40:56.120
+397,17,1,1,0,Robot TestSuites.Balance Transaction.DynamicAccounts SubAccount TestSuite.DynamicAccounts SubAccount TestSuite,20210128 22:37:15.222
+398,17,13,13,0,Robot TestSuites.Balance Transaction.Good TestSuite.Good TestSuite,20210128 22:37:15.222
+399,17,5,5,0,Robot TestSuites.Balance Transaction.HostDenial TestSuite.HostDenial TestSuite,20210128 22:37:15.222
+400,17,5,5,0,Robot TestSuites.Build Sanity Suite.Chaining TestSuite.Chaining TestSuite,20210128 22:37:15.222
+401,17,11,10,1,Robot TestSuites.Build Sanity Suite.ClearOpcode TestSuite.ClearOpcode  TestSuite,20210128 22:37:15.222
+402,17,1,0,1,Robot TestSuites.Build Sanity Suite.DepositContinuation TestSuite.DepositContinuation TestSuite,20210128 22:37:15.222
+403,17,2,0,2,Robot TestSuites.Build Sanity Suite.EMV TestSuite.EMV TestSuite,20210128 22:37:15.222
+404,17,24,13,11,Robot TestSuites.Build Sanity Suite.Good TestSuite.Good TestSuite,20210128 22:37:15.222
+405,17,2,2,0,Robot TestSuites.Build Sanity Suite.IB TestSuite.IB TestSuite,20210128 22:37:15.222
+406,17,2,2,0,Robot TestSuites.Build Sanity Suite.Multilanguage TestSuite.Multilanguage TestSuite,20210128 22:37:15.222
+407,17,29,28,1,Robot TestSuites.CashDeposit Transaction.Good TestSuite.Good TestSuite,20210128 22:37:15.222
+408,17,3,3,0,Robot TestSuites.CashDeposit Transaction.HostDenials TestSuite.HostDenials TestSuite,20210128 22:37:15.222
+409,17,2,2,0,Robot TestSuites.FastCash Transaction.CardBeforeCash TestSuite.CardBeforeCash TestSuite,20210128 22:37:15.222
+410,17,4,0,4,Robot TestSuites.FastCash Transaction.DCC GoodFlow TestSuite.DCC GoodFlow TestSuite,20210128 22:37:15.222
+411,17,2,2,0,Robot TestSuites.FastCash Transaction.DCC HostDenials TestSuite.DCC HostDenials TestSuite,20210128 22:37:15.222
+412,17,3,3,0,Robot TestSuites.FastCash Transaction.DCCVISA GoodFlow TestSuite.DCCVISA GoodFlow TestSuite,20210128 22:37:15.222
+413,17,2,2,0,Robot TestSuites.FastCash Transaction.DCCVISA InvalidHostData TestSuite.DCCVISA InvalidHostData TestSuite,20210128 22:37:15.222
+414,17,1,1,0,Robot TestSuites.FastCash Transaction.Good NonGrouping TestSuite.Good NonGrouping TestSuite,20210128 22:37:15.222
+415,17,27,27,0,Robot TestSuites.FastCash Transaction.Good TestSuite.Good TestSuite,20210128 22:37:15.222
+416,17,3,2,1,Robot TestSuites.FastCash Transaction.HostDenials TestSuite.HostDenials TestSuite,20210128 22:37:15.222
+417,17,2,2,0,Robot TestSuites.Transfer Transaction.DynamicAccounts SubAccount TestSuite.DynamicAccounts SubAccount TestSuite,20210128 22:37:15.222
+418,17,14,14,0,Robot TestSuites.Transfer Transaction.Good TestSuite.Good TestSuite,20210128 22:37:15.222
+419,17,3,2,1,Robot TestSuites.Transfer Transaction.HostDenialChained TestSuite.HostDenialChained TestSuite,20210128 22:37:15.222
+420,17,4,4,0,Robot TestSuites.Transfer Transaction.HostDenialUnchained TestSuite.HostDenialUnchained TestSuite,20210128 22:37:15.222
+421,17,1,0,1,Robot TestSuites.Withdrawal Transaction.Basic Custom Billmix TestSuite.Basic Custom BillMix Good TestSuite,20210128 22:37:15.222
+422,17,3,3,0,Robot TestSuites.Withdrawal Transaction.CardBeforeCash TestSuite.CardBeforeCash TestSuite,20210128 22:37:15.222
+423,17,4,4,0,Robot TestSuites.Withdrawal Transaction.DCC GoodFlow TestSuite.DCC GoodFlow TestSuite,20210128 22:37:15.222
+424,17,3,3,0,Robot TestSuites.Withdrawal Transaction.DCC HostDenials TestSuite.DCC HostDenials TestSuite,20210128 22:37:15.222
+425,17,5,4,1,Robot TestSuites.Withdrawal Transaction.DCCVISA TestSuite.DCCVISA TestSuite,20210128 22:37:15.222
+426,17,4,4,0,Robot TestSuites.Withdrawal Transaction.HostDenial TestSuite.HostDenial TestSuite,20210128 22:37:15.222
+427,17,2,0,2,Robot TestSuites.Withdrawal Transaction.Hybridbillmix Good TestSuite.Hybridbillmix Good TestSuite,20210128 22:37:15.222
+428,17,55,55,0,Robot TestSuites.Withdrawal Transaction.Withdrawal Good TestSuite.Withdrawal Good TestSuite,20210128 22:37:15.222
+429,18,1,1,0,Robot TestSuites.Balance Transaction.DynamicAccounts SubAccount TestSuite.DynamicAccounts SubAccount TestSuite,20210201 15:01:30.938
+430,18,13,13,0,Robot TestSuites.Balance Transaction.Good TestSuite.Good TestSuite,20210201 15:01:30.938
+431,18,5,4,1,Robot TestSuites.Balance Transaction.HostDenial TestSuite.HostDenial TestSuite,20210201 15:01:30.938
+432,18,5,5,0,Robot TestSuites.Build Sanity Suite.Chaining TestSuite.Chaining TestSuite,20210201 15:01:30.938
+433,18,11,10,1,Robot TestSuites.Build Sanity Suite.ClearOpcode TestSuite.ClearOpcode  TestSuite,20210201 15:01:30.938
+434,18,1,0,1,Robot TestSuites.Build Sanity Suite.DepositContinuation TestSuite.DepositContinuation TestSuite,20210201 15:01:30.938
+435,18,2,0,2,Robot TestSuites.Build Sanity Suite.EMV TestSuite.EMV TestSuite,20210201 15:01:30.938
+436,18,24,14,10,Robot TestSuites.Build Sanity Suite.Good TestSuite.Good TestSuite,20210201 15:01:30.938
+437,18,2,1,1,Robot TestSuites.Build Sanity Suite.IB TestSuite.IB TestSuite,20210201 15:01:30.938
+438,18,2,2,0,Robot TestSuites.Build Sanity Suite.Multilanguage TestSuite.Multilanguage TestSuite,20210201 15:01:30.938
+439,18,29,29,0,Robot TestSuites.CashDeposit Transaction.Good TestSuite.Good TestSuite,20210201 15:01:30.938
+440,18,3,2,1,Robot TestSuites.CashDeposit Transaction.HostDenials TestSuite.HostDenials TestSuite,20210201 15:01:30.938
+441,18,2,2,0,Robot TestSuites.FastCash Transaction.CardBeforeCash TestSuite.CardBeforeCash TestSuite,20210201 15:01:30.938
+442,18,4,4,0,Robot TestSuites.FastCash Transaction.DCC GoodFlow TestSuite.DCC GoodFlow TestSuite,20210201 15:01:30.938
+443,18,2,2,0,Robot TestSuites.FastCash Transaction.DCC HostDenials TestSuite.DCC HostDenials TestSuite,20210201 15:01:30.938
+444,18,3,3,0,Robot TestSuites.FastCash Transaction.DCCVISA GoodFlow TestSuite.DCCVISA GoodFlow TestSuite,20210201 15:01:30.938
+445,18,2,2,0,Robot TestSuites.FastCash Transaction.DCCVISA InvalidHostData TestSuite.DCCVISA InvalidHostData TestSuite,20210201 15:01:30.938
+446,18,1,1,0,Robot TestSuites.FastCash Transaction.Good NonGrouping TestSuite.Good NonGrouping TestSuite,20210201 15:01:30.938
+447,18,27,26,1,Robot TestSuites.FastCash Transaction.Good TestSuite.Good TestSuite,20210201 15:01:30.938
+448,18,3,3,0,Robot TestSuites.FastCash Transaction.HostDenials TestSuite.HostDenials TestSuite,20210201 15:01:30.938
+449,18,2,2,0,Robot TestSuites.Transfer Transaction.DynamicAccounts SubAccount TestSuite.DynamicAccounts SubAccount TestSuite,20210201 15:01:30.938
+450,18,14,14,0,Robot TestSuites.Transfer Transaction.Good TestSuite.Good TestSuite,20210201 15:01:30.938
+451,18,3,2,1,Robot TestSuites.Transfer Transaction.HostDenialChained TestSuite.HostDenialChained TestSuite,20210201 15:01:30.938
+452,18,4,2,2,Robot TestSuites.Transfer Transaction.HostDenialUnchained TestSuite.HostDenialUnchained TestSuite,20210201 15:01:30.938
+453,18,1,0,1,Robot TestSuites.Withdrawal Transaction.Basic Custom Billmix TestSuite.Basic Custom BillMix Good TestSuite,20210201 15:01:30.938
+454,18,3,3,0,Robot TestSuites.Withdrawal Transaction.CardBeforeCash TestSuite.CardBeforeCash TestSuite,20210201 15:01:30.938
+455,18,4,4,0,Robot TestSuites.Withdrawal Transaction.DCC GoodFlow TestSuite.DCC GoodFlow TestSuite,20210201 15:01:30.938
+456,18,3,0,3,Robot TestSuites.Withdrawal Transaction.DCC HostDenials TestSuite.DCC HostDenials TestSuite,20210201 15:01:30.938
+457,18,5,5,0,Robot TestSuites.Withdrawal Transaction.DCCVISA TestSuite.DCCVISA TestSuite,20210201 15:01:30.938
+458,18,4,4,0,Robot TestSuites.Withdrawal Transaction.HostDenial TestSuite.HostDenial TestSuite,20210201 15:01:30.938
+459,18,2,0,2,Robot TestSuites.Withdrawal Transaction.Hybridbillmix Good TestSuite.Hybridbillmix Good TestSuite,20210201 15:01:30.938
+460,18,55,54,1,Robot TestSuites.Withdrawal Transaction.Withdrawal Good TestSuite.Withdrawal Good TestSuite,20210201 15:01:30.938
+461,19,1,1,0,Robot TestSuites.Balance Transaction.DynamicAccounts SubAccount TestSuite.DynamicAccounts SubAccount TestSuite,20210201 23:01:37.225
+462,19,13,13,0,Robot TestSuites.Balance Transaction.Good TestSuite.Good TestSuite,20210201 23:01:37.225
+463,19,5,3,2,Robot TestSuites.Balance Transaction.HostDenial TestSuite.HostDenial TestSuite,20210201 23:01:37.225
+464,19,5,5,0,Robot TestSuites.Build Sanity Suite.Chaining TestSuite.Chaining TestSuite,20210201 23:01:37.225
+465,19,11,9,2,Robot TestSuites.Build Sanity Suite.ClearOpcode TestSuite.ClearOpcode  TestSuite,20210201 23:01:37.225
+466,19,1,0,1,Robot TestSuites.Build Sanity Suite.DepositContinuation TestSuite.DepositContinuation TestSuite,20210201 23:01:37.225
+467,19,2,0,2,Robot TestSuites.Build Sanity Suite.EMV TestSuite.EMV TestSuite,20210201 23:01:37.225
+468,19,24,14,10,Robot TestSuites.Build Sanity Suite.Good TestSuite.Good TestSuite,20210201 23:01:37.225
+469,19,2,0,2,Robot TestSuites.Build Sanity Suite.IB TestSuite.IB TestSuite,20210201 23:01:37.225
+470,19,2,2,0,Robot TestSuites.Build Sanity Suite.Multilanguage TestSuite.Multilanguage TestSuite,20210201 23:01:37.225
+471,19,29,29,0,Robot TestSuites.CashDeposit Transaction.Good TestSuite.Good TestSuite,20210201 23:01:37.225
+472,19,3,2,1,Robot TestSuites.CashDeposit Transaction.HostDenials TestSuite.HostDenials TestSuite,20210201 23:01:37.225
+473,19,2,2,0,Robot TestSuites.FastCash Transaction.CardBeforeCash TestSuite.CardBeforeCash TestSuite,20210201 23:01:37.225
+474,19,4,4,0,Robot TestSuites.FastCash Transaction.DCC GoodFlow TestSuite.DCC GoodFlow TestSuite,20210201 23:01:37.225
+475,19,2,2,0,Robot TestSuites.FastCash Transaction.DCC HostDenials TestSuite.DCC HostDenials TestSuite,20210201 23:01:37.225
+476,19,3,3,0,Robot TestSuites.FastCash Transaction.DCCVISA GoodFlow TestSuite.DCCVISA GoodFlow TestSuite,20210201 23:01:37.225
+477,19,2,2,0,Robot TestSuites.FastCash Transaction.DCCVISA InvalidHostData TestSuite.DCCVISA InvalidHostData TestSuite,20210201 23:01:37.225
+478,19,1,1,0,Robot TestSuites.FastCash Transaction.Good NonGrouping TestSuite.Good NonGrouping TestSuite,20210201 23:01:37.225
+479,19,27,27,0,Robot TestSuites.FastCash Transaction.Good TestSuite.Good TestSuite,20210201 23:01:37.225
+480,19,3,2,1,Robot TestSuites.FastCash Transaction.HostDenials TestSuite.HostDenials TestSuite,20210201 23:01:37.225
+481,19,2,2,0,Robot TestSuites.Transfer Transaction.DynamicAccounts SubAccount TestSuite.DynamicAccounts SubAccount TestSuite,20210201 23:01:37.225
+482,19,14,14,0,Robot TestSuites.Transfer Transaction.Good TestSuite.Good TestSuite,20210201 23:01:37.225
+483,19,3,0,3,Robot TestSuites.Transfer Transaction.HostDenialChained TestSuite.HostDenialChained TestSuite,20210201 23:01:37.225
+484,19,4,3,1,Robot TestSuites.Transfer Transaction.HostDenialUnchained TestSuite.HostDenialUnchained TestSuite,20210201 23:01:37.225
+485,19,1,0,1,Robot TestSuites.Withdrawal Transaction.Basic Custom Billmix TestSuite.Basic Custom BillMix Good TestSuite,20210201 23:01:37.225
+486,19,3,3,0,Robot TestSuites.Withdrawal Transaction.CardBeforeCash TestSuite.CardBeforeCash TestSuite,20210201 23:01:37.225
+487,19,4,4,0,Robot TestSuites.Withdrawal Transaction.DCC GoodFlow TestSuite.DCC GoodFlow TestSuite,20210201 23:01:37.225
+488,19,3,2,1,Robot TestSuites.Withdrawal Transaction.DCC HostDenials TestSuite.DCC HostDenials TestSuite,20210201 23:01:37.225
+489,19,5,5,0,Robot TestSuites.Withdrawal Transaction.DCCVISA TestSuite.DCCVISA TestSuite,20210201 23:01:37.225
+490,19,4,2,2,Robot TestSuites.Withdrawal Transaction.HostDenial TestSuite.HostDenial TestSuite,20210201 23:01:37.225
+491,19,2,0,2,Robot TestSuites.Withdrawal Transaction.Hybridbillmix Good TestSuite.Hybridbillmix Good TestSuite,20210201 23:01:37.225
+492,19,55,54,1,Robot TestSuites.Withdrawal Transaction.Withdrawal Good TestSuite.Withdrawal Good TestSuite,20210201 23:01:37.225
+493,20,1,1,0,Robot TestSuites.Balance Transaction.DynamicAccounts SubAccount TestSuite.DynamicAccounts SubAccount TestSuite,20210202 22:04:00.273
+494,20,13,13,0,Robot TestSuites.Balance Transaction.Good TestSuite.Good TestSuite,20210202 22:04:00.273
+495,20,5,4,1,Robot TestSuites.Balance Transaction.HostDenial TestSuite.HostDenial TestSuite,20210202 22:04:00.273
+496,20,5,5,0,Robot TestSuites.Build Sanity Suite.Chaining TestSuite.Chaining TestSuite,20210202 22:04:00.273
+497,20,11,10,1,Robot TestSuites.Build Sanity Suite.ClearOpcode TestSuite.ClearOpcode  TestSuite,20210202 22:04:00.273
+498,20,1,0,1,Robot TestSuites.Build Sanity Suite.DepositContinuation TestSuite.DepositContinuation TestSuite,20210202 22:04:00.273
+499,20,2,0,2,Robot TestSuites.Build Sanity Suite.EMV TestSuite.EMV TestSuite,20210202 22:04:00.273
+500,20,24,13,11,Robot TestSuites.Build Sanity Suite.Good TestSuite.Good TestSuite,20210202 22:04:00.273
+501,20,2,1,1,Robot TestSuites.Build Sanity Suite.IB TestSuite.IB TestSuite,20210202 22:04:00.273
+502,20,2,2,0,Robot TestSuites.Build Sanity Suite.Multilanguage TestSuite.Multilanguage TestSuite,20210202 22:04:00.273
+503,20,29,29,0,Robot TestSuites.CashDeposit Transaction.Good TestSuite.Good TestSuite,20210202 22:04:00.273
+504,20,3,3,0,Robot TestSuites.CashDeposit Transaction.HostDenials TestSuite.HostDenials TestSuite,20210202 22:04:00.273
+505,20,2,2,0,Robot TestSuites.FastCash Transaction.CardBeforeCash TestSuite.CardBeforeCash TestSuite,20210202 22:04:00.273
+506,20,4,4,0,Robot TestSuites.FastCash Transaction.DCC GoodFlow TestSuite.DCC GoodFlow TestSuite,20210202 22:04:00.273
+507,20,2,2,0,Robot TestSuites.FastCash Transaction.DCC HostDenials TestSuite.DCC HostDenials TestSuite,20210202 22:04:00.273
+508,20,3,3,0,Robot TestSuites.FastCash Transaction.DCCVISA GoodFlow TestSuite.DCCVISA GoodFlow TestSuite,20210202 22:04:00.273
+509,20,2,2,0,Robot TestSuites.FastCash Transaction.DCCVISA InvalidHostData TestSuite.DCCVISA InvalidHostData TestSuite,20210202 22:04:00.273
+510,20,1,1,0,Robot TestSuites.FastCash Transaction.Good NonGrouping TestSuite.Good NonGrouping TestSuite,20210202 22:04:00.273
+511,20,27,27,0,Robot TestSuites.FastCash Transaction.Good TestSuite.Good TestSuite,20210202 22:04:00.273
+512,20,3,3,0,Robot TestSuites.FastCash Transaction.HostDenials TestSuite.HostDenials TestSuite,20210202 22:04:00.273
+513,20,2,2,0,Robot TestSuites.Transfer Transaction.DynamicAccounts SubAccount TestSuite.DynamicAccounts SubAccount TestSuite,20210202 22:04:00.273
+514,20,14,14,0,Robot TestSuites.Transfer Transaction.Good TestSuite.Good TestSuite,20210202 22:04:00.273
+515,20,3,1,2,Robot TestSuites.Transfer Transaction.HostDenialChained TestSuite.HostDenialChained TestSuite,20210202 22:04:00.273
+516,20,4,3,1,Robot TestSuites.Transfer Transaction.HostDenialUnchained TestSuite.HostDenialUnchained TestSuite,20210202 22:04:00.273
+517,20,1,0,1,Robot TestSuites.Withdrawal Transaction.Basic Custom Billmix TestSuite.Basic Custom BillMix Good TestSuite,20210202 22:04:00.273
+518,20,3,3,0,Robot TestSuites.Withdrawal Transaction.CardBeforeCash TestSuite.CardBeforeCash TestSuite,20210202 22:04:00.273
+519,20,4,4,0,Robot TestSuites.Withdrawal Transaction.DCC GoodFlow TestSuite.DCC GoodFlow TestSuite,20210202 22:04:00.273
+520,20,3,1,2,Robot TestSuites.Withdrawal Transaction.DCC HostDenials TestSuite.DCC HostDenials TestSuite,20210202 22:04:00.273
+521,20,5,5,0,Robot TestSuites.Withdrawal Transaction.DCCVISA TestSuite.DCCVISA TestSuite,20210202 22:04:00.273
+522,20,4,1,3,Robot TestSuites.Withdrawal Transaction.HostDenial TestSuite.HostDenial TestSuite,20210202 22:04:00.273
+523,20,2,0,2,Robot TestSuites.Withdrawal Transaction.Hybridbillmix Good TestSuite.Hybridbillmix Good TestSuite,20210202 22:04:00.273
+524,20,55,55,0,Robot TestSuites.Withdrawal Transaction.Withdrawal Good TestSuite.Withdrawal Good TestSuite,20210202 22:04:00.273
+525,21,1,1,0,Robot TestSuites.Balance Transaction.DynamicAccounts SubAccount TestSuite.DynamicAccounts SubAccount TestSuite,20210204 18:40:48.516
+526,21,13,13,0,Robot TestSuites.Balance Transaction.Good TestSuite.Good TestSuite,20210204 18:40:48.516
+527,21,5,2,3,Robot TestSuites.Balance Transaction.HostDenial TestSuite.HostDenial TestSuite,20210204 18:40:48.516
+528,21,5,4,1,Robot TestSuites.Build Sanity Suite.Chaining TestSuite.Chaining TestSuite,20210204 18:40:48.516
+529,21,11,10,1,Robot TestSuites.Build Sanity Suite.ClearOpcode TestSuite.ClearOpcode  TestSuite,20210204 18:40:48.516
+530,21,1,0,1,Robot TestSuites.Build Sanity Suite.DepositContinuation TestSuite.DepositContinuation TestSuite,20210204 18:40:48.516
+531,21,2,0,2,Robot TestSuites.Build Sanity Suite.EMV TestSuite.EMV TestSuite,20210204 18:40:48.516
+532,21,24,13,11,Robot TestSuites.Build Sanity Suite.Good TestSuite.Good TestSuite,20210204 18:40:48.516
+533,21,2,1,1,Robot TestSuites.Build Sanity Suite.IB TestSuite.IB TestSuite,20210204 18:40:48.516
+534,21,2,2,0,Robot TestSuites.Build Sanity Suite.Multilanguage TestSuite.Multilanguage TestSuite,20210204 18:40:48.516
+535,21,29,29,0,Robot TestSuites.CashDeposit Transaction.Good TestSuite.Good TestSuite,20210204 18:40:48.516
+536,21,3,3,0,Robot TestSuites.CashDeposit Transaction.HostDenials TestSuite.HostDenials TestSuite,20210204 18:40:48.516
+537,21,2,2,0,Robot TestSuites.FastCash Transaction.CardBeforeCash TestSuite.CardBeforeCash TestSuite,20210204 18:40:48.516
+538,21,4,4,0,Robot TestSuites.FastCash Transaction.DCC GoodFlow TestSuite.DCC GoodFlow TestSuite,20210204 18:40:48.516
+539,21,2,1,1,Robot TestSuites.FastCash Transaction.DCC HostDenials TestSuite.DCC HostDenials TestSuite,20210204 18:40:48.516
+540,21,3,3,0,Robot TestSuites.FastCash Transaction.DCCVISA GoodFlow TestSuite.DCCVISA GoodFlow TestSuite,20210204 18:40:48.516
+541,21,2,2,0,Robot TestSuites.FastCash Transaction.DCCVISA InvalidHostData TestSuite.DCCVISA InvalidHostData TestSuite,20210204 18:40:48.516
+542,21,1,1,0,Robot TestSuites.FastCash Transaction.Good NonGrouping TestSuite.Good NonGrouping TestSuite,20210204 18:40:48.516
+543,21,27,27,0,Robot TestSuites.FastCash Transaction.Good TestSuite.Good TestSuite,20210204 18:40:48.516
+544,21,3,3,0,Robot TestSuites.FastCash Transaction.HostDenials TestSuite.HostDenials TestSuite,20210204 18:40:48.516
+545,21,2,2,0,Robot TestSuites.Transfer Transaction.DynamicAccounts SubAccount TestSuite.DynamicAccounts SubAccount TestSuite,20210204 18:40:48.516
+546,21,14,14,0,Robot TestSuites.Transfer Transaction.Good TestSuite.Good TestSuite,20210204 18:40:48.516
+547,21,3,2,1,Robot TestSuites.Transfer Transaction.HostDenialChained TestSuite.HostDenialChained TestSuite,20210204 18:40:48.516
+548,21,4,2,2,Robot TestSuites.Transfer Transaction.HostDenialUnchained TestSuite.HostDenialUnchained TestSuite,20210204 18:40:48.516
+549,21,1,0,1,Robot TestSuites.Withdrawal Transaction.Basic Custom Billmix TestSuite.Basic Custom BillMix Good TestSuite,20210204 18:40:48.516
+550,21,3,3,0,Robot TestSuites.Withdrawal Transaction.CardBeforeCash TestSuite.CardBeforeCash TestSuite,20210204 18:40:48.516
+551,21,4,4,0,Robot TestSuites.Withdrawal Transaction.DCC GoodFlow TestSuite.DCC GoodFlow TestSuite,20210204 18:40:48.516
+552,21,3,2,1,Robot TestSuites.Withdrawal Transaction.DCC HostDenials TestSuite.DCC HostDenials TestSuite,20210204 18:40:48.516
+553,21,5,5,0,Robot TestSuites.Withdrawal Transaction.DCCVISA TestSuite.DCCVISA TestSuite,20210204 18:40:48.516
+554,21,4,4,0,Robot TestSuites.Withdrawal Transaction.HostDenial TestSuite.HostDenial TestSuite,20210204 18:40:48.516
+555,21,2,0,2,Robot TestSuites.Withdrawal Transaction.Hybridbillmix Good TestSuite.Hybridbillmix Good TestSuite,20210204 18:40:48.516
+556,21,55,55,0,Robot TestSuites.Withdrawal Transaction.Withdrawal Good TestSuite.Withdrawal Good TestSuite,20210204 18:40:48.516
+557,22,1,1,0,Robot TestSuites.Balance Transaction.DynamicAccounts SubAccount TestSuite.DynamicAccounts SubAccount TestSuite,20210206 10:30:35.351
+558,22,13,13,0,Robot TestSuites.Balance Transaction.Good TestSuite.Good TestSuite,20210206 10:30:35.351
+559,22,5,4,1,Robot TestSuites.Balance Transaction.HostDenial TestSuite.HostDenial TestSuite,20210206 10:30:35.351
+560,22,5,5,0,Robot TestSuites.Build Sanity Suite.Chaining TestSuite.Chaining TestSuite,20210206 10:30:35.351
+561,22,11,10,1,Robot TestSuites.Build Sanity Suite.ClearOpcode TestSuite.ClearOpcode  TestSuite,20210206 10:30:35.351
+562,22,1,0,1,Robot TestSuites.Build Sanity Suite.DepositContinuation TestSuite.DepositContinuation TestSuite,20210206 10:30:35.351
+563,22,2,0,2,Robot TestSuites.Build Sanity Suite.EMV TestSuite.EMV TestSuite,20210206 10:30:35.351
+564,22,24,14,10,Robot TestSuites.Build Sanity Suite.Good TestSuite.Good TestSuite,20210206 10:30:35.351
+565,22,2,0,2,Robot TestSuites.Build Sanity Suite.IB TestSuite.IB TestSuite,20210206 10:30:35.351
+566,22,2,2,0,Robot TestSuites.Build Sanity Suite.Multilanguage TestSuite.Multilanguage TestSuite,20210206 10:30:35.351
+567,22,29,29,0,Robot TestSuites.CashDeposit Transaction.Good TestSuite.Good TestSuite,20210206 10:30:35.351
+568,22,3,2,1,Robot TestSuites.CashDeposit Transaction.HostDenials TestSuite.HostDenials TestSuite,20210206 10:30:35.351
+569,22,2,2,0,Robot TestSuites.FastCash Transaction.CardBeforeCash TestSuite.CardBeforeCash TestSuite,20210206 10:30:35.351
+570,22,4,4,0,Robot TestSuites.FastCash Transaction.DCC GoodFlow TestSuite.DCC GoodFlow TestSuite,20210206 10:30:35.351
+571,22,2,2,0,Robot TestSuites.FastCash Transaction.DCC HostDenials TestSuite.DCC HostDenials TestSuite,20210206 10:30:35.351
+572,22,3,3,0,Robot TestSuites.FastCash Transaction.DCCVISA GoodFlow TestSuite.DCCVISA GoodFlow TestSuite,20210206 10:30:35.351
+573,22,2,2,0,Robot TestSuites.FastCash Transaction.DCCVISA InvalidHostData TestSuite.DCCVISA InvalidHostData TestSuite,20210206 10:30:35.351
+574,22,1,1,0,Robot TestSuites.FastCash Transaction.Good NonGrouping TestSuite.Good NonGrouping TestSuite,20210206 10:30:35.351
+575,22,27,27,0,Robot TestSuites.FastCash Transaction.Good TestSuite.Good TestSuite,20210206 10:30:35.351
+576,22,3,3,0,Robot TestSuites.FastCash Transaction.HostDenials TestSuite.HostDenials TestSuite,20210206 10:30:35.351
+577,22,2,2,0,Robot TestSuites.Transfer Transaction.DynamicAccounts SubAccount TestSuite.DynamicAccounts SubAccount TestSuite,20210206 10:30:35.351
+578,22,14,14,0,Robot TestSuites.Transfer Transaction.Good TestSuite.Good TestSuite,20210206 10:30:35.351
+579,22,3,1,2,Robot TestSuites.Transfer Transaction.HostDenialChained TestSuite.HostDenialChained TestSuite,20210206 10:30:35.351
+580,22,4,3,1,Robot TestSuites.Transfer Transaction.HostDenialUnchained TestSuite.HostDenialUnchained TestSuite,20210206 10:30:35.351
+581,22,1,0,1,Robot TestSuites.Withdrawal Transaction.Basic Custom Billmix TestSuite.Basic Custom BillMix Good TestSuite,20210206 10:30:35.351
+582,22,3,3,0,Robot TestSuites.Withdrawal Transaction.CardBeforeCash TestSuite.CardBeforeCash TestSuite,20210206 10:30:35.351
+583,22,4,4,0,Robot TestSuites.Withdrawal Transaction.DCC GoodFlow TestSuite.DCC GoodFlow TestSuite,20210206 10:30:35.351
+584,22,3,3,0,Robot TestSuites.Withdrawal Transaction.DCC HostDenials TestSuite.DCC HostDenials TestSuite,20210206 10:30:35.351
+585,22,5,5,0,Robot TestSuites.Withdrawal Transaction.DCCVISA TestSuite.DCCVISA TestSuite,20210206 10:30:35.351
+586,22,4,4,0,Robot TestSuites.Withdrawal Transaction.HostDenial TestSuite.HostDenial TestSuite,20210206 10:30:35.351
+587,22,2,0,2,Robot TestSuites.Withdrawal Transaction.Hybridbillmix Good TestSuite.Hybridbillmix Good TestSuite,20210206 10:30:35.351
+588,22,55,55,0,Robot TestSuites.Withdrawal Transaction.Withdrawal Good TestSuite.Withdrawal Good TestSuite,20210206 10:30:35.351
+589,23,1,1,0,Robot TestSuites.Balance Transaction.DynamicAccounts SubAccount TestSuite.DynamicAccounts SubAccount TestSuite,20210207 16:09:54.613
+590,23,13,13,0,Robot TestSuites.Balance Transaction.Good TestSuite.Good TestSuite,20210207 16:09:54.613
+591,23,5,4,1,Robot TestSuites.Balance Transaction.HostDenial TestSuite.HostDenial TestSuite,20210207 16:09:54.613
+592,23,5,5,0,Robot TestSuites.Build Sanity Suite.Chaining TestSuite.Chaining TestSuite,20210207 16:09:54.613
+593,23,11,10,1,Robot TestSuites.Build Sanity Suite.ClearOpcode TestSuite.ClearOpcode  TestSuite,20210207 16:09:54.613
+594,23,1,0,1,Robot TestSuites.Build Sanity Suite.DepositContinuation TestSuite.DepositContinuation TestSuite,20210207 16:09:54.613
+595,23,2,0,2,Robot TestSuites.Build Sanity Suite.EMV TestSuite.EMV TestSuite,20210207 16:09:54.613
+596,23,24,14,10,Robot TestSuites.Build Sanity Suite.Good TestSuite.Good TestSuite,20210207 16:09:54.613
+597,23,2,1,1,Robot TestSuites.Build Sanity Suite.IB TestSuite.IB TestSuite,20210207 16:09:54.613
+598,23,2,2,0,Robot TestSuites.Build Sanity Suite.Multilanguage TestSuite.Multilanguage TestSuite,20210207 16:09:54.613
+599,23,29,29,0,Robot TestSuites.CashDeposit Transaction.Good TestSuite.Good TestSuite,20210207 16:09:54.613
+600,23,3,2,1,Robot TestSuites.CashDeposit Transaction.HostDenials TestSuite.HostDenials TestSuite,20210207 16:09:54.613
+601,23,2,2,0,Robot TestSuites.FastCash Transaction.CardBeforeCash TestSuite.CardBeforeCash TestSuite,20210207 16:09:54.613
+602,23,4,4,0,Robot TestSuites.FastCash Transaction.DCC GoodFlow TestSuite.DCC GoodFlow TestSuite,20210207 16:09:54.613
+603,23,2,2,0,Robot TestSuites.FastCash Transaction.DCC HostDenials TestSuite.DCC HostDenials TestSuite,20210207 16:09:54.613
+604,23,3,3,0,Robot TestSuites.FastCash Transaction.DCCVISA GoodFlow TestSuite.DCCVISA GoodFlow TestSuite,20210207 16:09:54.613
+605,23,2,2,0,Robot TestSuites.FastCash Transaction.DCCVISA InvalidHostData TestSuite.DCCVISA InvalidHostData TestSuite,20210207 16:09:54.613
+606,23,1,1,0,Robot TestSuites.FastCash Transaction.Good NonGrouping TestSuite.Good NonGrouping TestSuite,20210207 16:09:54.613
+607,23,27,27,0,Robot TestSuites.FastCash Transaction.Good TestSuite.Good TestSuite,20210207 16:09:54.613
+608,23,3,1,2,Robot TestSuites.FastCash Transaction.HostDenials TestSuite.HostDenials TestSuite,20210207 16:09:54.613
+609,23,2,2,0,Robot TestSuites.Transfer Transaction.DynamicAccounts SubAccount TestSuite.DynamicAccounts SubAccount TestSuite,20210207 16:09:54.613
+610,23,14,14,0,Robot TestSuites.Transfer Transaction.Good TestSuite.Good TestSuite,20210207 16:09:54.613
+611,23,3,1,2,Robot TestSuites.Transfer Transaction.HostDenialChained TestSuite.HostDenialChained TestSuite,20210207 16:09:54.613
+612,23,4,3,1,Robot TestSuites.Transfer Transaction.HostDenialUnchained TestSuite.HostDenialUnchained TestSuite,20210207 16:09:54.613
+613,23,1,0,1,Robot TestSuites.Withdrawal Transaction.Basic Custom Billmix TestSuite.Basic Custom BillMix Good TestSuite,20210207 16:09:54.613
+614,23,3,3,0,Robot TestSuites.Withdrawal Transaction.CardBeforeCash TestSuite.CardBeforeCash TestSuite,20210207 16:09:54.613
+615,23,4,4,0,Robot TestSuites.Withdrawal Transaction.DCC GoodFlow TestSuite.DCC GoodFlow TestSuite,20210207 16:09:54.613
+616,23,3,2,1,Robot TestSuites.Withdrawal Transaction.DCC HostDenials TestSuite.DCC HostDenials TestSuite,20210207 16:09:54.613
+617,23,5,4,1,Robot TestSuites.Withdrawal Transaction.DCCVISA TestSuite.DCCVISA TestSuite,20210207 16:09:54.613
+618,23,4,3,1,Robot TestSuites.Withdrawal Transaction.HostDenial TestSuite.HostDenial TestSuite,20210207 16:09:54.613
+619,23,2,0,2,Robot TestSuites.Withdrawal Transaction.Hybridbillmix Good TestSuite.Hybridbillmix Good TestSuite,20210207 16:09:54.613
+620,23,55,55,0,Robot TestSuites.Withdrawal Transaction.Withdrawal Good TestSuite.Withdrawal Good TestSuite,20210207 16:09:54.613
+621,24,1,1,0,Robot TestSuites.Balance Transaction.DynamicAccounts SubAccount TestSuite.DynamicAccounts SubAccount TestSuite,20210224 11:08:50.640
+622,24,13,13,0,Robot TestSuites.Balance Transaction.Good TestSuite.Good TestSuite,20210224 11:08:50.640
+623,24,5,4,1,Robot TestSuites.Balance Transaction.HostDenial TestSuite.HostDenial TestSuite,20210224 11:08:50.640
+624,24,5,5,0,Robot TestSuites.Build Sanity Suite.Chaining TestSuite.Chaining TestSuite,20210224 11:08:50.640
+625,24,11,10,1,Robot TestSuites.Build Sanity Suite.ClearOpcode TestSuite.ClearOpcode  TestSuite,20210224 11:08:50.640
+626,24,1,0,1,Robot TestSuites.Build Sanity Suite.DepositContinuation TestSuite.DepositContinuation TestSuite,20210224 11:08:50.640
+627,24,2,0,2,Robot TestSuites.Build Sanity Suite.EMV TestSuite.EMV TestSuite,20210224 11:08:50.640
+628,24,24,14,10,Robot TestSuites.Build Sanity Suite.Good TestSuite.Good TestSuite,20210224 11:08:50.640
+629,24,2,0,2,Robot TestSuites.Build Sanity Suite.IB TestSuite.IB TestSuite,20210224 11:08:50.640
+630,24,2,2,0,Robot TestSuites.Build Sanity Suite.Multilanguage TestSuite.Multilanguage TestSuite,20210224 11:08:50.640
+631,24,29,29,0,Robot TestSuites.CashDeposit Transaction.Good TestSuite.Good TestSuite,20210224 11:08:50.640
+632,24,3,3,0,Robot TestSuites.CashDeposit Transaction.HostDenials TestSuite.HostDenials TestSuite,20210224 11:08:50.640
+633,24,2,1,1,Robot TestSuites.FastCash Transaction.CardBeforeCash TestSuite.CardBeforeCash TestSuite,20210224 11:08:50.640
+634,24,4,4,0,Robot TestSuites.FastCash Transaction.DCC GoodFlow TestSuite.DCC GoodFlow TestSuite,20210224 11:08:50.640
+635,24,2,2,0,Robot TestSuites.FastCash Transaction.DCC HostDenials TestSuite.DCC HostDenials TestSuite,20210224 11:08:50.640
+636,24,3,3,0,Robot TestSuites.FastCash Transaction.DCCVISA GoodFlow TestSuite.DCCVISA GoodFlow TestSuite,20210224 11:08:50.640
+637,24,2,2,0,Robot TestSuites.FastCash Transaction.DCCVISA InvalidHostData TestSuite.DCCVISA InvalidHostData TestSuite,20210224 11:08:50.640
+638,24,1,1,0,Robot TestSuites.FastCash Transaction.Good NonGrouping TestSuite.Good NonGrouping TestSuite,20210224 11:08:50.640
+639,24,27,27,0,Robot TestSuites.FastCash Transaction.Good TestSuite.Good TestSuite,20210224 11:08:50.640
+640,24,3,2,1,Robot TestSuites.FastCash Transaction.HostDenials TestSuite.HostDenials TestSuite,20210224 11:08:50.640
+641,24,2,2,0,Robot TestSuites.Transfer Transaction.DynamicAccounts SubAccount TestSuite.DynamicAccounts SubAccount TestSuite,20210224 11:08:50.640
+642,24,14,14,0,Robot TestSuites.Transfer Transaction.Good TestSuite.Good TestSuite,20210224 11:08:50.640
+643,24,3,1,2,Robot TestSuites.Transfer Transaction.HostDenialChained TestSuite.HostDenialChained TestSuite,20210224 11:08:50.640
+644,24,4,2,2,Robot TestSuites.Transfer Transaction.HostDenialUnchained TestSuite.HostDenialUnchained TestSuite,20210224 11:08:50.640
+645,24,1,0,1,Robot TestSuites.Withdrawal Transaction.Basic Custom Billmix TestSuite.Basic Custom BillMix Good TestSuite,20210224 11:08:50.640
+646,24,3,3,0,Robot TestSuites.Withdrawal Transaction.CardBeforeCash TestSuite.CardBeforeCash TestSuite,20210224 11:08:50.640
+647,24,4,4,0,Robot TestSuites.Withdrawal Transaction.DCC GoodFlow TestSuite.DCC GoodFlow TestSuite,20210224 11:08:50.640
+648,24,3,1,2,Robot TestSuites.Withdrawal Transaction.DCC HostDenials TestSuite.DCC HostDenials TestSuite,20210224 11:08:50.640
+649,24,5,5,0,Robot TestSuites.Withdrawal Transaction.DCCVISA TestSuite.DCCVISA TestSuite,20210224 11:08:50.640
+650,24,4,4,0,Robot TestSuites.Withdrawal Transaction.HostDenial TestSuite.HostDenial TestSuite,20210224 11:08:50.640
+651,24,2,2,0,Robot TestSuites.Withdrawal Transaction.Hybridbillmix Good TestSuite.Hybridbillmix Good TestSuite,20210224 11:08:50.640
+652,24,55,55,0,Robot TestSuites.Withdrawal Transaction.Withdrawal Good TestSuite.Withdrawal Good TestSuite,20210224 11:08:50.640
+653,25,1,1,0,Robot TestSuites.Balance Transaction.DynamicAccounts SubAccount TestSuite.DynamicAccounts SubAccount TestSuite,20210305 12:39:57.059
+654,25,13,13,0,Robot TestSuites.Balance Transaction.Good TestSuite.Good TestSuite,20210305 12:39:57.059
+655,25,5,5,0,Robot TestSuites.Balance Transaction.HostDenial TestSuite.HostDenial TestSuite,20210305 12:39:57.059
+656,25,5,4,1,Robot TestSuites.Build Sanity Suite.Chaining TestSuite.Chaining TestSuite,20210305 12:39:57.059
+657,25,11,10,1,Robot TestSuites.Build Sanity Suite.ClearOpcode TestSuite.ClearOpcode  TestSuite,20210305 12:39:57.059
+658,25,1,0,1,Robot TestSuites.Build Sanity Suite.DepositContinuation TestSuite.DepositContinuation TestSuite,20210305 12:39:57.059
+659,25,2,0,2,Robot TestSuites.Build Sanity Suite.EMV TestSuite.EMV TestSuite,20210305 12:39:57.059
+660,25,24,14,10,Robot TestSuites.Build Sanity Suite.Good TestSuite.Good TestSuite,20210305 12:39:57.059
+661,25,2,1,1,Robot TestSuites.Build Sanity Suite.IB TestSuite.IB TestSuite,20210305 12:39:57.059
+662,25,2,2,0,Robot TestSuites.Build Sanity Suite.Multilanguage TestSuite.Multilanguage TestSuite,20210305 12:39:57.059
+663,25,29,29,0,Robot TestSuites.CashDeposit Transaction.Good TestSuite.Good TestSuite,20210305 12:39:57.059
+664,25,3,3,0,Robot TestSuites.CashDeposit Transaction.HostDenials TestSuite.HostDenials TestSuite,20210305 12:39:57.059
+665,25,2,2,0,Robot TestSuites.FastCash Transaction.CardBeforeCash TestSuite.CardBeforeCash TestSuite,20210305 12:39:57.059
+666,25,4,4,0,Robot TestSuites.FastCash Transaction.DCC GoodFlow TestSuite.DCC GoodFlow TestSuite,20210305 12:39:57.059
+667,25,2,2,0,Robot TestSuites.FastCash Transaction.DCC HostDenials TestSuite.DCC HostDenials TestSuite,20210305 12:39:57.059
+668,25,3,3,0,Robot TestSuites.FastCash Transaction.DCCVISA GoodFlow TestSuite.DCCVISA GoodFlow TestSuite,20210305 12:39:57.059
+669,25,2,2,0,Robot TestSuites.FastCash Transaction.DCCVISA InvalidHostData TestSuite.DCCVISA InvalidHostData TestSuite,20210305 12:39:57.059
+670,25,1,1,0,Robot TestSuites.FastCash Transaction.Good NonGrouping TestSuite.Good NonGrouping TestSuite,20210305 12:39:57.059
+671,25,27,27,0,Robot TestSuites.FastCash Transaction.Good TestSuite.Good TestSuite,20210305 12:39:57.059
+672,25,3,3,0,Robot TestSuites.FastCash Transaction.HostDenials TestSuite.HostDenials TestSuite,20210305 12:39:57.059
+673,25,2,2,0,Robot TestSuites.Transfer Transaction.DynamicAccounts SubAccount TestSuite.DynamicAccounts SubAccount TestSuite,20210305 12:39:57.059
+674,25,14,14,0,Robot TestSuites.Transfer Transaction.Good TestSuite.Good TestSuite,20210305 12:39:57.059
+675,25,3,2,1,Robot TestSuites.Transfer Transaction.HostDenialChained TestSuite.HostDenialChained TestSuite,20210305 12:39:57.059
+676,25,4,3,1,Robot TestSuites.Transfer Transaction.HostDenialUnchained TestSuite.HostDenialUnchained TestSuite,20210305 12:39:57.059
+677,25,1,0,1,Robot TestSuites.Withdrawal Transaction.Basic Custom Billmix TestSuite.Basic Custom BillMix Good TestSuite,20210305 12:39:57.059
+678,25,3,3,0,Robot TestSuites.Withdrawal Transaction.CardBeforeCash TestSuite.CardBeforeCash TestSuite,20210305 12:39:57.059
+679,25,4,4,0,Robot TestSuites.Withdrawal Transaction.DCC GoodFlow TestSuite.DCC GoodFlow TestSuite,20210305 12:39:57.059
+680,25,3,3,0,Robot TestSuites.Withdrawal Transaction.DCC HostDenials TestSuite.DCC HostDenials TestSuite,20210305 12:39:57.059
+681,25,5,5,0,Robot TestSuites.Withdrawal Transaction.DCCVISA TestSuite.DCCVISA TestSuite,20210305 12:39:57.059
+682,25,4,3,1,Robot TestSuites.Withdrawal Transaction.HostDenial TestSuite.HostDenial TestSuite,20210305 12:39:57.059
+683,25,2,0,2,Robot TestSuites.Withdrawal Transaction.Hybridbillmix Good TestSuite.Hybridbillmix Good TestSuite,20210305 12:39:57.059
+684,25,55,54,1,Robot TestSuites.Withdrawal Transaction.Withdrawal Good TestSuite.Withdrawal Good TestSuite,20210305 12:39:57.059
+720,28,1,1,0,Robot TestSuites.Balance Transaction.DynamicAccounts SubAccount TestSuite.DynamicAccounts SubAccount TestSuite,20210105 14:44:17.444
+721,28,13,13,0,Robot TestSuites.Balance Transaction.Good TestSuite.Good TestSuite,20210105 14:44:17.444
+722,28,5,5,0,Robot TestSuites.Balance Transaction.HostDenial TestSuite.HostDenial TestSuite,20210105 14:44:17.444
+723,28,6,6,0,Robot TestSuites.Build Sanity Suite.Chaining TestSuite.Chaining TestSuite,20210105 14:44:17.444
+724,28,11,10,1,Robot TestSuites.Build Sanity Suite.ClearOpcode TestSuite.ClearOpcode  TestSuite,20210105 14:44:17.444
+725,28,3,2,1,Robot TestSuites.Build Sanity Suite.DepositContinuation TestSuite.DepositContinuation TestSuite,20210105 14:44:17.444
+726,28,25,18,7,Robot TestSuites.Build Sanity Suite.Good TestSuite.Good TestSuite,20210105 14:44:17.444
+727,28,2,0,2,Robot TestSuites.Build Sanity Suite.IB TestSuite.IB TestSuite,20210105 14:44:17.444
+728,28,2,2,0,Robot TestSuites.Build Sanity Suite.Multilanguage TestSuite.Multilanguage TestSuite,20210105 14:44:17.444
+729,28,19,19,0,Robot TestSuites.CashDeposit Transaction.Good TestSuite.Good TestSuite,20210105 14:44:17.444
+730,28,1,1,0,Robot TestSuites.CashDeposit Transaction.HostDenials TestSuite.HostDenials TestSuite,20210105 14:44:17.444
+731,28,15,15,0,Robot TestSuites.FastCash Transaction.Good TestSuite.Good TestSuite,20210105 14:44:17.444
+732,28,3,2,1,Robot TestSuites.FastCash Transaction.HostDenials TestSuite.HostDenials TestSuite,20210105 14:44:17.444
+733,28,16,16,0,Robot TestSuites.Transfer Transaction.Good TestSuite.Good TestSuite,20210105 14:44:17.444
+734,28,5,1,4,Robot TestSuites.Transfer Transaction.HostDenialUnchained TestSuite.HostDenialUnchained TestSuite,20210105 14:44:17.444
+735,28,4,4,0,Robot TestSuites.Withdrawal Transaction.HostDenial TestSuite.HostDenial TestSuite,20210105 14:44:17.444
+736,28,2,0,2,Robot TestSuites.Withdrawal Transaction.Hybridbillmix Good TestSuite.Hybridbillmix Good TestSuite,20210105 14:44:17.444
+737,28,14,14,0,Robot TestSuites.Withdrawal Transaction.Withdrawal Good TestSuite.Withdrawal Good TestSuite,20210105 14:44:17.444
+738,29,1,1,0,Robot TestSuites.Balance Transaction.DynamicAccounts SubAccount TestSuite.DynamicAccounts SubAccount TestSuite,20210106 12:48:46.156
+739,29,13,13,0,Robot TestSuites.Balance Transaction.Good TestSuite.Good TestSuite,20210106 12:48:46.156
+740,29,5,5,0,Robot TestSuites.Balance Transaction.HostDenial TestSuite.HostDenial TestSuite,20210106 12:48:46.156
+741,29,6,6,0,Robot TestSuites.Build Sanity Suite.Chaining TestSuite.Chaining TestSuite,20210106 12:48:46.156
+742,29,11,11,0,Robot TestSuites.Build Sanity Suite.ClearOpcode TestSuite.ClearOpcode  TestSuite,20210106 12:48:46.156
+743,29,3,2,1,Robot TestSuites.Build Sanity Suite.DepositContinuation TestSuite.DepositContinuation TestSuite,20210106 12:48:46.156
+744,29,27,20,7,Robot TestSuites.Build Sanity Suite.Good TestSuite.Good TestSuite,20210106 12:48:46.156
+745,29,2,2,0,Robot TestSuites.Build Sanity Suite.IB TestSuite.IB TestSuite,20210106 12:48:46.156
+746,29,2,2,0,Robot TestSuites.Build Sanity Suite.Multilanguage TestSuite.Multilanguage TestSuite,20210106 12:48:46.156
+747,29,19,19,0,Robot TestSuites.CashDeposit Transaction.Good TestSuite.Good TestSuite,20210106 12:48:46.156
+748,29,1,1,0,Robot TestSuites.CashDeposit Transaction.HostDenials TestSuite.HostDenials TestSuite,20210106 12:48:46.156
+749,29,15,15,0,Robot TestSuites.FastCash Transaction.Good TestSuite.Good TestSuite,20210106 12:48:46.156
+750,29,3,2,1,Robot TestSuites.FastCash Transaction.HostDenials TestSuite.HostDenials TestSuite,20210106 12:48:46.156
+751,29,16,16,0,Robot TestSuites.Transfer Transaction.Good TestSuite.Good TestSuite,20210106 12:48:46.156
+752,29,5,4,1,Robot TestSuites.Transfer Transaction.HostDenialUnchained TestSuite.HostDenialUnchained TestSuite,20210106 12:48:46.156
+753,29,4,4,0,Robot TestSuites.Withdrawal Transaction.HostDenial TestSuite.HostDenial TestSuite,20210106 12:48:46.156
+754,29,2,0,2,Robot TestSuites.Withdrawal Transaction.Hybridbillmix Good TestSuite.Hybridbillmix Good TestSuite,20210106 12:48:46.156
+755,29,14,14,0,Robot TestSuites.Withdrawal Transaction.Withdrawal Good TestSuite.Withdrawal Good TestSuite,20210106 12:48:46.156
+756,30,1,1,0,Robot TestSuites.Balance Transaction.DynamicAccounts SubAccount TestSuite.DynamicAccounts SubAccount TestSuite,20210107 10:10:44.984
+757,30,13,13,0,Robot TestSuites.Balance Transaction.Good TestSuite.Good TestSuite,20210107 10:10:44.984
+758,30,5,5,0,Robot TestSuites.Balance Transaction.HostDenial TestSuite.HostDenial TestSuite,20210107 10:10:44.984
+759,30,6,6,0,Robot TestSuites.Build Sanity Suite.Chaining TestSuite.Chaining TestSuite,20210107 10:10:44.984
+760,30,11,10,1,Robot TestSuites.Build Sanity Suite.ClearOpcode TestSuite.ClearOpcode  TestSuite,20210107 10:10:44.984
+761,30,3,2,1,Robot TestSuites.Build Sanity Suite.DepositContinuation TestSuite.DepositContinuation TestSuite,20210107 10:10:44.984
+762,30,27,19,8,Robot TestSuites.Build Sanity Suite.Good TestSuite.Good TestSuite,20210107 10:10:44.984
+763,30,2,2,0,Robot TestSuites.Build Sanity Suite.IB TestSuite.IB TestSuite,20210107 10:10:44.984
+764,30,2,2,0,Robot TestSuites.Build Sanity Suite.Multilanguage TestSuite.Multilanguage TestSuite,20210107 10:10:44.984
+765,30,19,19,0,Robot TestSuites.CashDeposit Transaction.Good TestSuite.Good TestSuite,20210107 10:10:44.984
+766,30,1,1,0,Robot TestSuites.CashDeposit Transaction.HostDenials TestSuite.HostDenials TestSuite,20210107 10:10:44.984
+767,30,15,15,0,Robot TestSuites.FastCash Transaction.Good TestSuite.Good TestSuite,20210107 10:10:44.984
+768,30,3,3,0,Robot TestSuites.FastCash Transaction.HostDenials TestSuite.HostDenials TestSuite,20210107 10:10:44.984
+769,30,16,16,0,Robot TestSuites.Transfer Transaction.Good TestSuite.Good TestSuite,20210107 10:10:44.984
+770,30,5,4,1,Robot TestSuites.Transfer Transaction.HostDenialUnchained TestSuite.HostDenialUnchained TestSuite,20210107 10:10:44.984
+771,30,4,4,0,Robot TestSuites.Withdrawal Transaction.HostDenial TestSuite.HostDenial TestSuite,20210107 10:10:44.984
+772,30,2,0,2,Robot TestSuites.Withdrawal Transaction.Hybridbillmix Good TestSuite.Hybridbillmix Good TestSuite,20210107 10:10:44.984
+773,30,14,14,0,Robot TestSuites.Withdrawal Transaction.Withdrawal Good TestSuite.Withdrawal Good TestSuite,20210107 10:10:44.984
+774,31,1,1,0,Robot TestSuites.Balance Transaction.DynamicAccounts SubAccount TestSuite.DynamicAccounts SubAccount TestSuite,20210107 20:09:52.008
+775,31,13,13,0,Robot TestSuites.Balance Transaction.Good TestSuite.Good TestSuite,20210107 20:09:52.008
+776,31,5,5,0,Robot TestSuites.Balance Transaction.HostDenial TestSuite.HostDenial TestSuite,20210107 20:09:52.008
+777,31,6,6,0,Robot TestSuites.Build Sanity Suite.Chaining TestSuite.Chaining TestSuite,20210107 20:09:52.008
+778,31,11,10,1,Robot TestSuites.Build Sanity Suite.ClearOpcode TestSuite.ClearOpcode  TestSuite,20210107 20:09:52.008
+779,31,3,2,1,Robot TestSuites.Build Sanity Suite.DepositContinuation TestSuite.DepositContinuation TestSuite,20210107 20:09:52.008
+780,31,27,20,7,Robot TestSuites.Build Sanity Suite.Good TestSuite.Good TestSuite,20210107 20:09:52.008
+781,31,2,2,0,Robot TestSuites.Build Sanity Suite.IB TestSuite.IB TestSuite,20210107 20:09:52.008
+782,31,2,2,0,Robot TestSuites.Build Sanity Suite.Multilanguage TestSuite.Multilanguage TestSuite,20210107 20:09:52.008
+783,31,19,19,0,Robot TestSuites.CashDeposit Transaction.Good TestSuite.Good TestSuite,20210107 20:09:52.008
+784,31,1,1,0,Robot TestSuites.CashDeposit Transaction.HostDenials TestSuite.HostDenials TestSuite,20210107 20:09:52.008
+785,31,15,15,0,Robot TestSuites.FastCash Transaction.Good TestSuite.Good TestSuite,20210107 20:09:52.008
+786,31,3,3,0,Robot TestSuites.FastCash Transaction.HostDenials TestSuite.HostDenials TestSuite,20210107 20:09:52.008
+787,31,16,16,0,Robot TestSuites.Transfer Transaction.Good TestSuite.Good TestSuite,20210107 20:09:52.008
+788,31,5,3,2,Robot TestSuites.Transfer Transaction.HostDenialUnchained TestSuite.HostDenialUnchained TestSuite,20210107 20:09:52.008
+789,31,4,3,1,Robot TestSuites.Withdrawal Transaction.HostDenial TestSuite.HostDenial TestSuite,20210107 20:09:52.008
+790,31,2,0,2,Robot TestSuites.Withdrawal Transaction.Hybridbillmix Good TestSuite.Hybridbillmix Good TestSuite,20210107 20:09:52.008
+791,31,14,14,0,Robot TestSuites.Withdrawal Transaction.Withdrawal Good TestSuite.Withdrawal Good TestSuite,20210107 20:09:52.008
+792,32,1,1,0,Robot TestSuites.Balance Transaction.DynamicAccounts SubAccount TestSuite.DynamicAccounts SubAccount TestSuite,20210108 09:55:29.373
+793,32,13,13,0,Robot TestSuites.Balance Transaction.Good TestSuite.Good TestSuite,20210108 09:55:29.373
+794,32,5,4,1,Robot TestSuites.Balance Transaction.HostDenial TestSuite.HostDenial TestSuite,20210108 09:55:29.373
+795,32,6,6,0,Robot TestSuites.Build Sanity Suite.Chaining TestSuite.Chaining TestSuite,20210108 09:55:29.373
+796,32,11,10,1,Robot TestSuites.Build Sanity Suite.ClearOpcode TestSuite.ClearOpcode  TestSuite,20210108 09:55:29.373
+797,32,3,1,2,Robot TestSuites.Build Sanity Suite.DepositContinuation TestSuite.DepositContinuation TestSuite,20210108 09:55:29.373
+798,32,27,19,8,Robot TestSuites.Build Sanity Suite.Good TestSuite.Good TestSuite,20210108 09:55:29.373
+799,32,2,2,0,Robot TestSuites.Build Sanity Suite.IB TestSuite.IB TestSuite,20210108 09:55:29.373
+800,32,2,2,0,Robot TestSuites.Build Sanity Suite.Multilanguage TestSuite.Multilanguage TestSuite,20210108 09:55:29.373
+801,32,19,19,0,Robot TestSuites.CashDeposit Transaction.Good TestSuite.Good TestSuite,20210108 09:55:29.373
+802,32,1,1,0,Robot TestSuites.CashDeposit Transaction.HostDenials TestSuite.HostDenials TestSuite,20210108 09:55:29.373
+803,32,15,15,0,Robot TestSuites.FastCash Transaction.Good TestSuite.Good TestSuite,20210108 09:55:29.373
+804,32,3,2,1,Robot TestSuites.FastCash Transaction.HostDenials TestSuite.HostDenials TestSuite,20210108 09:55:29.373
+805,32,16,16,0,Robot TestSuites.Transfer Transaction.Good TestSuite.Good TestSuite,20210108 09:55:29.373
+806,32,5,3,2,Robot TestSuites.Transfer Transaction.HostDenialUnchained TestSuite.HostDenialUnchained TestSuite,20210108 09:55:29.373
+807,32,4,4,0,Robot TestSuites.Withdrawal Transaction.HostDenial TestSuite.HostDenial TestSuite,20210108 09:55:29.373
+808,32,2,0,2,Robot TestSuites.Withdrawal Transaction.Hybridbillmix Good TestSuite.Hybridbillmix Good TestSuite,20210108 09:55:29.373
+809,32,14,0,14,Robot TestSuites.Withdrawal Transaction.Withdrawal Good TestSuite.Withdrawal Good TestSuite,20210108 09:55:29.373
+810,33,1,1,0,Robot TestSuites.Balance Transaction.DynamicAccounts SubAccount TestSuite.DynamicAccounts SubAccount TestSuite,20210118 15:37:52.948
+811,33,13,11,2,Robot TestSuites.Balance Transaction.Good TestSuite.Good TestSuite,20210118 15:37:52.948
+812,33,5,5,0,Robot TestSuites.Balance Transaction.HostDenial TestSuite.HostDenial TestSuite,20210118 15:37:52.948
+813,33,6,1,5,Robot TestSuites.Build Sanity Suite.Chaining TestSuite.Chaining TestSuite,20210118 15:37:52.948
+814,33,11,4,7,Robot TestSuites.Build Sanity Suite.ClearOpcode TestSuite.ClearOpcode  TestSuite,20210118 15:37:52.948
+815,33,3,0,3,Robot TestSuites.Build Sanity Suite.DepositContinuation TestSuite.DepositContinuation TestSuite,20210118 15:37:52.948
+816,33,25,3,22,Robot TestSuites.Build Sanity Suite.Good TestSuite.Good TestSuite,20210118 15:37:52.948
+817,33,2,0,2,Robot TestSuites.Build Sanity Suite.IB TestSuite.IB TestSuite,20210118 15:37:52.948
+818,33,2,1,1,Robot TestSuites.Build Sanity Suite.Multilanguage TestSuite.Multilanguage TestSuite,20210118 15:37:52.948
+819,33,19,18,1,Robot TestSuites.CashDeposit Transaction.Good TestSuite.Good TestSuite,20210118 15:37:52.948
+820,33,1,1,0,Robot TestSuites.CashDeposit Transaction.HostDenials TestSuite.HostDenials TestSuite,20210118 15:37:52.948
+821,33,15,14,1,Robot TestSuites.FastCash Transaction.Good TestSuite.Good TestSuite,20210118 15:37:52.948
+822,33,3,3,0,Robot TestSuites.FastCash Transaction.HostDenials TestSuite.HostDenials TestSuite,20210118 15:37:52.948
+823,33,16,15,1,Robot TestSuites.Transfer Transaction.Good TestSuite.Good TestSuite,20210118 15:37:52.948
+824,33,5,5,0,Robot TestSuites.Transfer Transaction.HostDenialUnchained TestSuite.HostDenialUnchained TestSuite,20210118 15:37:52.948
+825,33,4,4,0,Robot TestSuites.Withdrawal Transaction.HostDenial TestSuite.HostDenial TestSuite,20210118 15:37:52.948
+826,33,2,0,2,Robot TestSuites.Withdrawal Transaction.Hybridbillmix Good TestSuite.Hybridbillmix Good TestSuite,20210118 15:37:52.948
+827,33,14,13,1,Robot TestSuites.Withdrawal Transaction.Withdrawal Good TestSuite.Withdrawal Good TestSuite,20210118 15:37:52.948
+828,34,1,1,0,Robot TestSuites.Balance Transaction.DynamicAccounts SubAccount TestSuite.DynamicAccounts SubAccount TestSuite,20210119 09:45:06.271
+829,34,13,11,2,Robot TestSuites.Balance Transaction.Good TestSuite.Good TestSuite,20210119 09:45:06.271
+830,34,5,4,1,Robot TestSuites.Balance Transaction.HostDenial TestSuite.HostDenial TestSuite,20210119 09:45:06.271
+831,34,6,1,5,Robot TestSuites.Build Sanity Suite.Chaining TestSuite.Chaining TestSuite,20210119 09:45:06.271
+832,34,11,4,7,Robot TestSuites.Build Sanity Suite.ClearOpcode TestSuite.ClearOpcode  TestSuite,20210119 09:45:06.271
+833,34,3,0,3,Robot TestSuites.Build Sanity Suite.DepositContinuation TestSuite.DepositContinuation TestSuite,20210119 09:45:06.271
+834,34,25,3,22,Robot TestSuites.Build Sanity Suite.Good TestSuite.Good TestSuite,20210119 09:45:06.271
+835,34,2,0,2,Robot TestSuites.Build Sanity Suite.IB TestSuite.IB TestSuite,20210119 09:45:06.271
+836,34,2,1,1,Robot TestSuites.Build Sanity Suite.Multilanguage TestSuite.Multilanguage TestSuite,20210119 09:45:06.271
+837,34,19,18,1,Robot TestSuites.CashDeposit Transaction.Good TestSuite.Good TestSuite,20210119 09:45:06.271
+838,34,1,1,0,Robot TestSuites.CashDeposit Transaction.HostDenials TestSuite.HostDenials TestSuite,20210119 09:45:06.271
+839,34,15,14,1,Robot TestSuites.FastCash Transaction.Good TestSuite.Good TestSuite,20210119 09:45:06.271
+840,34,3,3,0,Robot TestSuites.FastCash Transaction.HostDenials TestSuite.HostDenials TestSuite,20210119 09:45:06.271
+841,34,16,15,1,Robot TestSuites.Transfer Transaction.Good TestSuite.Good TestSuite,20210119 09:45:06.271
+842,34,5,5,0,Robot TestSuites.Transfer Transaction.HostDenialUnchained TestSuite.HostDenialUnchained TestSuite,20210119 09:45:06.271
+843,34,4,3,1,Robot TestSuites.Withdrawal Transaction.HostDenial TestSuite.HostDenial TestSuite,20210119 09:45:06.271
+844,34,2,0,2,Robot TestSuites.Withdrawal Transaction.Hybridbillmix Good TestSuite.Hybridbillmix Good TestSuite,20210119 09:45:06.271
+845,34,14,13,1,Robot TestSuites.Withdrawal Transaction.Withdrawal Good TestSuite.Withdrawal Good TestSuite,20210119 09:45:06.271
+846,35,1,1,0,Robot TestSuites.Balance Transaction.DynamicAccounts SubAccount TestSuite.DynamicAccounts SubAccount TestSuite,20210119 19:57:05.993
+847,35,13,11,2,Robot TestSuites.Balance Transaction.Good TestSuite.Good TestSuite,20210119 19:57:05.993
+848,35,5,2,3,Robot TestSuites.Balance Transaction.HostDenial TestSuite.HostDenial TestSuite,20210119 19:57:05.993
+849,35,6,1,5,Robot TestSuites.Build Sanity Suite.Chaining TestSuite.Chaining TestSuite,20210119 19:57:05.993
+850,35,11,4,7,Robot TestSuites.Build Sanity Suite.ClearOpcode TestSuite.ClearOpcode  TestSuite,20210119 19:57:05.993
+851,35,3,0,3,Robot TestSuites.Build Sanity Suite.DepositContinuation TestSuite.DepositContinuation TestSuite,20210119 19:57:05.993
+852,35,25,3,22,Robot TestSuites.Build Sanity Suite.Good TestSuite.Good TestSuite,20210119 19:57:05.993
+853,35,2,0,2,Robot TestSuites.Build Sanity Suite.IB TestSuite.IB TestSuite,20210119 19:57:05.993
+854,35,2,1,1,Robot TestSuites.Build Sanity Suite.Multilanguage TestSuite.Multilanguage TestSuite,20210119 19:57:05.993
+855,35,19,18,1,Robot TestSuites.CashDeposit Transaction.Good TestSuite.Good TestSuite,20210119 19:57:05.993
+856,35,1,0,1,Robot TestSuites.CashDeposit Transaction.HostDenials TestSuite.HostDenials TestSuite,20210119 19:57:05.993
+857,35,15,14,1,Robot TestSuites.FastCash Transaction.Good TestSuite.Good TestSuite,20210119 19:57:05.993
+858,35,3,3,0,Robot TestSuites.FastCash Transaction.HostDenials TestSuite.HostDenials TestSuite,20210119 19:57:05.993
+859,35,16,15,1,Robot TestSuites.Transfer Transaction.Good TestSuite.Good TestSuite,20210119 19:57:05.993
+860,35,5,5,0,Robot TestSuites.Transfer Transaction.HostDenialUnchained TestSuite.HostDenialUnchained TestSuite,20210119 19:57:05.993
+861,35,4,3,1,Robot TestSuites.Withdrawal Transaction.HostDenial TestSuite.HostDenial TestSuite,20210119 19:57:05.993
+862,35,2,0,2,Robot TestSuites.Withdrawal Transaction.Hybridbillmix Good TestSuite.Hybridbillmix Good TestSuite,20210119 19:57:05.993
+863,35,14,13,1,Robot TestSuites.Withdrawal Transaction.Withdrawal Good TestSuite.Withdrawal Good TestSuite,20210119 19:57:05.993
+864,36,1,1,0,Robot TestSuites.Balance Transaction.DynamicAccounts SubAccount TestSuite.DynamicAccounts SubAccount TestSuite,20210121 22:08:13.604
+865,36,13,11,2,Robot TestSuites.Balance Transaction.Good TestSuite.Good TestSuite,20210121 22:08:13.604
+866,36,5,5,0,Robot TestSuites.Balance Transaction.HostDenial TestSuite.HostDenial TestSuite,20210121 22:08:13.604
+867,36,6,1,5,Robot TestSuites.Build Sanity Suite.Chaining TestSuite.Chaining TestSuite,20210121 22:08:13.604
+868,36,11,4,7,Robot TestSuites.Build Sanity Suite.ClearOpcode TestSuite.ClearOpcode  TestSuite,20210121 22:08:13.604
+869,36,3,0,3,Robot TestSuites.Build Sanity Suite.DepositContinuation TestSuite.DepositContinuation TestSuite,20210121 22:08:13.604
+870,36,25,2,23,Robot TestSuites.Build Sanity Suite.Good TestSuite.Good TestSuite,20210121 22:08:13.604
+871,36,2,0,2,Robot TestSuites.Build Sanity Suite.IB TestSuite.IB TestSuite,20210121 22:08:13.604
+872,36,2,1,1,Robot TestSuites.Build Sanity Suite.Multilanguage TestSuite.Multilanguage TestSuite,20210121 22:08:13.604
+873,36,29,28,1,Robot TestSuites.CashDeposit Transaction.Good TestSuite.Good TestSuite,20210121 22:08:13.604
+874,36,3,3,0,Robot TestSuites.CashDeposit Transaction.HostDenials TestSuite.HostDenials TestSuite,20210121 22:08:13.604
+875,36,2,2,0,Robot TestSuites.FastCash Transaction.CardBeforeCash TestSuite.CardBeforeCash TestSuite,20210121 22:08:13.604
+876,36,4,4,0,Robot TestSuites.FastCash Transaction.DCC GoodFlow TestSuite.DCC GoodFlow TestSuite,20210121 22:08:13.604
+877,36,2,2,0,Robot TestSuites.FastCash Transaction.DCC HostDenials TestSuite.DCC HostDenials TestSuite,20210121 22:08:13.604
+878,36,3,3,0,Robot TestSuites.FastCash Transaction.DCCVISA GoodFlow TestSuite.DCCVISA GoodFlow TestSuite,20210121 22:08:13.604
+879,36,1,1,0,Robot TestSuites.FastCash Transaction.DCCVISA InvalidHostData TestSuite.DCCVISA InvalidHostData TestSuite,20210121 22:08:13.604
+880,36,1,0,1,Robot TestSuites.FastCash Transaction.Good NonGrouping TestSuite.Good NonGrouping TestSuite,20210121 22:08:13.604
+881,36,27,26,1,Robot TestSuites.FastCash Transaction.Good TestSuite.Good TestSuite,20210121 22:08:13.604
+882,36,3,3,0,Robot TestSuites.FastCash Transaction.HostDenials TestSuite.HostDenials TestSuite,20210121 22:08:13.604
+883,36,2,2,0,Robot TestSuites.Transfer Transaction.DynamicAccounts SubAccount TestSuite.DynamicAccounts SubAccount TestSuite,20210121 22:08:13.604
+884,36,14,12,2,Robot TestSuites.Transfer Transaction.Good TestSuite.Good TestSuite,20210121 22:08:13.604
+885,36,4,4,0,Robot TestSuites.Transfer Transaction.HostDenialUnchained TestSuite.HostDenialUnchained TestSuite,20210121 22:08:13.604
+886,36,1,0,1,Robot TestSuites.Withdrawal Transaction.Basic Custom Billmix TestSuite.Basic Custom BillMix Good TestSuite,20210121 22:08:13.604
+887,36,3,2,1,Robot TestSuites.Withdrawal Transaction.CardBeforeCash TestSuite.CardBeforeCash TestSuite,20210121 22:08:13.604
+888,36,4,4,0,Robot TestSuites.Withdrawal Transaction.DCC GoodFlow TestSuite.DCC GoodFlow TestSuite,20210121 22:08:13.604
+889,36,3,2,1,Robot TestSuites.Withdrawal Transaction.DCC HostDenials TestSuite.DCC HostDenials TestSuite,20210121 22:08:13.604
+890,36,5,5,0,Robot TestSuites.Withdrawal Transaction.DCCVISA TestSuite.DCCVISA TestSuite,20210121 22:08:13.604
+891,36,4,4,0,Robot TestSuites.Withdrawal Transaction.HostDenial TestSuite.HostDenial TestSuite,20210121 22:08:13.604
+892,36,2,0,2,Robot TestSuites.Withdrawal Transaction.Hybridbillmix Good TestSuite.Hybridbillmix Good TestSuite,20210121 22:08:13.604
+893,36,55,54,1,Robot TestSuites.Withdrawal Transaction.Withdrawal Good TestSuite.Withdrawal Good TestSuite,20210121 22:08:13.604
+894,37,1,1,0,Robot TestSuites.Balance Transaction.DynamicAccounts SubAccount TestSuite.DynamicAccounts SubAccount TestSuite,20210122 05:34:08.705
+895,37,13,11,2,Robot TestSuites.Balance Transaction.Good TestSuite.Good TestSuite,20210122 05:34:08.705
+896,37,5,5,0,Robot TestSuites.Balance Transaction.HostDenial TestSuite.HostDenial TestSuite,20210122 05:34:08.705
+897,37,6,1,5,Robot TestSuites.Build Sanity Suite.Chaining TestSuite.Chaining TestSuite,20210122 05:34:08.705
+898,37,11,4,7,Robot TestSuites.Build Sanity Suite.ClearOpcode TestSuite.ClearOpcode  TestSuite,20210122 05:34:08.705
+899,37,3,0,3,Robot TestSuites.Build Sanity Suite.DepositContinuation TestSuite.DepositContinuation TestSuite,20210122 05:34:08.705
+900,37,27,3,24,Robot TestSuites.Build Sanity Suite.Good TestSuite.Good TestSuite,20210122 05:34:08.705
+901,37,2,0,2,Robot TestSuites.Build Sanity Suite.IB TestSuite.IB TestSuite,20210122 05:34:08.705
+902,37,2,1,1,Robot TestSuites.Build Sanity Suite.Multilanguage TestSuite.Multilanguage TestSuite,20210122 05:34:08.705
+903,37,29,28,1,Robot TestSuites.CashDeposit Transaction.Good TestSuite.Good TestSuite,20210122 05:34:08.705
+904,37,3,3,0,Robot TestSuites.CashDeposit Transaction.HostDenials TestSuite.HostDenials TestSuite,20210122 05:34:08.705
+905,37,2,2,0,Robot TestSuites.FastCash Transaction.CardBeforeCash TestSuite.CardBeforeCash TestSuite,20210122 05:34:08.705
+906,37,4,4,0,Robot TestSuites.FastCash Transaction.DCC GoodFlow TestSuite.DCC GoodFlow TestSuite,20210122 05:34:08.705
+907,37,2,2,0,Robot TestSuites.FastCash Transaction.DCC HostDenials TestSuite.DCC HostDenials TestSuite,20210122 05:34:08.705
+908,37,3,3,0,Robot TestSuites.FastCash Transaction.DCCVISA GoodFlow TestSuite.DCCVISA GoodFlow TestSuite,20210122 05:34:08.705
+909,37,1,1,0,Robot TestSuites.FastCash Transaction.DCCVISA InvalidHostData TestSuite.DCCVISA InvalidHostData TestSuite,20210122 05:34:08.705
+910,37,1,0,1,Robot TestSuites.FastCash Transaction.Good NonGrouping TestSuite.Good NonGrouping TestSuite,20210122 05:34:08.705
+911,37,27,26,1,Robot TestSuites.FastCash Transaction.Good TestSuite.Good TestSuite,20210122 05:34:08.705
+912,37,3,2,1,Robot TestSuites.FastCash Transaction.HostDenials TestSuite.HostDenials TestSuite,20210122 05:34:08.705
+913,37,2,2,0,Robot TestSuites.Transfer Transaction.DynamicAccounts SubAccount TestSuite.DynamicAccounts SubAccount TestSuite,20210122 05:34:08.705
+914,37,14,12,2,Robot TestSuites.Transfer Transaction.Good TestSuite.Good TestSuite,20210122 05:34:08.705
+915,37,4,4,0,Robot TestSuites.Transfer Transaction.HostDenialUnchained TestSuite.HostDenialUnchained TestSuite,20210122 05:34:08.705
+916,37,1,0,1,Robot TestSuites.Withdrawal Transaction.Basic Custom Billmix TestSuite.Basic Custom BillMix Good TestSuite,20210122 05:34:08.705
+917,37,3,2,1,Robot TestSuites.Withdrawal Transaction.CardBeforeCash TestSuite.CardBeforeCash TestSuite,20210122 05:34:08.705
+918,37,4,4,0,Robot TestSuites.Withdrawal Transaction.DCC GoodFlow TestSuite.DCC GoodFlow TestSuite,20210122 05:34:08.705
+919,37,3,3,0,Robot TestSuites.Withdrawal Transaction.DCC HostDenials TestSuite.DCC HostDenials TestSuite,20210122 05:34:08.705
+920,37,5,5,0,Robot TestSuites.Withdrawal Transaction.DCCVISA TestSuite.DCCVISA TestSuite,20210122 05:34:08.705
+921,37,4,4,0,Robot TestSuites.Withdrawal Transaction.HostDenial TestSuite.HostDenial TestSuite,20210122 05:34:08.705
+922,37,2,0,2,Robot TestSuites.Withdrawal Transaction.Hybridbillmix Good TestSuite.Hybridbillmix Good TestSuite,20210122 05:34:08.705
+923,37,55,54,1,Robot TestSuites.Withdrawal Transaction.Withdrawal Good TestSuite.Withdrawal Good TestSuite,20210122 05:34:08.705
+924,38,1,1,0,Robot TestSuites.Balance Transaction.DynamicAccounts SubAccount TestSuite.DynamicAccounts SubAccount TestSuite,20210123 12:30:21.401
+925,38,13,11,2,Robot TestSuites.Balance Transaction.Good TestSuite.Good TestSuite,20210123 12:30:21.401
+928,38,11,4,7,Robot TestSuites.Build Sanity Suite.ClearOpcode TestSuite.ClearOpcode  TestSuite,20210123 12:30:21.401
+929,38,3,0,3,Robot TestSuites.Build Sanity Suite.DepositContinuation TestSuite.DepositContinuation TestSuite,20210123 12:30:21.401
+930,38,3,0,3,Robot TestSuites.Build Sanity Suite.EMV TestSuite.EMV TestSuite,20210123 12:30:21.401
+931,38,27,3,24,Robot TestSuites.Build Sanity Suite.Good TestSuite.Good TestSuite,20210123 12:30:21.401
+932,38,2,0,2,Robot TestSuites.Build Sanity Suite.IB TestSuite.IB TestSuite,20210123 12:30:21.401
+933,38,2,1,1,Robot TestSuites.Build Sanity Suite.Multilanguage TestSuite.Multilanguage TestSuite,20210123 12:30:21.401
+934,38,29,28,1,Robot TestSuites.CashDeposit Transaction.Good TestSuite.Good TestSuite,20210123 12:30:21.401
+935,38,3,2,1,Robot TestSuites.CashDeposit Transaction.HostDenials TestSuite.HostDenials TestSuite,20210123 12:30:21.401
+936,38,2,2,0,Robot TestSuites.FastCash Transaction.CardBeforeCash TestSuite.CardBeforeCash TestSuite,20210123 12:30:21.401
+937,38,4,4,0,Robot TestSuites.FastCash Transaction.DCC GoodFlow TestSuite.DCC GoodFlow TestSuite,20210123 12:30:21.401
+938,38,2,2,0,Robot TestSuites.FastCash Transaction.DCC HostDenials TestSuite.DCC HostDenials TestSuite,20210123 12:30:21.401
+939,38,3,3,0,Robot TestSuites.FastCash Transaction.DCCVISA GoodFlow TestSuite.DCCVISA GoodFlow TestSuite,20210123 12:30:21.401
+940,38,2,2,0,Robot TestSuites.FastCash Transaction.DCCVISA InvalidHostData TestSuite.DCCVISA InvalidHostData TestSuite,20210123 12:30:21.401
+941,38,1,0,1,Robot TestSuites.FastCash Transaction.Good NonGrouping TestSuite.Good NonGrouping TestSuite,20210123 12:30:21.401
+942,38,27,26,1,Robot TestSuites.FastCash Transaction.Good TestSuite.Good TestSuite,20210123 12:30:21.401
+943,38,3,3,0,Robot TestSuites.FastCash Transaction.HostDenials TestSuite.HostDenials TestSuite,20210123 12:30:21.401
+944,38,2,2,0,Robot TestSuites.Transfer Transaction.DynamicAccounts SubAccount TestSuite.DynamicAccounts SubAccount TestSuite,20210123 12:30:21.401
+945,38,14,12,2,Robot TestSuites.Transfer Transaction.Good TestSuite.Good TestSuite,20210123 12:30:21.401
+946,38,3,1,2,Robot TestSuites.Transfer Transaction.HostDenialChained TestSuite.HostDenialChained TestSuite,20210123 12:30:21.401
+947,38,4,4,0,Robot TestSuites.Transfer Transaction.HostDenialUnchained TestSuite.HostDenialUnchained TestSuite,20210123 12:30:21.401
+948,38,1,0,1,Robot TestSuites.Withdrawal Transaction.Basic Custom Billmix TestSuite.Basic Custom BillMix Good TestSuite,20210123 12:30:21.401
+949,38,3,2,1,Robot TestSuites.Withdrawal Transaction.CardBeforeCash TestSuite.CardBeforeCash TestSuite,20210123 12:30:21.401
+950,38,4,4,0,Robot TestSuites.Withdrawal Transaction.DCC GoodFlow TestSuite.DCC GoodFlow TestSuite,20210123 12:30:21.401
+951,38,3,3,0,Robot TestSuites.Withdrawal Transaction.DCC HostDenials TestSuite.DCC HostDenials TestSuite,20210123 12:30:21.401
+952,38,5,5,0,Robot TestSuites.Withdrawal Transaction.DCCVISA TestSuite.DCCVISA TestSuite,20210123 12:30:21.401
+953,38,4,2,2,Robot TestSuites.Withdrawal Transaction.HostDenial TestSuite.HostDenial TestSuite,20210123 12:30:21.401
+954,38,2,0,2,Robot TestSuites.Withdrawal Transaction.Hybridbillmix Good TestSuite.Hybridbillmix Good TestSuite,20210123 12:30:21.401
+955,38,55,54,1,Robot TestSuites.Withdrawal Transaction.Withdrawal Good TestSuite.Withdrawal Good TestSuite,20210123 12:30:21.401
+956,39,1,1,0,Robot TestSuites.Balance Transaction.DynamicAccounts SubAccount TestSuite.DynamicAccounts SubAccount TestSuite,20210123 22:48:46.295
+957,39,13,11,2,Robot TestSuites.Balance Transaction.Good TestSuite.Good TestSuite,20210123 22:48:46.295
+958,39,5,5,0,Robot TestSuites.Balance Transaction.HostDenial TestSuite.HostDenial TestSuite,20210123 22:48:46.295
+959,39,6,1,5,Robot TestSuites.Build Sanity Suite.Chaining TestSuite.Chaining TestSuite,20210123 22:48:46.295
+960,39,11,4,7,Robot TestSuites.Build Sanity Suite.ClearOpcode TestSuite.ClearOpcode  TestSuite,20210123 22:48:46.295
+961,39,3,0,3,Robot TestSuites.Build Sanity Suite.DepositContinuation TestSuite.DepositContinuation TestSuite,20210123 22:48:46.295
+962,39,3,0,3,Robot TestSuites.Build Sanity Suite.EMV TestSuite.EMV TestSuite,20210123 22:48:46.295
+963,39,27,3,24,Robot TestSuites.Build Sanity Suite.Good TestSuite.Good TestSuite,20210123 22:48:46.295
+964,39,2,0,2,Robot TestSuites.Build Sanity Suite.IB TestSuite.IB TestSuite,20210123 22:48:46.295
+965,39,2,1,1,Robot TestSuites.Build Sanity Suite.Multilanguage TestSuite.Multilanguage TestSuite,20210123 22:48:46.295
+966,39,29,28,1,Robot TestSuites.CashDeposit Transaction.Good TestSuite.Good TestSuite,20210123 22:48:46.295
+967,39,3,2,1,Robot TestSuites.CashDeposit Transaction.HostDenials TestSuite.HostDenials TestSuite,20210123 22:48:46.295
+968,39,2,2,0,Robot TestSuites.FastCash Transaction.CardBeforeCash TestSuite.CardBeforeCash TestSuite,20210123 22:48:46.295
+969,39,4,4,0,Robot TestSuites.FastCash Transaction.DCC GoodFlow TestSuite.DCC GoodFlow TestSuite,20210123 22:48:46.295
+970,39,2,2,0,Robot TestSuites.FastCash Transaction.DCC HostDenials TestSuite.DCC HostDenials TestSuite,20210123 22:48:46.295
+971,39,3,3,0,Robot TestSuites.FastCash Transaction.DCCVISA GoodFlow TestSuite.DCCVISA GoodFlow TestSuite,20210123 22:48:46.295
+972,39,2,2,0,Robot TestSuites.FastCash Transaction.DCCVISA InvalidHostData TestSuite.DCCVISA InvalidHostData TestSuite,20210123 22:48:46.295
+973,39,1,0,1,Robot TestSuites.FastCash Transaction.Good NonGrouping TestSuite.Good NonGrouping TestSuite,20210123 22:48:46.295
+974,39,27,26,1,Robot TestSuites.FastCash Transaction.Good TestSuite.Good TestSuite,20210123 22:48:46.295
+975,39,3,3,0,Robot TestSuites.FastCash Transaction.HostDenials TestSuite.HostDenials TestSuite,20210123 22:48:46.295
+976,39,2,2,0,Robot TestSuites.Transfer Transaction.DynamicAccounts SubAccount TestSuite.DynamicAccounts SubAccount TestSuite,20210123 22:48:46.295
+977,39,14,12,2,Robot TestSuites.Transfer Transaction.Good TestSuite.Good TestSuite,20210123 22:48:46.295
+978,39,3,3,0,Robot TestSuites.Transfer Transaction.HostDenialChained TestSuite.HostDenialChained TestSuite,20210123 22:48:46.295
+979,39,4,4,0,Robot TestSuites.Transfer Transaction.HostDenialUnchained TestSuite.HostDenialUnchained TestSuite,20210123 22:48:46.295
+980,39,1,0,1,Robot TestSuites.Withdrawal Transaction.Basic Custom Billmix TestSuite.Basic Custom BillMix Good TestSuite,20210123 22:48:46.295
+981,39,3,2,1,Robot TestSuites.Withdrawal Transaction.CardBeforeCash TestSuite.CardBeforeCash TestSuite,20210123 22:48:46.295
+982,39,4,4,0,Robot TestSuites.Withdrawal Transaction.DCC GoodFlow TestSuite.DCC GoodFlow TestSuite,20210123 22:48:46.295
+983,39,3,2,1,Robot TestSuites.Withdrawal Transaction.DCC HostDenials TestSuite.DCC HostDenials TestSuite,20210123 22:48:46.295
+984,39,5,5,0,Robot TestSuites.Withdrawal Transaction.DCCVISA TestSuite.DCCVISA TestSuite,20210123 22:48:46.295
+985,39,4,4,0,Robot TestSuites.Withdrawal Transaction.HostDenial TestSuite.HostDenial TestSuite,20210123 22:48:46.295
+986,39,2,0,2,Robot TestSuites.Withdrawal Transaction.Hybridbillmix Good TestSuite.Hybridbillmix Good TestSuite,20210123 22:48:46.295
+987,39,55,54,1,Robot TestSuites.Withdrawal Transaction.Withdrawal Good TestSuite.Withdrawal Good TestSuite,20210123 22:48:46.295
+988,40,1,1,0,Robot TestSuites.Balance Transaction.DynamicAccounts SubAccount TestSuite.DynamicAccounts SubAccount TestSuite,20210124 22:13:03.572
+989,40,13,11,2,Robot TestSuites.Balance Transaction.Good TestSuite.Good TestSuite,20210124 22:13:03.572
+990,40,5,4,1,Robot TestSuites.Balance Transaction.HostDenial TestSuite.HostDenial TestSuite,20210124 22:13:03.572
+991,40,6,1,5,Robot TestSuites.Build Sanity Suite.Chaining TestSuite.Chaining TestSuite,20210124 22:13:03.572
+992,40,11,4,7,Robot TestSuites.Build Sanity Suite.ClearOpcode TestSuite.ClearOpcode  TestSuite,20210124 22:13:03.572
+993,40,3,0,3,Robot TestSuites.Build Sanity Suite.DepositContinuation TestSuite.DepositContinuation TestSuite,20210124 22:13:03.572
+994,40,3,0,3,Robot TestSuites.Build Sanity Suite.EMV TestSuite.EMV TestSuite,20210124 22:13:03.572
+995,40,27,3,24,Robot TestSuites.Build Sanity Suite.Good TestSuite.Good TestSuite,20210124 22:13:03.572
+996,40,2,0,2,Robot TestSuites.Build Sanity Suite.IB TestSuite.IB TestSuite,20210124 22:13:03.572
+997,40,2,1,1,Robot TestSuites.Build Sanity Suite.Multilanguage TestSuite.Multilanguage TestSuite,20210124 22:13:03.572
+998,40,29,28,1,Robot TestSuites.CashDeposit Transaction.Good TestSuite.Good TestSuite,20210124 22:13:03.572
+999,40,3,2,1,Robot TestSuites.CashDeposit Transaction.HostDenials TestSuite.HostDenials TestSuite,20210124 22:13:03.572
+1000,40,2,2,0,Robot TestSuites.FastCash Transaction.CardBeforeCash TestSuite.CardBeforeCash TestSuite,20210124 22:13:03.572
+1001,40,4,4,0,Robot TestSuites.FastCash Transaction.DCC GoodFlow TestSuite.DCC GoodFlow TestSuite,20210124 22:13:03.572
+1002,40,2,2,0,Robot TestSuites.FastCash Transaction.DCC HostDenials TestSuite.DCC HostDenials TestSuite,20210124 22:13:03.572
+1003,40,3,3,0,Robot TestSuites.FastCash Transaction.DCCVISA GoodFlow TestSuite.DCCVISA GoodFlow TestSuite,20210124 22:13:03.572
+1004,40,2,2,0,Robot TestSuites.FastCash Transaction.DCCVISA InvalidHostData TestSuite.DCCVISA InvalidHostData TestSuite,20210124 22:13:03.572
+1005,40,1,0,1,Robot TestSuites.FastCash Transaction.Good NonGrouping TestSuite.Good NonGrouping TestSuite,20210124 22:13:03.572
+1006,40,27,26,1,Robot TestSuites.FastCash Transaction.Good TestSuite.Good TestSuite,20210124 22:13:03.572
+1007,40,3,3,0,Robot TestSuites.FastCash Transaction.HostDenials TestSuite.HostDenials TestSuite,20210124 22:13:03.572
+1008,40,2,2,0,Robot TestSuites.Transfer Transaction.DynamicAccounts SubAccount TestSuite.DynamicAccounts SubAccount TestSuite,20210124 22:13:03.572
+1009,40,14,12,2,Robot TestSuites.Transfer Transaction.Good TestSuite.Good TestSuite,20210124 22:13:03.572
+1010,40,3,3,0,Robot TestSuites.Transfer Transaction.HostDenialChained TestSuite.HostDenialChained TestSuite,20210124 22:13:03.572
+1011,40,4,4,0,Robot TestSuites.Transfer Transaction.HostDenialUnchained TestSuite.HostDenialUnchained TestSuite,20210124 22:13:03.572
+1012,40,1,0,1,Robot TestSuites.Withdrawal Transaction.Basic Custom Billmix TestSuite.Basic Custom BillMix Good TestSuite,20210124 22:13:03.572
+1013,40,3,2,1,Robot TestSuites.Withdrawal Transaction.CardBeforeCash TestSuite.CardBeforeCash TestSuite,20210124 22:13:03.572
+1014,40,4,4,0,Robot TestSuites.Withdrawal Transaction.DCC GoodFlow TestSuite.DCC GoodFlow TestSuite,20210124 22:13:03.572
+1015,40,3,3,0,Robot TestSuites.Withdrawal Transaction.DCC HostDenials TestSuite.DCC HostDenials TestSuite,20210124 22:13:03.572
+1016,40,5,5,0,Robot TestSuites.Withdrawal Transaction.DCCVISA TestSuite.DCCVISA TestSuite,20210124 22:13:03.572
+1017,40,4,4,0,Robot TestSuites.Withdrawal Transaction.HostDenial TestSuite.HostDenial TestSuite,20210124 22:13:03.572
+1018,40,2,0,2,Robot TestSuites.Withdrawal Transaction.Hybridbillmix Good TestSuite.Hybridbillmix Good TestSuite,20210124 22:13:03.572
+1019,40,55,53,2,Robot TestSuites.Withdrawal Transaction.Withdrawal Good TestSuite.Withdrawal Good TestSuite,20210124 22:13:03.572
+1020,41,1,1,0,Robot TestSuites.Balance Transaction.DynamicAccounts SubAccount TestSuite.DynamicAccounts SubAccount TestSuite,20210125 19:42:42.352
+1021,41,13,13,0,Robot TestSuites.Balance Transaction.Good TestSuite.Good TestSuite,20210125 19:42:42.352
+1022,41,5,3,2,Robot TestSuites.Balance Transaction.HostDenial TestSuite.HostDenial TestSuite,20210125 19:42:42.352
+1023,41,6,6,0,Robot TestSuites.Build Sanity Suite.Chaining TestSuite.Chaining TestSuite,20210125 19:42:42.352
+1024,41,11,8,3,Robot TestSuites.Build Sanity Suite.ClearOpcode TestSuite.ClearOpcode  TestSuite,20210125 19:42:42.352
+1025,41,3,0,3,Robot TestSuites.Build Sanity Suite.DepositContinuation TestSuite.DepositContinuation TestSuite,20210125 19:42:42.352
+1026,41,3,0,3,Robot TestSuites.Build Sanity Suite.EMV TestSuite.EMV TestSuite,20210125 19:42:42.352
+1027,41,27,0,27,Robot TestSuites.Build Sanity Suite.Good TestSuite.Good TestSuite,20210125 19:42:42.352
+1028,41,2,0,2,Robot TestSuites.Build Sanity Suite.IB TestSuite.IB TestSuite,20210125 19:42:42.352
+1029,41,2,0,2,Robot TestSuites.Build Sanity Suite.Multilanguage TestSuite.Multilanguage TestSuite,20210125 19:42:42.352
+1030,41,29,28,1,Robot TestSuites.CashDeposit Transaction.Good TestSuite.Good TestSuite,20210125 19:42:42.352
+1031,41,3,3,0,Robot TestSuites.CashDeposit Transaction.HostDenials TestSuite.HostDenials TestSuite,20210125 19:42:42.352
+1032,41,2,2,0,Robot TestSuites.FastCash Transaction.CardBeforeCash TestSuite.CardBeforeCash TestSuite,20210125 19:42:42.352
+1033,41,4,4,0,Robot TestSuites.FastCash Transaction.DCC GoodFlow TestSuite.DCC GoodFlow TestSuite,20210125 19:42:42.352
+1034,41,2,2,0,Robot TestSuites.FastCash Transaction.DCC HostDenials TestSuite.DCC HostDenials TestSuite,20210125 19:42:42.352
+1035,41,3,3,0,Robot TestSuites.FastCash Transaction.DCCVISA GoodFlow TestSuite.DCCVISA GoodFlow TestSuite,20210125 19:42:42.352
+1036,41,2,2,0,Robot TestSuites.FastCash Transaction.DCCVISA InvalidHostData TestSuite.DCCVISA InvalidHostData TestSuite,20210125 19:42:42.352
+1037,41,1,0,1,Robot TestSuites.FastCash Transaction.Good NonGrouping TestSuite.Good NonGrouping TestSuite,20210125 19:42:42.352
