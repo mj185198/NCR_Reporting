@@ -1,56 +1,28 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React,{useState,useEffect} from 'react';
 import './App.css';
+import TotalTable from "./Components/TotalTable";
+import TagTable from "./Components/TagTable";
+import SuiteTable from "./Components/SuiteTable";
+import TotalGraph from "./Components/TotalGraph";
+import SuiteGraph from "./Components/SuiteGraph";
+import TagGraph from "./Components/TagGraph";
 
-function App() {
-  const [data,setData]=useState([])
-  const URL = 'http://127.0.0.1:5000/totalstat';
-  useEffect(() => {
-    fetchData()
-  }, [])
 
 
-  const fetchData = () => {
-      fetch(URL)
-          .then((res) =>
-            res.json())
-
-          .then((response) => {
-            console.log(response);
-            setData(response);
-          })
-
-  }
+export default function App() {
 
   return (
-    <>
-            <h1>Results Table</h1>
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Solution</th>
-                    <th>Sprint</th>
-                    <th>Total_Test_Cases</th>
-                    <th>Total_Test_Passed</th>
-                    <th>Total_Test_Failed</th>
-                    <th>Date_Time</th>
-                </tr>
-            </thead>
-            <tbody>
-                {data.map((item, i) => (
-                    <tr key={i}>
-                        <td>{item.Id}</td>
-                        <td>{item.Solution_Stack}</td>
-                        <td>{item.Sprint}</td>
-                        <td>{item.Total_Test_Cases}</td>
-                        <td>{item.Total_Test_Passed}</td>
-                        <td>{item.Total_Test_Failed}</td>
-                        <td>{item.Time_Stamp}</td>
-                    </tr>
-                ))}
-            </tbody>
-
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="totaltable" element={<TotalTable />}/>
+        <Route path="suitetable" element={<SuiteTable />} />
+        <Route path="tagtable" element={<TagTable />}/>
+        <Route path="totalgraph" element={<TotalGraph />}/>
+        <Route path="suitegraph" element={<SuiteGraph />} />
+        <Route path="taggraph" element={<TagGraph />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
-export default App;
