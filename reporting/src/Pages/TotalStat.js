@@ -1,27 +1,8 @@
 import React,{useState,useEffect} from 'react';
 
-import {Line} from 'react-chartjs-2';
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Legend,
-} from 'chart.js';
-
-
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Legend
-);
+import Barchart from "./../Component/Barchart";
+import Linechart from "./../Component/Linechart";
+import Piechart from "./../Component/Piechart";
 
 export const options = {
   responsive: true,
@@ -39,20 +20,15 @@ export const options = {
 
 function TotalStat() {
   const [data,setData]=useState([])
-  const [mode, setMode] = useState("totalstat");
-  const URL = "http://127.0.0.1:5000/" + mode;
-  var dataset = [];
+  const URL = "http://127.0.0.1:5000/totalstat";
+
+  const [chart, setChart] = useState("bar");
+
   var totalCases = [];
   var totalPass = [];
   var totalFail = [];
-var x_label = [];
-
-  function onChangeValue(event) {
-      setMode(event.target.value);
-      console.log(event.target.value);
-      fetchData();
-      changedata();
-  }
+  var x_label = [];
+  const background1 = [];
   
   useEffect(() => {fetchData()}, [])
   const fetchData = () => {
@@ -62,49 +38,26 @@ var x_label = [];
         setData(response);})
     }
 
-    function changedata() {
       data.map((item, i) => {
-          if(i < 30) {
+          if(i < 20) {
               totalCases.push(item["Total_Test_Cases"])
               totalPass.push(item["Total_Test_Passed"])
               totalFail.push(item["Total_Test_Failed"])
           x_label.push(i + 1)
         }
+        const r = Math.floor(Math.random() * 255);
+        const g = Math.floor(Math.random() * 255);
+        const b = Math.floor(Math.random() * 255);
+        background1.push('rgba('+r+', '+g+', '+b+', 0.8)');
       })
-      dataset = {
-          labels: x_label,
-        datasets: [
-          {
-            label: 'Total Cases',
-            data: totalCases,
-            backgroundColor: 'rgb(90, 90, 90,0.2)',
-            borderColor: 'rgb(90, 90, 90,1)',
-            borderWidth: 1
-        },
-        {
-            label: 'Passed',
-            data: totalPass,
-            backgroundColor: 'rgb(60, 179, 113,0.2)',
-            borderColor: 'rgb(60, 179, 113,1)',
-            borderWidth: 1
-        },{
-            label: 'failed',
-            data: totalFail,
-            backgroundColor: 'rgba(255, 26, 104, 0.2)',
-            borderColor:'rgba(255, 26, 104, 1)',
-            borderWidth: 1
-        }],
-    }
-}
-changedata();
+
     return <div>
-            <Line options={options} data={dataset} />
-            <div onChange={onChangeValue}>
-                <input type="radio" id="mode" name='mode' value="totalstat"defaultChecked/>
-                <label for="totalstat">TotalStat</label><br></br>
-                <input type="radio" id="mode" name='mode' value="suitestat"/>
-                <label for="suitstat">SuitStat</label><br></br>
-            </div>
+            <button onClick={() => {setChart("bar")}}>Bar Chart</button>
+            <button onClick={() => {setChart("line")}}>Line Chart</button>
+            <button onClick={() => {setChart("pie")}}>Pie Chart</button>
+            {chart === "bar" && <Barchart x_label={x_label} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail} /> }
+            {chart === "line" && <Linechart x_label={x_label} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail} /> }
+            {chart === "pie" && <Piechart x_label={x_label} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail} background1={background1} /> }
           </div>;
     }
 export default TotalStat;
