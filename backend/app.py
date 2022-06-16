@@ -32,8 +32,8 @@ def total_stat():
 @app.route("/tagstat") 
 def tag_stat(): 
     curs = conn.cursor() 
-    res = pd.read_sql_query("select * from tagresults", conn) 
-    result1 = res.to_json(orient = 'records') 
+    res1 = pd.read_sql_query("select * from tagresults", conn) 
+    result1 = res1.to_json(orient = 'records') 
     return result1
 
 @app.route("/suitestat") 
