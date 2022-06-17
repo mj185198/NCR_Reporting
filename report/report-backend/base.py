@@ -35,18 +35,18 @@ def release():
     # PI = str(request.json["pi"])
     # Sprint = str(request.json["sprint"])
 
-    # Solution = str(request.json["sol"])
-    # Organization = str(request.json["Organization"])
-    # SRT = str(request.json["SRT"])
-    # PI = str(request.json["PI"])
-    # Sprint = str(request.json["Sprint"])
-    # Solution = str(request.json["Solution"])
-    # res = pd.read_sql_query(
-    #     "select Id,Solution_Stack,Total_Test_Cases,Total_Test_Passed,Total_Test_Failed,Time_Stamp from dbo.Report where Organization = '""" + Organization + """' and SRT = '""" + SRT + """' and PI = """ + PI + """ and Sprint = '""" + Sprint + """' and Solution = '""" + Solution + """' """,
-    #     conn)
+    Solution = str(request.json["sol"])
+    Organization = str(request.json["Organization"])
+    SRT = str(request.json["SRT"])
+    PI = str(request.json["PI"])
+    Sprint = str(request.json["Sprint"])
+    Solution = str(request.json["Solution"])
     res = pd.read_sql_query(
-        "select Id,Solution_Stack,Total_Test_Cases,Total_Test_Passed,Total_Test_Failed,Time_Stamp from dbo.Report where Organization = 'Banking Core' and SRT = 'EAB' and PI = 21.1 and Sprint = 'S3' and Solution = 'AE_NDCHOST' """,
+        "select Id,Solution_Stack,Total_Test_Cases,Total_Test_Passed,Total_Test_Failed,Time_Stamp from dbo.Report where Organization = '""" + Organization + """' and SRT = '""" + SRT + """' and PI = """ + PI + """ and Sprint = '""" + Sprint + """' and Solution = '""" + Solution + """' """,
         conn)
+    # res = pd.read_sql_query(
+    #     "select Id,Solution_Stack,Total_Test_Cases,Total_Test_Passed,Total_Test_Failed,Time_Stamp from dbo.Report where Organization = 'Banking Core' and SRT = 'EAB' and PI = 21.1 and Sprint = 'S3' and Solution = 'AE_NDCHOST' """,
+    #     conn)
     # global result
     result = res.to_json(orient='records')
     #FUNC CALL

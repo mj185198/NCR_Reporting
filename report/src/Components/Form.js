@@ -1,32 +1,10 @@
 
 import React,{useState,useEffect, Component} from 'react';
 
-
+import Select from 'react-select';
 
 function Form() {
-    // const history = useHistory();
-
-    // const routeChange = () =>{
-    // let path = `newPath`;
-    // history.push(path);
-    // }
-    // const [org,setOrg]=useState('');
-    // const [srt,setSRT]=useState('');
-    // const [pi,setPI]=useState(0);
-    // const [sprint,setSprint]=useState('');
-    // const [sol,setSol]=useState('');
-    // const handle = (e)=>{
-    //     e.preventDefault();
-    //     const val = {org,srt,pi,sprint,sol};
-    //     fetch('http://localhost:5000/release',{
-    //         method: 'POST',
-    //         headers: {"Content-Type":"application/json"},
-    //         body: JSON.stringify(val)
-    //         }).then(()=>{
-    //         console.log('data sent');
-    //     })
-    // }
-
+    
     const Organization = [{label: "Banking Core", value: "Banking Core"}]
     const SRT = [{label: "EAB", value: "EAB"},
                  {label: "ICE", value: "ICE"}
@@ -55,38 +33,27 @@ function Form() {
         { label: "AE_NDCHOST", value: "AE_NDCHOST" },
         { label: "AE_CxTH-ISO", value: "AE_CxTH-ISO" },
       ];
+      const [data, setData] = useState({
+        org : "",
+        srt : "",
+        pi : "",
+        sprint : "",
+        solution : ""
+      })
+      // function handle(e){
+      //   const newData = {...data};
+      //   newData[e.target.id] = e.target.values;
+      //   setData(newData);
+      //   console.log(newData);
+      // }
     return(
     <>
-    <form onSubmit={() => 
-        
-        // use python function directly here
-        {
-
-          // var data = eel.filterData();
-          // console.log(data);
-
-          fetch( "http://127.0.0.1:5000/release"
-          // method: "POST",
-          //make sure to serialize your JSON body
-          // body: JSON.stringify({
-          //   Organization : Organization,
-          //   SRT : SRT,
-          //   PI : PI,
-          //   Sprint : Sprint,
-          //   Solution : Solution
-          // })
-        )
-        .then( (response) => { 
-          //do something awesome that makes the world a better place
-          console.log(response);
-        });
-
-        }}>
-        <Select name="Organization"  options={Organization} />
-        <Select name="SRT" options={SRT}/>
-        <Select name="PI" options={PI}/>
-        <Select name="Sprint" options={Sprint}/>
-        <Select name="Solution" options={Solution}/>
+    <form action='http://127.0.0.1:5000/release' method='POST'>
+        <Select name="Organization" id = 'org' options={Organization} />
+        <Select name="SRT" id='srt' options={SRT}/>
+        <Select name="PI" id='pi' options={PI}/>
+        <Select name="Sprint" id='sprint' options={Sprint}/>
+        <Select name="Solution" id='solution' options={Solution}/>
       <button>Submit</button>
     </form>
     {/* <form onSubmit={handle}>
@@ -120,3 +87,55 @@ function Form() {
     </>
     );
 }
+
+
+export default Form;
+
+/* onSubmit={() => 
+        
+        // use python function directly here
+        {
+
+          // var data = eel.filterData();
+          // console.log(data);
+
+          fetch( "http://127.0.0.1:5000/release",{
+          method: "POST",
+          // make sure to serialize your JSON body
+          body: JSON.stringify({
+            Organization : Organization,
+            SRT : SRT,
+            PI : PI,
+            Sprint : Sprint,
+            Solution : Solution
+          })
+        }
+        )
+        .then( (response) => { 
+          //do something awesome that makes the world a better place
+          console.log(response);
+        });
+
+        }} */
+        // const history = useHistory();
+
+    // const routeChange = () =>{
+    // let path = `newPath`;
+    // history.push(path);
+    // }
+    // const [org,setOrg]=useState('');
+    // const [srt,setSRT]=useState('');
+    // const [pi,setPI]=useState(0);
+    // const [sprint,setSprint]=useState('');
+    // const [sol,setSol]=useState('');
+    // const handle = (e)=>{
+    //     e.preventDefault();
+    //     const val = {org,srt,pi,sprint,sol};
+    //     fetch('http://localhost:5000/release',{
+    //         method: 'POST',
+    //         headers: {"Content-Type":"application/json"},
+    //         body: JSON.stringify(val)
+    //         }).then(()=>{
+    //         console.log('data sent');
+    //     })
+    // }
