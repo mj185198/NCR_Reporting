@@ -7,6 +7,7 @@ import SuiteTable from "./Components/SuiteTable";
 import TotalGraph from "./Components/TotalGraph";
 import SuiteGraph from "./Components/SuiteGraph";
 import TagGraph from "./Components/TagGraph";
+import Input from "./Components/Input";
 
 
 
@@ -15,6 +16,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
+      <Route path="" element={<Input />}/>
         <Route path="totaltable" element={<TotalTable />}/>
         <Route path="suitetable" element={<SuiteTable />} />
         <Route path="tagtable" element={<TagTable />}/>
@@ -25,4 +27,3 @@ export default function App() {
     </BrowserRouter>
   );
 }
-
