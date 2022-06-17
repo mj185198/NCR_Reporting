@@ -3,7 +3,7 @@ import React,{useState,useEffect} from 'react';
 
 function TotalTable() {
     const [data,setData]=useState([]);
-    const URL = 'http://127.0.0.1:5000/totalstat';
+    const URL = 'http://127.0.0.1:5000/release';
     useEffect(() => {
         fetchtotalData();
     }, [])
