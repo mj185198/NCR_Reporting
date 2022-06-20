@@ -1,28 +1,34 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import React,{useState,useEffect} from 'react';
+import { BrowserRouter , Routes,Route} from "react-router-dom";
+import ReactDOM from 'react-dom/client';
+import React from 'react';
 import './App.css';
-import TotalTable from "./Components/TotalTable";
-import TagTable from "./Components/TagTable";
-import SuiteTable from "./Components/SuiteTable";
-import TotalGraph from "./Components/TotalGraph";
-import SuiteGraph from "./Components/SuiteGraph";
-import TagGraph from "./Components/TagGraph";
+import Input from "./Pages/Input";
+import Form from "./Pages/Form";
+import TagStat from "./Pages/TagStat";
+import TotalStats from "./Pages/TotalStats";
+// import TotalStat from "./Pages/TotalStat";
+// import SuiteStat from "./Pages/SuiteStat";
+// import TagStat from "./Pages/TagStat";
 
 
 
-export default function App() {
 
+
+ const App = () => {
   return (
+    <>
     <BrowserRouter>
       <Routes>
-        <Route path="totaltable" element={<TotalTable />}/>
-        <Route path="suitetable" element={<SuiteTable />} />
-        <Route path="tagtable" element={<TagTable />}/>
-        <Route path="totalgraph" element={<TotalGraph />}/>
-        <Route path="suitegraph" element={<SuiteGraph />} />
-        <Route path="taggraph" element={<TagGraph />} />
+        <Route path="/" element={<Input/>}/>
+        <Route path="/form" element={<Form/>}/>
+//        <Route path="/totalstat" element={<TotalStats/>}/>
+        <Route path="/tagstat" element = {<TagStat/>} />
+        {/* <Route path="tagstat" element={<TagStat/>}/>  */}
       </Routes>
     </BrowserRouter>
+    </>
   );
 }
+
+export default App;
 

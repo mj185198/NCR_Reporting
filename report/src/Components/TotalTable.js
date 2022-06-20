@@ -2,17 +2,20 @@ import React,{useState,useEffect} from 'react';
 
 
 function TotalTable() {
+
+    // data = TotalTable({{data|tojson}});
+
     const [data,setData]=useState([]);
-    const URL = 'http://127.0.0.1:5000/totalstat';
+    const URL = 'http://127.0.0.1:5000/getrelease';
     useEffect(() => {
         fetchtotalData();
     }, [])
 
     const fetchtotalData = () => {
         fetch(URL)
-            .then((res) =>
-              res.json())
-
+            // .then((res) =>
+            //   res.json)
+    
             .then((response) => {
               console.log(response);
               setData(response);
@@ -25,7 +28,7 @@ function TotalTable() {
                 <tr>
                     <th>Id</th>
                     <th>Solution</th>
-                    <th>Sprint</th>
+                    {/* <th>Sprint</th> */}
                     <th>Total_Test_Cases</th>
                     <th>Total_Test_Passed</th>
                     <th>Total_Test_Failed</th>
@@ -37,7 +40,7 @@ function TotalTable() {
                     <tr key={i}>
                         <td>{item.Id}</td>
                         <td>{item.Solution_Stack}</td>
-                        <td>{item.Sprint}</td>
+                        {/* <td>{item.Sprint}</td> */}
                         <td>{item.Total_Test_Cases}</td>
                         <td>{item.Total_Test_Passed}</td>
                         <td>{item.Total_Test_Failed}</td>

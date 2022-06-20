@@ -14,11 +14,11 @@ function TagTable() {
         fetch(URL1)
             .then((res) =>
                 res.json())
-
+              
             .then((response) => {
                 console.log(response);
                 tagData(response);
-            })
+            })              
           }
     return (
         <>
@@ -52,4 +52,4 @@ function TagTable() {
 }
 
 export default TagTable;
-
+    

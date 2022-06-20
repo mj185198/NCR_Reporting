@@ -4,24 +4,24 @@ import React,{useState,useEffect} from 'react';
 function SuiteTable() {
     const [data2,suiteData]=useState([]);
     const URL2 = 'http://127.0.0.1:5000/suitestat';
-
+  
     useEffect(() => {
       fetchsuiteData();
     }, [])
-
+  
     const fetchsuiteData = () => {
       fetch(URL2)
         .then((res) =>
           res.json())
-
+      
         .then((response) => {
           console.log(response);
           suiteData(response);
-        })
+        })              
     }
-
+  
     return (
-        <>
+        <>   
             <h1>Suite Results Table</h1>
               <thead>
                   <tr>
@@ -42,9 +42,9 @@ function SuiteTable() {
                           <td>{item.Time_Stamp}</td>
                       </tr>
                   ))}
-              </tbody>
+              </tbody>            
       </>
     );
   }
-
+  
   export default SuiteTable;

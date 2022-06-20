@@ -1,12 +1,14 @@
+from unicodedata import name
 from flask import Flask, jsonify, request, render_template, redirect, url_for
 from flask_cors import CORS
 import pandas as pd
 import json
 import pickle
 import pyodbc
+import sqlite3 as sq
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, supports_credentials=True)
 
 server = '153.78.66.172'
 database = 'Test_Results_Archiving'
@@ -15,33 +17,32 @@ password = 'SIT_SST12345'
 conn = pyodbc.connect(
     'DRIVER={SQL Server};SERVER=' + server + ';DATABASE=' + database + ';UID=' + username + ';PWD=' + password)
 
-result = {}
+
+# conn = sq.connect('results.db',check_same_thread=False)
 
 
 @app.route("/release", methods=['POST'])
 def release():
     cur = conn.cursor()
-    # Organization = str(request.json["org"])
-    # SRT = str(request.json["srt"])
-    # PI = str(request.json["pi"])
-    # Sprint = str(request.json["sprint"])
-    # Solution = str(request.json["sol"])
-    Organization = str(request.form["Organization"])
-    SRT = str(request.form["SRT"])
-    PI = str(request.form["PI"])
-    Sprint = str(request.form["Sprint"])
-    Solution = str(request.form["Solution"])
+    Organization = str(request.json["org"])
+    SRT = str(request.json["srt"])
+    PI = str(request.json["pi"])
+    Sprint = str(request.json["sprint"])
+    Solution = str(request.json["sol"])
+    # Organization = str(request.form["Organization"])
+    # SRT = str(request.form["SRT"])
+    # PI = str(request.form["PI"])
+    # Sprint = str(request.form["Sprint"])
+    # Solution = str(request.form["Solution"])
     res = pd.read_sql_query(
         "select Id,Solution_Stack,Total_Test_Cases,Total_Test_Passed,Total_Test_Failed,Time_Stamp from dbo.Report where Organization = '""" + Organization + """' and SRT = '""" + SRT + """' and PI = """ + PI + """ and Sprint = '""" + Sprint + """' and Solution = '""" + Solution + """' """,
         conn)
-    global result
     result = res.to_json(orient='records')
+    return result
     # global dummy
     # dummy = result
     # return "200"
-    return render_template(
-        'C:\Users\mj185198\Downloads\NCR Intelligent Test Automation\front-end\src\Components\TotalGraph.js',
-        data=result)
+    # return render_template('C:\Users\mj185198\Downloads\NCR Intelligent Test Automation\front-end\src\Components\TotalGraph.js', data=result)
     # return redirect(url_for('.getrelease',data=result))
     # return "empty"
     # #return redirect(url_for('http://127.0.0.1:5000/release1',data=res))
@@ -52,24 +53,22 @@ def release():
 def getrelease():
     # global dummy
     # res = request.args['data']
-    return result
+    return "ij"
 
 
 @app.route("/tag", methods=['get', 'post'])
 def tag():
     cur = conn.cursor()
     Report_Id = request.form["Report_Id"]
-    sql = "select * from dbo.Tag_Statistics where Report_Id=?"
-    res = pd.read_sql_query(sql, conn, params=[Report_Id])
+    res = pd.read_sql_query("select * from dbo.Statistics_By_Tag where Report_Id = """ + Report_Id + """ """, conn)
     result = res.to_json(orient='records')
-    print(result)
     return result
 
 
 @app.route("/totalstat")
 def total_stat():
     res = pd.read_sql_query(
-        "select Id,Solution_Stack,Sprint,Total_Test_Cases,Total_Test_Passed,Total_Test_Failed,Time_Stamp from dbo.Report",
+        "select Id,Solution_Stack,Sprint,Total_Test_Cases,Total_Test_Passed,Total_Test_Failed,Time_Stamp from totalresults",
         conn)
     result = res.to_json(orient='records')
     return result
