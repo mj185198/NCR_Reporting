@@ -20,15 +20,15 @@ const Input = () => {
       <h1>Welcome to NCR Reporting</h1>
       <br />
       <div>
-        <a href ="/Form">
+        <a href ="/form">
         <button>Release</button>
         </a>
-        <a href ="/tagstat">
-        <button>TagStat</button>
-        </a>
+        <a href ="/tagform">
         <button>Tag</button>
+        </a>
+        {/* <a href ="/suiteform">
         <button>Suite</button>
-        
+        </a> */}
       </div>
 
 
