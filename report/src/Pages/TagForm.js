@@ -24,7 +24,7 @@ const TagForm = () => {
   const [tagname, setTagname] = useState("");
   const [sol, setSol] = useState("");
   const [data, setData] = useState([]);
-  const [chart, setChart] = useState("tagtable");
+  const [chart, setChart] = useState("bar");
 
   var totalCases = [];
   var totalPass = [];
@@ -40,7 +40,9 @@ const TagForm = () => {
       totalFail.push(item["Total_Test_Failed"]);
       datetime.push(item["Time_Stamp"]);
       solutionstack.push(item["Solution_Stack"]);
-      x_label.push(item["Tag_Name"]);
+      x_label.push("PI "+item["PI"]+"_"+item["Sprint"]+"_"+item["Test_Execution_Id"]+"_"+item["Time_Stamp"].slice(4,8) );
+      
+      // +" ("+item["Total_Test_Cases"]+")"
     }
     const r = Math.floor(Math.random() * 255);
     const g = Math.floor(Math.random() * 255);
@@ -121,7 +123,7 @@ const TagForm = () => {
 
   return (
     <div>
-      <h2 style={{textAlign:"center"}}>Welcome to NCR Reporting</h2>
+      <h2 style={{textAlign:"center"}}>Tag-wise Report</h2>
       <div className="print-button">
           <button style={{float: "right"}} onClick={handlePrint}>Export to PDF</button>
           <button style={{float: "right"}} onClick={() => export_to_excel(data,pi+"_"+sprint+"_"+sol)}>Export to Excel</button>
@@ -220,19 +222,20 @@ const TagForm = () => {
       </form>
 
       <div>
-        <button
-          onClick={() => {
-            setChart("tagtable");
-          }}
-        >
-          Table
-        </button>
+        
         <button
           onClick={() => {
             setChart("bar");
           }}
         >
           Bar Chart
+        </button>
+        <button
+          onClick={() => {
+            setChart("tagtable");
+          }}
+        >
+          Table
         </button>
         <button
           onClick={() => {
@@ -243,7 +246,6 @@ const TagForm = () => {
         </button>
         <button onClick={() => {setChart("stackedbar")}}>StackedBar Chart</button>
         <div ref = {componentRef}>
-        {chart === "tagtable" && <TagTable data={data} />}
         {chart === "bar" && (
           <Barchart
             x_label={x_label}
@@ -252,6 +254,8 @@ const TagForm = () => {
             totalFail={totalFail}
           />
         )}
+        {chart === "tagtable" && <TagTable data={data} />}
+       
         {chart === "line" && (
           <Linechart
             x_label={x_label}

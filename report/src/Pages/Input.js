@@ -1,17 +1,19 @@
-import React from "react";
+import React,{useState} from "react";
+import Form from "../Pages/Form"
+import TagForm from "../Pages/TagForm"
 
 const Input = () => {
+
+  const [option, setOption] = useState(null);
   return (
     <div>
-      <h1>Reporting</h1>
-      <br />
       <div>
-        <a href ="/form">
-        <button>Release</button>
-        </a>
-        <a href ="/tagform">
-        <button>Tag</button>
-        </a>
+        <button onClick={() => { setOption("total")
+        }}>Release</button>
+        <button onClick={() => { setOption("tag")
+        }}>Tag</button>
+        { option === "total" &&  <Form />}
+        { option === "tag" &&  <TagForm />}
       </div>
     </div> );
   };

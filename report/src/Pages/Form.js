@@ -23,7 +23,7 @@ const Form = () => {
     const [sprint,setSprint]=useState('');
     const [sol,setSol]=useState('');
     const [data, setData]=useState([]);
-    const [chart, setChart] = useState("totaltable");
+    const [chart, setChart] = useState("bar");
     
     
     var totalCases = [];
@@ -111,7 +111,7 @@ const Form = () => {
 
   return (
     <div>
-      <h2 style={{textAlign:"center"}}>Welcome to NCR Reporting</h2>
+      <h2 style={{textAlign:"center"}}>Release-wise Report</h2>
       <div className="print-button">
           <button style={{float: "right"}} onClick={handlePrint}>Export to PDF</button>
           <button style={{float: "right"}} onClick={() => export_to_excel(data,pi+"_"+sprint+"_"+sol)}>Export to Excel</button>
@@ -165,13 +165,13 @@ const Form = () => {
       </form>
 
       <div >
-            <button onClick={() => {setChart("totaltable")}}>Table</button>
             <button onClick={() => {setChart("bar")}}>Bar Chart</button>
+            <button onClick={() => {setChart("totaltable")}}>Table</button>
             <button onClick={() => {setChart("line")}}>Line Chart</button>
             <button onClick={() => {setChart("stackedbar")}}>StackedBar Chart</button>
             <div ref = {componentRef}>
-            {chart === "totaltable" && <TotalTable data ={data}/>}
             {chart === "bar" && <Barchart x_label={x_label} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail} /> }
+            {chart === "totaltable" && <TotalTable data ={data}/>}
             {chart === "line" && <Linechart x_label={x_label} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail} /> }
             {chart === "stackedbar" && <StackedBarchart x_label={x_label} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail} background1={background1} /> }
             </div>
