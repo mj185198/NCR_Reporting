@@ -74,16 +74,16 @@ const TagForm = () => {
     setData(resp.data);
   };
   const Organization = [
-    { id: 0, label: "Select option", value: "" },
+    { id: 0, label: "Select Organization", value: "" },
     { id: 1, label: "Banking Core", value: "Banking Core" },
   ];
   const SRT = [
-    { id: 0, label: "Select option", value: "Select option" },
+    { id: 0, label: "Select SRT", value: "Select option" },
     { id: 1, label: "EAB", value: "EAB" },
     { id: 1, label: "ICE", value: "ICE" },
   ];
   const PI = [
-    { id: 0, label: "Select option", value: "Select option" },
+    { id: 0, label: "Select PI", value: "Select option" },
     { id: 1, label: "21.1", value: 21.1 },
     { id: 2, label: "21.2", value: 21.2 },
     { id: 3, label: "21.3", value: 21.3 },
@@ -92,7 +92,7 @@ const TagForm = () => {
     { id: 6, label: "22.2", value: 22.2 },
   ];
   const Tagname = [
-    { id: 0, label: "Select option", value: "" },
+    { id: 0, label: "Select Tagname", value: "" },
     { id: 1, label: "DynamicSubAccount", value: "DynamicSubAccount" },
     { id: 2, label: "IB", value: "IB" },
     { id: 3, label: "Fee", value: "Fee" },
@@ -110,7 +110,7 @@ const TagForm = () => {
       { id : 6,label: "S6", value: "S6" },
   ];
   const Solution = [
-    { id: 0, label: "Select option", value: "" },
+    { id: 0, label: "Select Solution", value: "" },
     { id: 1, label: "AE_CxM", value: "AE_CxM" },
     { id: 2, label: "ESS_AE_CxTH_ISO", value: "ESS_AE_CxTH_ISO" },
     { id: 3, label: "AE_IB", value: "AE_IB" },

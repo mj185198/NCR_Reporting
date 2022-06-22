@@ -1,0 +1,32 @@
+V 1.0 : End of Today
+V 1.2 : End of Week (2 resources)
+V 2.0 : Future Plans
+
+V 1.0 :
+
+Put Release&Tag as parent of Form.js (Single page application)
+Stop default rendering of Table Headers
+Comparisions
+
+V 1.2 :
+Exception Handling
+Make fields in drop down to required and make "Select option" option as invalid 
+(submit shouldn't work when "select option" is selected)
+Search option in dropdown.
+
+V 2.0 :
+Automatic fields getter using API call to server and distinct query in server
+Find a way to visualise the charts and graphs better (too clumsy).
+ [Workaround : date selection for better visibility].
+idea : user should be able to export only selected components.
+     i.e., user should have choice over what to print and what not to print.
+
+
+
+Completed :
+Implement export option.
+Label display for dropdowns.
+ UI/UX. (Basic) : 
+    - Button positions for export feature to top right
+
+
