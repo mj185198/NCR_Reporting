@@ -17,7 +17,7 @@ export class Barchart extends Component {
                                     datasets:[{
                                     label:'Total Cases',
                                     data:this.props.totalCases,
-                                    backgroundColor:'red',
+                                    backgroundColor:'orange',
                                     barThickness:12
                                     },
                                     {
@@ -29,7 +29,7 @@ export class Barchart extends Component {
                                     {
                                     label:'Total Fail Cases',
                                     data:this.props.totalFail,
-                                    backgroundColor:'orange',
+                                    backgroundColor:'red',
                                     barThickness:12
                                     },
                                     ]

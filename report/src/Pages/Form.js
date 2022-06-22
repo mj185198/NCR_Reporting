@@ -1,17 +1,28 @@
-import React, { useState } from "react";
+import React, { useState,useRef } from "react";
 import httpClient from "../httpClient";
 import {Link} from 'react-router-dom';
 import TotalTable from '../Components/TotalTable';
 import Barchart from "../Components/Barchart";
 import Linechart from "../Components/Linechart";
-import Piechart from "../Components/Piechart";
+import StackedBarchart from "../Components/StackedBarchart";
+import {useReactToPrint} from "react-to-print";
+
+const xlsx = require('xlsx');
 
 const Form = () => {
+
+  const componentRef = useRef();
+  const handlePrint = useReactToPrint({
+    content: () => componentRef.current,
+  });
+
+
     const [org,setOrg]=useState('');
     const [srt,setSRT]=useState('');
     const [pi,setPI]=useState(0);
     const [sprint,setSprint]=useState('');
     const [sol,setSol]=useState('');
+    const [date,setDate]=useState('');
     const [data, setData]=useState([]);
     const [chart, setChart] = useState("totaltable");
     
@@ -32,7 +43,7 @@ const Form = () => {
           datetime.push(item["Time_Stamp"])
           solutionstack.push(item["Solution_Stack"])
           id.push(item["Id"])
-      x_label.push(i+1)
+          x_label.push("PI "+item["PI"]+"_"+item["Sprint"]+"_"+item["Test_Execution_Id"]+"_"+item["Time_Stamp"].slice(4,8))
     }
     const r = Math.floor(Math.random() * 255);
     const g = Math.floor(Math.random() * 255);
@@ -40,8 +51,20 @@ const Form = () => {
     background1.push('rgba('+r+', '+g+', '+b+', 0.8)');
   })
 
+
+  const export_to_excel = (data, name) => {
+    console.log(data);
+    const worksheet = xlsx.utils.json_to_sheet(data);
+    const workbook = xlsx.utils.book_new();
+    xlsx.utils.book_append_sheet(workbook, worksheet, name);
+    xlsx.write(workbook, {bookType : 'xlsx', type : "buffer"});
+    xlsx.write(workbook,{bookType:"xlsx",type:"binary"});
+    xlsx.writeFile(workbook,name+".xlsx");
+
+}
+
   const Filter = async () => {
-    console.log(org,srt,pi,sprint,sol);
+    console.log(org,srt,pi,sprint,sol,date);
     // try {
       const resp = await httpClient.post("//localhost:5000/release", {
         org,
@@ -49,18 +72,19 @@ const Form = () => {
         pi,
         sprint,
         sol,
+        date,
       });
       console.log(resp.data);
       setData(resp.data);
   };
-  const Organization = [ {id:0,label: "Select option", value: "Select option"},
+  const Organization = [ {id:0,label: "Select Organization", value: ""},
     {id : 1,label: "Banking Core", value: "Banking Core"}]
-        const SRT = [ {id:0,label: "Select option", value: "Select option"},
+        const SRT = [ {id:0,label: "Select SRT", value: ""},
           {id : 1,label: "EAB", value: "EAB"},
                  {id : 1,label: "ICE", value: "ICE"}
                 ]
         const PI = [
-          {id:0,label: "Select option", value: "Select option"},
+          {id:0,label: "Select PI", value: ""},
             { id : 1,label: "21.1", value: 21.1 },
             { id : 2,label: "21.2", value: 21.2 },
             { id : 3,label: "21.3", value: 21.3 },
@@ -69,7 +93,7 @@ const Form = () => {
             { id : 6,label: "22.2", value: 22.2 },
         ];
         const Sprint = [
-          {id:0,label: "Select option", value: "Select option"},
+          {id:0,label: "Select Sprint", value: ""},
             { id : 1,label: "S1", value: "S1" },
             { id : 2,label: "S2", value: "S2" },
             { id : 3,label: "S3", value: "S3" },
@@ -78,7 +102,7 @@ const Form = () => {
             { id : 6,label: "S6", value: "S6" },
         ];
         const Solution = [
-          {id:0,label: "Select option", value: "Select option"},
+          {id:0,label: "Select Solution", value: ""},
             { id : 1,label: "AE_CxM", value: "AE_CxM" },
             { id : 2,label: "ESS_AE_CxTH_ISO", value: "ESS_AE_CxTH_ISO" },
             { id : 3,label: "AE_IB", value: "AE_IB" },
@@ -89,10 +113,12 @@ const Form = () => {
 
   return (
     <div>
+      <div className="print-button">
+          <button onClick={handlePrint}>Export to PDF</button>
+          <button onClick={() => export_to_excel(data,pi+"_"+sprint+"_"+sol)}>Export to Excel</button>
+      </div>
       <h1>Apply Filters</h1>
       <form>
-
-
         <select name="org" value={org?.value}  onChange={(e)=>{
           setOrg(e.target.value);
           console.log(org);
@@ -133,23 +159,27 @@ const Form = () => {
             <option key={Solution.id} value={Solution.value}>{Solution.label}</option>
         ))}
         </select>
-
+        <input name = "date" type="date" onChange={(e)=>{
+          setDate(e.target.value);
+          console.log(date);
+          }}/> 
         <button type="button" onClick={() => Filter()}>
           Apply
         </button>
 
       </form>
 
-      <div>
+      <div >
             <button onClick={() => {setChart("totaltable")}}>Table</button>
             <button onClick={() => {setChart("bar")}}>Bar Chart</button>
             <button onClick={() => {setChart("line")}}>Line Chart</button>
-            <button onClick={() => {setChart("pie")}}>Pie Chart</button>
+            <button onClick={() => {setChart("stackedbar")}}>StackedBar Chart</button>
+            <div ref = {componentRef}>
             {chart === "totaltable" && <TotalTable data ={data}/>}
             {chart === "bar" && <Barchart x_label={x_label} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail} /> }
             {chart === "line" && <Linechart x_label={x_label} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail} /> }
-            {chart === "pie" && <Piechart x_label={x_label} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail} background1={background1} /> }
-            {/* {chart === "totaltable" && <TotalTable id={id} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail} datetime={datetime} solutionstack={solutionstack}/>} */}
+            {chart === "stackedbar" && <StackedBarchart x_label={x_label} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail} background1={background1} /> }
+            </div>
     </div>
 
       {/* <Link to={{

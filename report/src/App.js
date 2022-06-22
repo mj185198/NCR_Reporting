@@ -25,7 +25,6 @@ import TagForm from "./Pages/TagForm";
         <Route path="/form" element={<Form/>}/>
         <Route path="/tagform" element={<TagForm/>}/> 
         {/* <Route path="/suiteform" element = {<SuiteForm/>} /> */}
-        {/* <Route path="tagstat" element={<TagStat/>}/>  */}
       </Routes>
     </BrowserRouter>
     </>

@@ -1,55 +1,48 @@
-import React,{useState,useEffect} from 'react';
+import React, { Component } from 'react';
 
 
-
-function TagTable() {
-    const [data1,tagData]=useState([]);
-    const URL1 = 'http://127.0.0.1:5000/tagstat';
-
-    useEffect(() => {
-        fetchtagData();
-    }, [])
-
-    const fetchtagData = () => {
-        fetch(URL1)
-            .then((res) =>
-                res.json())
-              
-            .then((response) => {
-                console.log(response);
-                tagData(response);
-            })              
-          }
-    return (
-        <>
-        <h1>Tag Results Table</h1>
-            <thead>
+export default class TagTable extends Component { 
+    constructor(props) {  
+            super(props);
+    }
+    render() {  
+        return (  
+            <>
+             <thead>
                 <tr>
-                    <th>Id</th>
-                    <th>Report_Id</th>
-                    <th>Tag_Name</th>
-                    <th>Total_Test_Cases</th>
-                    <th>Total_Test_Passed</th>
-                    <th>Total_Test_Failed</th>
-                    <th>Date_Time</th>
-                </tr>
+                     <th>Report_Id</th>
+                     <th>Solution</th>
+                     <th>Sprint</th>
+                     <th>Tag_Name</th>
+                     <th>Total_Test_Cases</th>
+                     <th>Total_Test_Passed</th>
+                     <th>Total_Test_Failed</th>
+                     <th>Date_Time</th>
+                 </tr>
             </thead>
-            <tbody>
-                {data1.map((item, i) => (
-                    <tr key={i}>
-                        <td>{item.Id}</td>
+             <tbody>
+                 {this.props.data.map((item, i) => (
+                    <tr key={i} >
                         <td>{item.Report_Id}</td>
+                        <td>{item.Solution_Stack}</td>
+                        <td>{item.Sprint}</td>
                         <td>{item.Tag_Name}</td>
                         <td>{item.Total_Test_Cases}</td>
                         <td>{item.Total_Test_Passed}</td>
                         <td>{item.Total_Test_Failed}</td>
                         <td>{item.Time_Stamp}</td>
+                        {/* <td>{this.props.id}</td>
+                        <td>{this.props.solutionstack}</td>
+                        <td>{item.Sprint}</td>
+                        <td>{this.props.totalCases}</td>
+                        <td>{this.props.totalPass}</td>
+                        <td>{this.props.totalFail}</td>
+                        <td>{this.props.datetime}</td> */}
                     </tr>
                 ))}
             </tbody>
+                    
         </>
-    );
-}
-
-export default TagTable;
-    
+        )
+}  
+}  

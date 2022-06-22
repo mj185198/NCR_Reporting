@@ -15,16 +15,22 @@ export class Linechart extends Component {
                                 data={{
                                     labels:this.props.x_label,
                                     datasets:[{
+                                    label:'Total Cases',
                                     data:this.props.totalCases,
-                                    backgroundColor:'orange',
+                                    backgroundColor:'rgba(255, 99, 71,1)',
+                                    borderColor:'rgba(255, 165, 0,0.4)'
                                     },
                                     {
+                                    label:'Total Pass Cases',
                                     data:this.props.totalPass,
-                                    backgroundColor:'green',
+                                    backgroundColor:'#007d18',
+                                    borderColor:'#00ff00'
                                     },
                                     {
+                                    label:'Total Fail Cases',
                                     data:this.props.totalFail,
-                                    backgroundColor:'red',
+                                    backgroundColor:'rgba(255, 0, 0,1)',
+                                    borderColor:'rgba(255, 0, 0,0.3)'
                                     }]
                                 }
                                 }
