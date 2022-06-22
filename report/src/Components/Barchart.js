@@ -21,13 +21,13 @@ export class Barchart extends Component {
                                     barThickness:12
                                     },
                                     {
-                                    label:'Total Pass Cases',
+                                    label:'Passed',
                                     data:this.props.totalPass,
                                     backgroundColor:'green',
                                     barThickness:12
                                     },
                                     {
-                                    label:'Total Fail Cases',
+                                    label:'Failed',
                                     data:this.props.totalFail,
                                     backgroundColor:'red',
                                     barThickness:12

@@ -22,7 +22,6 @@ const Form = () => {
     const [pi,setPI]=useState(0);
     const [sprint,setSprint]=useState('');
     const [sol,setSol]=useState('');
-    const [date,setDate]=useState('');
     const [data, setData]=useState([]);
     const [chart, setChart] = useState("totaltable");
     
@@ -64,7 +63,7 @@ const Form = () => {
 }
 
   const Filter = async () => {
-    console.log(org,srt,pi,sprint,sol,date);
+    console.log(org,srt,pi,sprint,sol);
     // try {
       const resp = await httpClient.post("//localhost:5000/release", {
         org,
@@ -72,7 +71,6 @@ const Form = () => {
         pi,
         sprint,
         sol,
-        date,
       });
       console.log(resp.data);
       setData(resp.data);
@@ -113,11 +111,12 @@ const Form = () => {
 
   return (
     <div>
+      <h2 style={{textAlign:"center"}}>Welcome to NCR Reporting</h2>
       <div className="print-button">
-          <button onClick={handlePrint}>Export to PDF</button>
-          <button onClick={() => export_to_excel(data,pi+"_"+sprint+"_"+sol)}>Export to Excel</button>
+          <button style={{float: "right"}} onClick={handlePrint}>Export to PDF</button>
+          <button style={{float: "right"}} onClick={() => export_to_excel(data,pi+"_"+sprint+"_"+sol)}>Export to Excel</button>
       </div>
-      <h1>Apply Filters</h1>
+      <h3>Filter Options</h3>
       <form>
         <select name="org" value={org?.value}  onChange={(e)=>{
           setOrg(e.target.value);
@@ -159,10 +158,6 @@ const Form = () => {
             <option key={Solution.id} value={Solution.value}>{Solution.label}</option>
         ))}
         </select>
-        <input name = "date" type="date" onChange={(e)=>{
-          setDate(e.target.value);
-          console.log(date);
-          }}/> 
         <button type="button" onClick={() => Filter()}>
           Apply
         </button>

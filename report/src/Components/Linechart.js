@@ -21,13 +21,13 @@ export class Linechart extends Component {
                                     borderColor:'rgba(255, 165, 0,0.4)'
                                     },
                                     {
-                                    label:'Total Pass Cases',
+                                    label:'Passed',
                                     data:this.props.totalPass,
                                     backgroundColor:'#007d18',
                                     borderColor:'#00ff00'
                                     },
                                     {
-                                    label:'Total Fail Cases',
+                                    label:'Failed',
                                     data:this.props.totalFail,
                                     backgroundColor:'rgba(255, 0, 0,1)',
                                     borderColor:'rgba(255, 0, 0,0.3)'

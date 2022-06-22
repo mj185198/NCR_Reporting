@@ -1,23 +1,9 @@
-import React, { useState, useEffect } from "react";
-import httpClient from "../httpClient";
+import React from "react";
 
 const Input = () => {
-//   const [data, setData] = useState<data | null>(null);
-
-//   useEffect(() => {
-//     (async () => {
-//       try {
-//         const resp = await httpClient.get("//localhost:5000/release");
-//         setData(resp.data);
-//       } catch (error) {
-//         console.log("Not authenticated");
-//       }
-//     })();
-//   }, []);
-
   return (
     <div>
-      <h1>Welcome to NCR Reporting</h1>
+      <h1>Reporting</h1>
       <br />
       <div>
         <a href ="/form">
@@ -26,28 +12,7 @@ const Input = () => {
         <a href ="/tagform">
         <button>Tag</button>
         </a>
-        {/* <a href ="/suiteform">
-        <button>Suite</button>
-        </a> */}
       </div>
-
-
-      {/* {data != null ? (
-        <div>
-          <h2>Logged in</h2>
-          <h3>ID: {.id}</h3>
-          <h3>Email: {user.email}</h3>
-        </div>
-      ) : (
-        <div>
-          <p>You are not logged in</p>
-          <div>
-            <a href="/Form">
-              <button>Login</button>
-            </a>
-          </div>
-        </div>
-      )}*/}
     </div> );
   };
 

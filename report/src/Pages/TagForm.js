@@ -1,18 +1,28 @@
-import React, { useState } from "react";
+import React, { useState,useRef } from "react";
 import httpClient from "../httpClient";
 import { Link } from "react-router-dom";
 import TagTable from "../Components/TagTable";
 import Barchart from "../Components/Barchart";
 import Linechart from "../Components/Linechart";
-import Piechart from "../Components/Piechart";
+import StackedBarchart from "../Components/StackedBarchart";
+import {useReactToPrint} from "react-to-print";
+
+
+const xlsx = require('xlsx');
+
 
 const TagForm = () => {
+
+  const componentRef = useRef();
+  const handlePrint = useReactToPrint({
+    content: () => componentRef.current,
+  });
   const [org, setOrg] = useState("");
   const [srt, setSRT] = useState("");
   const [pi, setPI] = useState(0);
+  const [sprint,setSprint]=useState('');
   const [tagname, setTagname] = useState("");
   const [sol, setSol] = useState("");
-  const [date, setDate] = useState("");
   const [data, setData] = useState([]);
   const [chart, setChart] = useState("tagtable");
 
@@ -38,16 +48,27 @@ const TagForm = () => {
     background1.push("rgba(" + r + ", " + g + ", " + b + ", 0.8)");
   });
 
+  const export_to_excel = (data, name) => {
+    console.log(data);
+    const worksheet = xlsx.utils.json_to_sheet(data);
+    const workbook = xlsx.utils.book_new();
+    xlsx.utils.book_append_sheet(workbook, worksheet, name);
+    xlsx.write(workbook, {bookType : 'xlsx', type : "buffer"});
+    xlsx.write(workbook,{bookType:"xlsx",type:"binary"});
+    xlsx.writeFile(workbook,name+".xlsx");
+
+}
+
   const Filter = async () => {
-    console.log(org, srt, pi, tagname, sol, date);
+    console.log(org, srt, pi, tagname, sol);
     // try {
     const resp = await httpClient.post("//localhost:5000/tag", {
       org,
       srt,
       pi,
+      sprint,
       tagname,
       sol,
-      date,
     });
     console.log(resp.data);
     setData(resp.data);
@@ -79,6 +100,15 @@ const TagForm = () => {
     { id: 5, label: "CashPayment", value: "CashPayment" },
     { id: 6, label: "EndDeposit", value: "EndDeposit" },
   ];
+  const Sprint = [
+    {id:0,label: "Select Sprint", value: ""},
+      { id : 1,label: "S1", value: "S1" },
+      { id : 2,label: "S2", value: "S2" },
+      { id : 3,label: "S3", value: "S3" },
+      { id : 4,label: "S4", value: "S4" },
+      { id : 5,label: "S5", value: "S5" },
+      { id : 6,label: "S6", value: "S6" },
+  ];
   const Solution = [
     { id: 0, label: "Select option", value: "" },
     { id: 1, label: "AE_CxM", value: "AE_CxM" },
@@ -91,12 +121,12 @@ const TagForm = () => {
 
   return (
     <div>
-      <h1>
-        Apply Filters
-        <a href="/">
-          <button>Go back</button>
-        </a>
-      </h1>
+      <h2 style={{textAlign:"center"}}>Welcome to NCR Reporting</h2>
+      <div className="print-button">
+          <button style={{float: "right"}} onClick={handlePrint}>Export to PDF</button>
+          <button style={{float: "right"}} onClick={() => export_to_excel(data,pi+"_"+sprint+"_"+sol)}>Export to Excel</button>
+      </div>
+      <h3>Filter Options</h3>
       <form>
         <select
           required="true"
@@ -139,6 +169,16 @@ const TagForm = () => {
           ))}
         </select>
 
+        <select name="sprint" id="" onChange={(e)=>{
+          setSprint(e.target.value);
+          console.log(sprint);
+        }
+        }>{Sprint.map((Sprint) => (
+          <option key={Sprint.id} value={Sprint.value}>{Sprint.label}</option>
+          ))}
+
+      </select>
+
         <select
           name="tagname"
           id=""
@@ -169,16 +209,6 @@ const TagForm = () => {
             </option>
           ))}
         </select>
-
-        <input
-          name="date"
-          type="date"
-          onChange={(e) => {
-            setDate(e.target.value);
-            console.log(date);
-          }}
-        />
-
         <button
           type="button"
           onClick={() => {
@@ -211,13 +241,8 @@ const TagForm = () => {
         >
           Line Chart
         </button>
-        <button
-          onClick={() => {
-            setChart("pie");
-          }}
-        >
-          Pie Chart
-        </button>
+        <button onClick={() => {setChart("stackedbar")}}>StackedBar Chart</button>
+        <div ref = {componentRef}>
         {chart === "tagtable" && <TagTable data={data} />}
         {chart === "bar" && (
           <Barchart
@@ -235,15 +260,8 @@ const TagForm = () => {
             totalFail={totalFail}
           />
         )}
-        {chart === "pie" && (
-          <Piechart
-            x_label={x_label}
-            totalCases={totalCases}
-            totalPass={totalPass}
-            totalFail={totalFail}
-            background1={background1}
-          />
-        )}
+        {chart === "stackedbar" && <StackedBarchart x_label={x_label} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail} background1={background1} /> }
+        </div>
       </div>
 
       {/* <Link to={{

@@ -28,13 +28,13 @@ def release():
     PI = str(request.json["pi"])
     Sprint = str(request.json["sprint"])
     Solution = str(request.json["sol"])
-    Time_Stamp = str(request.json["date"]).replace('-','')
+    # Time_Stamp = str(request.json["date"]).replace('-','')
     # Organization = str(request.form["Organization8"])
     # SRT = str(request.form["SRT"])
     # PI = str(request.form["PI"])
     # Sprint = str(request.form["Sprint"])
     # Solution = str(request.form["Solution"])
-    res = pd.read_sql_query("select Id,Test_Execution_Id,PI,Sprint,Solution_Stack,Total_Test_Cases,Total_Test_Passed,Total_Test_Failed,Time_Stamp from dbo.Report where Organization = '""" + Organization +"""' and SRT = '""" + SRT +"""' and PI = """ + PI +""" and Sprint = '""" + Sprint +"""' and Solution = '""" + Solution +"""' and Time_Stamp like '""" + Time_Stamp +"""%' """ ,conn)
+    res = pd.read_sql_query("select Id,Test_Execution_Id,PI,Sprint,Solution_Stack,Total_Test_Cases,Total_Test_Passed,Total_Test_Failed,Time_Stamp from dbo.Report where Organization = '""" + Organization +"""' and SRT = '""" + SRT +"""' and PI = """ + PI +""" and Sprint = '""" + Sprint +"""' and Solution = '""" + Solution +"""' """ ,conn)
     result = res.to_json(orient = 'records')
     return result
     # global dummy 
@@ -46,15 +46,6 @@ def release():
     # #return redirect(url_for('http://127.0.0.1:5000/release1',data=res))
     # #render_template("front-end\src\Components\App.js",datas =result)
 
-@app.route("/getrelease")
-def getrelease():
-    #global dummy
-    #res = request.args['data']
-    return "ij"
-
-
-
-
 
     
 @app.route("/tag", methods =['POST'])
@@ -63,10 +54,11 @@ def tag():
     Organization = str(request.json["org"])
     SRT = str(request.json["srt"])
     PI = str(request.json["pi"])
+    Sprint = str(request.json["sprint"])
     Tag_Name = str(request.json["tagname"])
     Solution = str(request.json["sol"])
-    Time_Stamp = str(request.json["date"]).replace('-','')
-    res = pd.read_sql_query("SELECT t.Report_Id,r.Solution_Stack,r.Sprint,t.Tag_Name,t.Total_Test_Cases,t.Total_Test_Passed,t.Total_Test_Failed,t.Time_Stamp from dbo.Report r,dbo.Statistics_By_Tag t where r.Time_Stamp=t.Time_Stamp and r.Organization = '""" + Organization +"""' and r.SRT = '""" + SRT +"""' and r.PI = """ + PI +""" and t.Tag_Name = '""" + Tag_Name +"""' and r.Solution = '""" + Solution +"""' and t.Time_Stamp like '""" + Time_Stamp +"""%' """,conn)
+    # Time_Stamp = str(request.json["date"]).replace('-','')
+    res = pd.read_sql_query("SELECT t.Report_Id,r.Solution_Stack,r.Sprint,t.Tag_Name,t.Total_Test_Cases,t.Total_Test_Passed,t.Total_Test_Failed,t.Time_Stamp from dbo.Report r,dbo.Statistics_By_Tag t where r.Time_Stamp=t.Time_Stamp and r.Organization = '""" + Organization +"""' and r.SRT = '""" + SRT +"""' and r.PI = """ + PI +""" and Sprint = '""" + Sprint +"""' and t.Tag_Name = '""" + Tag_Name +"""' and r.Solution = '""" + Solution +"""'  """,conn)
     result = res.to_json(orient = 'records')
     return result
 
