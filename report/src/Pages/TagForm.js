@@ -120,7 +120,6 @@ const TagForm = () => {
     if(org === '' && srt === '' && pi === 0 && sprint === '' && sol === '' && tagname === ''){
       window.alert("Please select a filter before clicking apply !");
     }
-    // try {
     else{
     const resp = await httpClient.post("//localhost:5000/tag", {
       org,
@@ -131,7 +130,14 @@ const TagForm = () => {
       sol,
     });
     console.log(resp.data);
-    setData(resp.data);
+    if(resp.data.length === 0){
+      window.alert("No data to show for the selected filters");
+    
+    }
+    else{
+      setData(resp.data);
+      console.log("Data variable = "+String(data));
+    }
   }
   };
   const Organization = [
@@ -285,6 +291,7 @@ const TagForm = () => {
         <button
           type="button"
           onClick={() => {
+            setClick(true);
             Filter();
           }}
         >
