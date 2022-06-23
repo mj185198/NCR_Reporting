@@ -86,7 +86,7 @@ def compare():
     PI = str(request.json["pi"])
     Solution = str(request.json["sol"])
 
-    res = pd.read_sql_query("select PI,Sprint,sum(Total_Test_Cases) as total, sum(Total_Test_Passed) as totalPass, sum(Total_Test_Failed) as totalFail from dbo.Report where Organization = '""" + Organization +"""' and SRT = '""" + SRT +"""' and PI = """ + PI +"""  and Solution = '""" + Solution +"""'  group by Sprint,PI""",conn)
+    res = pd.read_sql_query("select PI,Sprint,Solution,sum(Total_Test_Cases) as total, sum(Total_Test_Passed) as totalPass, sum(Total_Test_Failed) as totalFail from dbo.Report where Organization = '""" + Organization +"""' and SRT = '""" + SRT +"""' and PI = """ + PI +"""  and Solution = '""" + Solution +"""'  group by Sprint,PI,Solution""",conn)
     result = res.to_json(orient = 'records')
     return result
 
@@ -99,7 +99,7 @@ def tagcompare():
     SRT = str(request.json["srt"])
     PI = str(request.json["pi"])
     Tag_Name = str(request.json["tagname"])
-    res = pd.read_sql_query("SELECT r.PI,r.Sprint,sum(t.Total_Test_Cases) as total, sum(t.Total_Test_Passed) as totalPass, sum(t.Total_Test_Failed) as totalFail from dbo.Report r,dbo.Statistics_By_Tag t where r.Time_Stamp=t.Time_Stamp and r.Organization = '""" + Organization +"""' and r.SRT = '""" + SRT +"""' and r.PI = """ + PI +""" and t.Tag_Name = '""" + Tag_Name +"""' group by PI,Sprint """,conn)
+    res = pd.read_sql_query("SELECT r.PI,r.Sprint,t.Tag_Name,sum(t.Total_Test_Cases) as total, sum(t.Total_Test_Passed) as totalPass, sum(t.Total_Test_Failed) as totalFail from dbo.Report r,dbo.Statistics_By_Tag t where r.Time_Stamp=t.Time_Stamp and r.Organization = '""" + Organization +"""' and r.SRT = '""" + SRT +"""' and r.PI = """ + PI +""" and t.Tag_Name = '""" + Tag_Name +"""' group by r.PI,r.Sprint,t.Tag_Name """,conn)
     result = res.to_json(orient = 'records')
     return result
 

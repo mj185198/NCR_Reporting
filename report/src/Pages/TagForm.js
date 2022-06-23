@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import httpClient from "../httpClient";
 import { Link } from "react-router-dom";
 import TagTable from "../Components/TagTable";
+import CompareTagTable from "../Components/CompareTagTable";
 import Barchart from "../Components/Barchart";
 import Linechart from "../Components/Linechart";
 import StackedBarchart from "../Components/StackedBarchart";
@@ -399,11 +400,11 @@ const TagForm = () => {
         </button>
         <div ref={componentRef}>
             {totalCases.length > 0 && button==="filter" && click === true && chart === "bar" && <Barchart x_label={x_label} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail} /> }
-            {click === true && button==="filter" && chart === "totaltable" && <TagTable data ={data}/>}
+            {click === true && button==="filter" && chart === "tagtable" && <TagTable data ={data}/>}
             {click === true && button==="filter" && chart === "line" && <Linechart x_label={x_label} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail} /> }
             {click === true && button==="filter" && chart === "stackedbar" && <StackedBarchart x_label={x_label} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail} /> } 
             {totalCases.length > 0 && button==="compare" && click === true && chart === "bar" && <Barchart x_label={xlabel} totalCases={total} totalPass={pass} totalFail={fail} /> }
-            {click === true && button==="compare" && chart === "totaltable" && <TagTable compareData ={compareData}/>}
+            {click === true && button==="compare" && chart === "tagtable" && <CompareTagTable compareData ={compareData}/>}
             {click === true && button==="compare" && chart === "line" && <Linechart x_label={xlabel} totalCases={total} totalPass={pass} totalFail={fail} /> }
             {click === true && button==="compare" && chart === "stackedbar" && <StackedBarchart x_label={xlabel} totalCases={total} totalPass={pass} totalFail={fail} /> }
         </div>
