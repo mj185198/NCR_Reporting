@@ -131,6 +131,7 @@ const TagForm = () => {
     });
     console.log(resp.data);
     if(resp.data.length === 0){
+      setData([]);
       window.alert("No data to show for the selected filters");
     
     }
