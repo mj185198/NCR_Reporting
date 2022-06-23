@@ -3,14 +3,11 @@ V 1.2 : End of Week (2 resources)
 V 2.0 : Future Plans
 
 V 1.0 :
--Ask vijay about default graph to show
+
 -Comparisions
 
 V 1.2 :
-Exception Handling
-Make fields in drop down to required and make "Select option" option as invalid 
-(submit shouldn't work when "select option" is selected)
-Search option in dropdown.
+
 
 V 2.0 :
 Automatic fields getter using API call to server and distinct query in server
@@ -28,5 +25,9 @@ Label display for dropdowns.
     - Button positions for export feature to top right
 Put Release&Tag as parent of Form.js (Single page application)
 Stop default rendering of Table Headers
-
+Exception Handling
+Make fields in drop down to required and make "Select option" option as invalid 
+(submit shouldn't work when "select option" is selected)
+Search option in dropdown.
+-Ask vijay about default graph to show
 

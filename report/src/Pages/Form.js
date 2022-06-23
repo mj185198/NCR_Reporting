@@ -1,4 +1,4 @@
-import React, { useState,useRef } from "react";
+import React, { useState,useRef,useEffect } from "react";
 import httpClient from "../httpClient";
 import {Link} from 'react-router-dom';
 import TotalTable from '../Components/TotalTable';
@@ -26,6 +26,12 @@ const Form = () => {
     const [chart, setChart] = useState("bar");
     const [click , setClick] = useState(false);
     const [compareData, setCompareData] = useState([]);
+    const [pi_data, setPIData] = useState([])
+    let PI = [];
+
+
+
+    const PI_URL = "http://127.0.0.1:5000/getPI";
     // const [totalCases, setTotalCases] = useState([]);
     // const [totalPass, setTotalPass] = useState([]);
     // const [totalFail, setTotalFail] = useState([]);
@@ -62,8 +68,22 @@ const Form = () => {
    background1.push('rgba('+r+', '+g+', '+b+', 0.8)');
 
  })
-    
 
+
+
+    // fetch PI data
+    useEffect(() => {setPIData()}, []);
+ useEffect(() => {fetchPIData()}, []);
+  let promise = new Promise(function(fetchPIData){
+      fetch(PI_URL)
+      .then((res) =>res.json())
+      .then((response) => {
+        // console.log(response);
+        setPIData(response);
+      
+      })
+    });
+// console.log(pi_data);
   const export_to_excel = (data, name) => {
     console.log(data);
     if(data.length > 0){
@@ -151,7 +171,8 @@ const Compare = async () => {
       }
       else{
       setData(resp.data);
-      console.log("Data : "+String(data));
+      console.log("Data : ");
+      console.log(data);
       }
     }
 
@@ -163,15 +184,51 @@ const Compare = async () => {
           {id : 1,label: "EAB", value: "EAB"},
                  {id : 1,label: "ICE", value: "ICE"}
                 ]
-        const PI = [
-          {id:0,label: "Select PI", value: ""},
-            { id : 1,label: "21.1", value: 21.1 },
-            { id : 2,label: "21.2", value: 21.2 },
-            { id : 3,label: "21.3", value: 21.3 },
-            { id : 4,label: "21.4", value: 21.4 },
-            { id : 5,label: "22.1", value: 22.1 },
-            { id : 6,label: "22.2", value: 22.2 },
-        ];
+        
+        // PI = [
+        //   {id:0,label: "Select PI", value: ""},
+        //     { id : 1,label: "21.1", value: 21.1 },
+        //     { id : 2,label: "21.2", value: 21.2 },
+        //     { id : 3,label: "21.3", value: 21.3 },
+        //     { id : 4,label: "21.4", value: 21.4 },
+        //     { id : 5,label: "22.1", value: 22.1 },
+        //     { id : 6,label: "22.2", value: 22.2 },
+
+        // ];
+
+        // class piClass{
+        //   id = 0;
+        //   label = "";
+        //   value = 0;
+        //   piClass(id, label , value){
+        //     this.id = id;
+        //     this.label = label;
+        //     this.value = value;
+        //   }
+
+        // };
+        
+        // pi_data["PI"].map((item ,i) => {
+          
+        //   PI.push(item[i]);
+          
+        // })
+        // console.log(pi_data["PI"][1]);
+        // PI.push({ id : 1,label: "21.1", value: 21.1 })
+        // console.log("PI = ");
+        // console.log(PI);
+        // console.log(pi_data["2"]);
+
+        // pi_data.map((item , i ) => {
+        //     PI.push(item["PI"])
+        // });
+
+        console.log("PI data : " );
+        console.log(pi_data);
+
+        // console.log(Object.values(pi_data["PI"]));
+
+
         const Sprint = [
           {id:0,label: "Select Sprint", value: ""},
             { id : 1,label: "S1", value: "S1" },
@@ -190,6 +247,19 @@ const Compare = async () => {
             { id : 5,label: "AE_NDCHOST", value: "AE_NDCHOST" },
             { id : 6,label: "AE_CxTH-ISO", value: "AE_CxTH-ISO" },
         ];
+        // var array = Object.values(pi_data).map(item => pi_data[item]);
+        // console.log("array :");
+        // console.log(array);
+        // console.log(typeof(array));
+
+        var array = [];
+        console.log(pi_data.length);
+        for(var i = 0; i < pi_data.length; i++){
+          // let one_PI = new piClass(i,pi_data[i],pi_data[i]);
+          // let obj = { id : i , label : pi_data["PI"][i], value : pi_data["PI"][i]};
+          // PI.push({ id : i , label : pi_data["PI"][i] , value : pi_data["PI"][i] });
+          console.log(i);
+      }
 
   return (
     <div>
@@ -216,8 +286,8 @@ const Compare = async () => {
             ))}
         </select>
         <select name="pi" id="" onChange={(e)=>setPI(e.target.value)}>
-            {PI.map((PI) => (
-            <option key={PI.label} value={PI.value}>{PI.label}</option>
+            {Object.values(pi_data).map((val) => (
+            <option key={val[3]} value={val[3]}>{val[3]}</option>
             ))}
         </select>
 

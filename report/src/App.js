@@ -5,6 +5,7 @@ import './App.css';
 import Input from "./Pages/Input";
 import Form from "./Pages/Form";
 import TagForm from "./Pages/TagForm";
+import Sample from "./Pages/Sample";
 // import SuiteForm from "./Pages/SuiteForm";
 // import TagStat from "./Pages/TagStat";
 // import TotalStat from "./Pages/TotalStat";
@@ -24,6 +25,7 @@ import TagForm from "./Pages/TagForm";
         <Route path="/" element={<Input/>}/>
         <Route path="/form" element={<Form/>}/>
         <Route path="/tagform" element={<TagForm/>}/> 
+        <Route path="/sample" element={<Sample/>}/>
         {/* <Route path="/suiteform" element = {<SuiteForm/>} /> */}
       </Routes>
     </BrowserRouter>

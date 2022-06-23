@@ -90,6 +90,11 @@ def compare():
     result = res.to_json(orient = 'records')
     return result
 
+@app.route("/getPI")
+def getPI():
+    pi_data = pd.read_sql_query("select distinct PI from dbo.Report where PI != ' ' order by PI", conn)
+    return pi_data.to_json()
+
 @app.route("/tagstat")
 def tag_stat():
     res1 = pd.read_sql_query("select * from dbo.Statistics_By_Tag", conn)
