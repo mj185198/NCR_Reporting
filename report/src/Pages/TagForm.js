@@ -24,21 +24,26 @@ const TagForm = () => {
   const [chart, setChart] = useState("bar");
   const [click, setClick] = useState(false);
   const [compareData, setCompareData] = useState([]);
+  const[button,setButton] = useState("");
 
   var totalCases = [];
   var totalPass = [];
   var totalFail = [];
-  var datetime = [];
   var x_label = [];
-  var solutionstack = [];
-  const background1 = [];
+
+  var total = [];
+  var pass = [];
+  var fail = [];
+  var xlabel = [];
+
+  var background1=[];
+  var background2=[];
+
   data.map((item, i) => {
     {
       totalCases.push(item["Total_Test_Cases"]);
       totalPass.push(item["Total_Test_Passed"]);
       totalFail.push(item["Total_Test_Failed"]);
-      datetime.push(item["Time_Stamp"]);
-      solutionstack.push(item["Solution_Stack"]);
       x_label.push(
         "PI " +
           item["PI"] +
@@ -49,14 +54,26 @@ const TagForm = () => {
           "_" +
           item["Time_Stamp"].slice(4, 8)
       );
-
-      // +" ("+item["Total_Test_Cases"]+")"
     }
     const r = Math.floor(Math.random() * 255);
     const g = Math.floor(Math.random() * 255);
     const b = Math.floor(Math.random() * 255);
     background1.push("rgba(" + r + ", " + g + ", " + b + ", 0.8)");
   });
+
+  compareData.map((item, i) => {
+    {
+   total.push(item["total"])
+   pass.push(item["totalPass"])
+   fail.push(item["totalFail"])
+   xlabel.push("PI "+item["PI"]+"_"+item["Sprint"])
+          
+     }
+     const r = Math.floor(Math.random() * 255);
+     const g = Math.floor(Math.random() * 255);
+     const b = Math.floor(Math.random() * 255);
+     background2.push('rgba('+r+', '+g+', '+b+', 0.8)');
+   })
 
   const export_to_excel = (data, name) => {
     console.log(data);
@@ -75,43 +92,22 @@ const TagForm = () => {
   const Compare = async () => {
     console.log(org, srt, pi, sol);
     // try {
-      if(org === '' && srt === '' && pi === 0 && sol === ''){
+      if(org === '' && srt === '' && pi === 0 && tagname === ''){
         window.alert("Please select a filter before clicking apply !");
       }
       else{
-    const resp = await httpClient.post("//localhost:5000/compare", {
+    const resp = await httpClient.post("//localhost:5000/tagcompare", {
       org,
       srt,
       pi,
-      sol,
+      tagname,
     });
     console.log(resp.data);
-    // console.log("Compare Data : "+resp.data);
 
     setCompareData(resp.data);
   }
     // console.log("Compare Data : "+compareData);
-    // compareData.map((item, i) => {
-    //   {
-    //  totalCases.push(item["total"])
-    //  totalPass.push(item["totalPass"])
-    //  totalFail.push(item["totalFail"])
-    //  datetime.push(item["Time_Stamp"])
-    //  solutionstack.push(item["Solution_Stack"])
-    //  id.push(item["Id"])
-    //         setCompareSprint(() => {
-    //           compareSprint.totalCases.push(item["total"]);
-    //           compareSprint.totalPass.push(item["totalPass"]);
-    //           compareSprint.totalFail.push(item["totalFail"]);
-    //         })
-    //         //  x_label.push("PI "+item["PI"]+"_"+item["Sprint"])
-    //         setX_label("PI ");
-    //    }
-    //    const r = Math.floor(Math.random() * 255);
-    //    const g = Math.floor(Math.random() * 255);
-    //    const b = Math.floor(Math.random() * 255);
-    //    background2.push('rgba('+r+', '+g+', '+b+', 0.8)');
-    //  })
+    
   };
 
   const Filter = async () => {
@@ -166,6 +162,67 @@ const TagForm = () => {
     { id: 4, label: "Withdrawal", value: "Withdrawal" },
     { id: 5, label: "CashPayment", value: "CashPayment" },
     { id: 6, label: "EndDeposit", value: "EndDeposit" },
+    { id: 7, label: "Broadbased", value: "Broadbased" },
+    { id: 8, label: "DCCVISA", value: "DCCVISA" },
+    { id: 9, label: "MultiLanguage", value: "MultiLanguage" },
+    { id: 10, label: "DCCGood", value: "DCCGood" },
+    { id: 11, label: "Good", value: "Good" },
+    { id: 12, label: "ESSCashD", value: "ESSCashD" },
+    { id: 13, label: "ChainingDisable", value: "ChainingDisable" },
+    { id: 14, label: "FeeOverride", value: "FeeOverride" },
+    { id: 15, label: "Mini Statement Good", value: "Mini Statement Good" },
+    { id: 16, label: "Grouping", value: "Grouping" },
+    { id: 17, label: "WithoutReceipt", value: "WithoutReceipt" },
+    { id: 18, label: "ReciptOption4", value: "ReciptOption4" },
+    { id: 19, label: "OtherAmount", value: "OtherAmount" },
+    { id: 20, label: "Pinchange", value: "Pinchange" },
+    { id: 21, label: "BillMix", value: "BillMix" },
+    { id: 22, label: "MiniStatementMultiplePages", value: "MiniStatementMultiplePages" },
+    { id: 23, label: "FastCash", value: "FastCash" },
+    { id: 24, label: "Unchained", value: "Unchained" },
+    { id: 25, label: "Deletepreferences", value: "Deletepreferences" },
+    { id: 26, label: "ExistingCustomer", value: "ExistingCustomer" },
+    { id: 27, label: "ChangePin", value: "ChangePin" },
+    { id: 28, label: "Preferences", value: "Preferences" },
+    { id: 29, label: "MixedMedia", value: "MixedMedia" },
+    { id: 30, label: "Accounts", value: "Accounts" },
+    { id: 31, label: "DepositContinuation", value: "DepositContinuation" },
+    { id: 32, label: "EnhancedCashDeposit", value: "EnhancedCashDeposit" },
+    { id: 33, label: "MiniStatement", value: "MiniStatement" },
+    { id: 34, label: "CXM", value: "CXM" },
+    { id: 35, label: "Generic Transaction", value: "Generic Transaction" },
+    { id: 36, label: "EnhancedDeposit", value: "EnhancedDeposit" },
+    { id: 37, label: "Targeted marketing", value: "Targeted marketing" },
+    { id: 38, label: "Transfer", value: "Transfer" },
+    { id: 39, label: "CxM_Prferences", value: "CxM_Prferences" },
+    { id: 40, label: "OAR", value: "OAR" },
+    { id: 41, label: "MixedMediaDeposit", value: "MixedMediaDeposit" },
+    { id: 42, label: "CashDeposit", value: "CashDeposit" },
+    { id: 43, label: "HostDenial", value: "HostDenial" },
+    { id: 44, label: "ESSCashDep", value: "ESSCashDep" },
+    { id: 45, label: "Withdrawal Fee timeout", value: "Withdrawal Fee timeout" },
+    { id: 46, label: "NonGrouping", value: "NonGrouping" },
+    { id: 47, label: "GenericTransaction", value: "GenericTransaction" },
+    { id: 48, label: "DynamicTextVG", value: "DynamicTextVG" },
+    { id: 49, label: "UserError", value: "UserError" },
+    { id: 50, label: "TargetMarketing", value: "TargetMarketing" },
+    { id: 51, label: "ESSAccDnld", value: "ESSAccDnld" },
+    { id: 52, label: "NDCPreferences", value: "NDCPreferences" },
+    { id: 53, label: "Chained", value: "Chained" },
+    { id: 54, label: "Sanity", value: "Sanity" },
+    { id: 55, label: "Regression", value: "Regression" },
+    { id: 56, label: "Progressive", value: "Progressive" },
+    { id: 57, label: "DCC", value: "DCC" },
+    { id: 58, label: "Denial", value: "Denial" },
+    { id: 59, label: "Electronicpayment", value: "Electronicpayment" },
+    { id: 60, label: "Balance", value: "Balance" },
+    { id: 61, label: "EMV", value: "EMV" },
+    { id: 62, label: "AccDnld", value: "AccDnld" },
+    { id: 63, label: "CardBeforeCash", value: "CardBeforeCash" },
+    { id: 64, label: "MultiplePages", value: "MultiplePages" },
+    { id: 65, label: "Chaining", value: "Chaining" },
+    { id: 66, label: "CheckPayment", value: "CheckPayment" },
+
   ];
   const Sprint = [
     { id: 0, label: "Select Sprint", value: "" },
@@ -291,6 +348,7 @@ const TagForm = () => {
         <button
           type="button"
           onClick={() => {
+            setButton("filter");
             setClick(true);
             Filter();
           }}
@@ -298,15 +356,16 @@ const TagForm = () => {
           Apply
         </button>
 
-        {/* <button
+        <button
           type="button"
           onClick={() => {
+            setButton("compare");
             setClick(true);
             Compare();
           }}
         >
           Compare by sprint
-        </button> */}
+        </button>
       </form>
 
       <div>
@@ -339,33 +398,14 @@ const TagForm = () => {
           StackedBar Chart
         </button>
         <div ref={componentRef}>
-          {totalCases.length > 0 && click === true && chart === "bar" && (
-            <Barchart
-              x_label={x_label}
-              totalCases={totalCases}
-              totalPass={totalPass}
-              totalFail={totalFail}
-            />
-          )}
-          {click === true && chart === "tagtable" && <TagTable data={data} />}
-
-          {click === true && chart === "line" && (
-            <Linechart
-              x_label={x_label}
-              totalCases={totalCases}
-              totalPass={totalPass}
-              totalFail={totalFail}
-            />
-          )}
-          {click === true && chart === "stackedbar" && (
-            <StackedBarchart
-              x_label={x_label}
-              totalCases={totalCases}
-              totalPass={totalPass}
-              totalFail={totalFail}
-              background1={background1}
-            />
-          )}
+            {totalCases.length > 0 && button==="filter" && click === true && chart === "bar" && <Barchart x_label={x_label} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail} /> }
+            {click === true && button==="filter" && chart === "totaltable" && <TagTable data ={data}/>}
+            {click === true && button==="filter" && chart === "line" && <Linechart x_label={x_label} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail} /> }
+            {click === true && button==="filter" && chart === "stackedbar" && <StackedBarchart x_label={x_label} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail} /> } 
+            {totalCases.length > 0 && button==="compare" && click === true && chart === "bar" && <Barchart x_label={xlabel} totalCases={total} totalPass={pass} totalFail={fail} /> }
+            {click === true && button==="compare" && chart === "totaltable" && <TagTable compareData ={compareData}/>}
+            {click === true && button==="compare" && chart === "line" && <Linechart x_label={xlabel} totalCases={total} totalPass={pass} totalFail={fail} /> }
+            {click === true && button==="compare" && chart === "stackedbar" && <StackedBarchart x_label={xlabel} totalCases={total} totalPass={pass} totalFail={fail} /> }
         </div>
       </div>
 
