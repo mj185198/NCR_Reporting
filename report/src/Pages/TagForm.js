@@ -25,6 +25,7 @@ const TagForm = () => {
   const [sol, setSol] = useState("");
   const [data, setData] = useState([]);
   const [chart, setChart] = useState("bar");
+  const [click, setClick] = useState(false);
 
   var totalCases = [];
   var totalPass = [];
@@ -52,12 +53,17 @@ const TagForm = () => {
 
   const export_to_excel = (data, name) => {
     console.log(data);
+    if(data.length > 0){
     const worksheet = xlsx.utils.json_to_sheet(data);
     const workbook = xlsx.utils.book_new();
     xlsx.utils.book_append_sheet(workbook, worksheet, name);
     xlsx.write(workbook, {bookType : 'xlsx', type : "buffer"});
     xlsx.write(workbook,{bookType:"xlsx",type:"binary"});
     xlsx.writeFile(workbook,name+".xlsx");
+    }
+    else{
+      window.alert("Empty data cannot be exported !");
+    }
 
 }
 
@@ -140,7 +146,7 @@ const TagForm = () => {
           }}
         >
           {Organization.map((Organization) => (
-            <option key={Organization.id} value={Organization.value}>
+            <option key={Organization.label} value={Organization.value}>
               {Organization.label}
             </option>
           ))}
@@ -153,7 +159,7 @@ const TagForm = () => {
           required
         >
           {SRT.map((SRT) => (
-            <option key={SRT.id} value={SRT.value}>
+            <option key={SRT.label} value={SRT.value}>
               {SRT.label}
             </option>
           ))}
@@ -165,7 +171,7 @@ const TagForm = () => {
           required
         >
           {PI.map((PI) => (
-            <option key={PI.id} value={PI.value}>
+            <option key={PI.label} value={PI.value}>
               {PI.label}
             </option>
           ))}
@@ -176,7 +182,7 @@ const TagForm = () => {
           console.log(sprint);
         }
         }>{Sprint.map((Sprint) => (
-          <option key={Sprint.id} value={Sprint.value}>{Sprint.label}</option>
+          <option key={Sprint.label} value={Sprint.value}>{Sprint.label}</option>
           ))}
 
       </select>
@@ -190,7 +196,7 @@ const TagForm = () => {
           required
         >
           {Tagname.map((Tagname) => (
-            <option key={Tagname.id} value={Tagname.value}>
+            <option key={Tagname.label} value={Tagname.value}>
               {Tagname.label}
             </option>
           ))}
@@ -206,7 +212,7 @@ const TagForm = () => {
           required
         >
           {Solution.map((Solution) => (
-            <option key={Solution.id} value={Solution.value}>
+            <option key={Solution.label} value={Solution.value}>
               {Solution.label}
             </option>
           ))}
@@ -246,7 +252,7 @@ const TagForm = () => {
         </button>
         <button onClick={() => {setChart("stackedbar")}}>StackedBar Chart</button>
         <div ref = {componentRef}>
-        {chart === "bar" && (
+        {click === true && chart === "bar" && (
           <Barchart
             x_label={x_label}
             totalCases={totalCases}
@@ -254,9 +260,9 @@ const TagForm = () => {
             totalFail={totalFail}
           />
         )}
-        {chart === "tagtable" && <TagTable data={data} />}
+        {click === true && chart === "tagtable" && <TagTable data={data} />}
        
-        {chart === "line" && (
+        {click === true && chart === "line" && (
           <Linechart
             x_label={x_label}
             totalCases={totalCases}
@@ -264,7 +270,7 @@ const TagForm = () => {
             totalFail={totalFail}
           />
         )}
-        {chart === "stackedbar" && <StackedBarchart x_label={x_label} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail} background1={background1} /> }
+        {click === true && chart === "stackedbar" && <StackedBarchart x_label={x_label} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail} background1={background1} /> }
         </div>
       </div>
 

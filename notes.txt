@@ -3,8 +3,8 @@ V 1.2 : End of Week (2 resources)
 V 2.0 : Future Plans
 
 V 1.0 :
-Stop default rendering of Table Headers
-Comparisions
+-Ask vijay about default graph to show
+-Comparisions
 
 V 1.2 :
 Exception Handling
@@ -27,5 +27,6 @@ Label display for dropdowns.
  UI/UX. (Basic) : 
     - Button positions for export feature to top right
 Put Release&Tag as parent of Form.js (Single page application)
+Stop default rendering of Table Headers
 
 

@@ -22,21 +22,28 @@ conn = pyodbc.connect('DRIVER={SQL Server};SERVER='+server+';DATABASE='+database
 
 @app.route("/release", methods=['POST'])
 def release():
-    cur = conn.cursor()
-    Organization = str(request.json["org"])
-    SRT = str(request.json["srt"])
-    PI = str(request.json["pi"])
-    Sprint = str(request.json["sprint"])
-    Solution = str(request.json["sol"])
-    # Time_Stamp = str(request.json["date"]).replace('-','')
-    # Organization = str(request.form["Organization8"])
-    # SRT = str(request.form["SRT"])
-    # PI = str(request.form["PI"])
-    # Sprint = str(request.form["Sprint"])
-    # Solution = str(request.form["Solution"])
-    res = pd.read_sql_query("select Id,Test_Execution_Id,PI,Sprint,Solution_Stack,Total_Test_Cases,Total_Test_Passed,Total_Test_Failed,Time_Stamp from dbo.Report where Organization = '""" + Organization +"""' and SRT = '""" + SRT +"""' and PI = """ + PI +""" and Sprint = '""" + Sprint +"""' and Solution = '""" + Solution +"""' """ ,conn)
-    result = res.to_json(orient = 'records')
-    return result
+    try:
+        cur = conn.cursor()
+        Organization = str(request.json["org"])
+        SRT = str(request.json["srt"])
+        PI = str(request.json["pi"])
+        Sprint = str(request.json["sprint"])
+        Solution = str(request.json["sol"])
+        # Time_Stamp = str(request.json["date"]).replace('-','')
+        # Organization = str(request.form["Organization8"])
+        # SRT = str(request.form["SRT"])
+        # PI = str(request.form["PI"])
+        # Sprint = str(request.form["Sprint"])
+        # Solution = str(request.form["Solution"])
+        res = pd.read_sql_query("select Id,Test_Execution_Id,PI,Sprint,Solution_Stack,Total_Test_Cases,Total_Test_Passed,Total_Test_Failed,Time_Stamp from dbo.Report where Organization = '""" + Organization +"""' and SRT = '""" + SRT +"""' and PI = """ + PI +""" and Sprint = '""" + Sprint +"""' and Solution = '""" + Solution +"""' """ ,conn)
+        result = res.to_json(orient = 'records')
+        # print("Result length : "+format(len(result)))
+        # if len(result) > 0:
+        return result   
+        # else:
+        #     return "Empty data"
+    except :
+        return "invalid response"
     # global dummy 
     # dummy = result
     #return "200"
@@ -50,18 +57,20 @@ def release():
     
 @app.route("/tag", methods =['POST'])
 def tag():
-    cur = conn.cursor()
-    Organization = str(request.json["org"])
-    SRT = str(request.json["srt"])
-    PI = str(request.json["pi"])
-    Sprint = str(request.json["sprint"])
-    Tag_Name = str(request.json["tagname"])
-    Solution = str(request.json["sol"])
-    # Time_Stamp = str(request.json["date"]).replace('-','')
-    res = pd.read_sql_query("SELECT t.Report_Id,r.Solution_Stack,r.PI,r.Sprint,t.Tag_Name,t.Total_Test_Cases,t.Total_Test_Passed,t.Total_Test_Failed,t.Time_Stamp,r.Test_Execution_Id from dbo.Report r,dbo.Statistics_By_Tag t where r.Time_Stamp=t.Time_Stamp and r.Organization = '""" + Organization +"""' and r.SRT = '""" + SRT +"""' and r.PI = """ + PI +""" and Sprint = '""" + Sprint +"""' and t.Tag_Name = '""" + Tag_Name +"""' and r.Solution = '""" + Solution +"""'  """,conn)
-    result = res.to_json(orient = 'records')
-    return result
-
+    try:
+        cur = conn.cursor()
+        Organization = str(request.json["org"])
+        SRT = str(request.json["srt"])
+        PI = str(request.json["pi"])
+        Sprint = str(request.json["sprint"])
+        Tag_Name = str(request.json["tagname"])
+        Solution = str(request.json["sol"])
+        # Time_Stamp = str(request.json["date"]).replace('-','')
+        res = pd.read_sql_query("SELECT t.Report_Id,r.Solution_Stack,r.PI,r.Sprint,t.Tag_Name,t.Total_Test_Cases,t.Total_Test_Passed,t.Total_Test_Failed,t.Time_Stamp,r.Test_Execution_Id from dbo.Report r,dbo.Statistics_By_Tag t where r.Time_Stamp=t.Time_Stamp and r.Organization = '""" + Organization +"""' and r.SRT = '""" + SRT +"""' and r.PI = """ + PI +""" and Sprint = '""" + Sprint +"""' and t.Tag_Name = '""" + Tag_Name +"""' and r.Solution = '""" + Solution +"""'  """,conn)
+        result = res.to_json(orient = 'records')
+        return result
+    except :
+        return "invalid request"
 
 @app.route("/totalstat")
 def total_stat():
@@ -69,6 +78,17 @@ def total_stat():
     result = res.to_json(orient='records')  
     return result
 
+@app.route("/compare", methods = ['POST'])
+def compare():
+    cur = conn.cursor()
+    Organization = str(request.json["org"])
+    SRT = str(request.json["srt"])
+    PI = str(request.json["pi"])
+    Solution = str(request.json["sol"])
+
+    res = pd.read_sql_query("select PI,Sprint,sum(Total_Test_Cases) as total, sum(Total_Test_Passed) as totalPass, sum(Total_Test_Failed) as totalFail from dbo.Report where Organization = '""" + Organization +"""' and SRT = '""" + SRT +"""' and PI = """ + PI +"""  and Solution = '""" + Solution +"""'  group by Sprint,PI""",conn)
+    result = res.to_json(orient = 'records')
+    return result
 
 @app.route("/tagstat")
 def tag_stat():

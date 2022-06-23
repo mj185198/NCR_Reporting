@@ -24,43 +24,108 @@ const Form = () => {
     const [sol,setSol]=useState('');
     const [data, setData]=useState([]);
     const [chart, setChart] = useState("bar");
-    
+    const [click , setClick] = useState(false);
+    const [compareData, setCompareData] = useState([]);
+    // const [totalCases, setTotalCases] = useState([]);
+    // const [totalPass, setTotalPass] = useState([]);
+    // const [totalFail, setTotalFail] = useState([]);
+    // const [x_label, setX_label] = useState([]);
+
+    const background1 = [];
+    const background2 = [];
     
     var totalCases = [];
     var totalPass = [];
     var totalFail = [];
-    var datetime = [];
-    var id = [];
+    // var datetime = [];
+    // var id = [];
     var x_label = [];
-    var solutionstack = [];
-    const background1 = [];
-    data.map((item, i) => {
-       {
-          totalCases.push(item["Total_Test_Cases"])
-          totalPass.push(item["Total_Test_Passed"])
-          totalFail.push(item["Total_Test_Failed"])
-          datetime.push(item["Time_Stamp"])
-          solutionstack.push(item["Solution_Stack"])
-          id.push(item["Id"])
-          x_label.push("PI "+item["PI"]+"_"+item["Sprint"]+"_"+item["Test_Execution_Id"]+"_"+item["Time_Stamp"].slice(4,8))
-    }
-    const r = Math.floor(Math.random() * 255);
-    const g = Math.floor(Math.random() * 255);
-    const b = Math.floor(Math.random() * 255);
-    background1.push('rgba('+r+', '+g+', '+b+', 0.8)');
-  })
+    // var solutionstack = [];
 
+    data.map((item, i) => {
+      {
+         totalCases.push(item["Total_Test_Cases"]);
+         totalPass.push(item["Total_Test_Passed"]);
+         totalFail.push(item["Total_Test_Failed"]);
+         // datetime.push(item["Time_Stamp"])
+         // solutionstack.push(item["Solution_Stack"])
+         // id.push(item["Id"])
+         x_label.push("PI "+item["PI"]+"_"+item["Sprint"]+"_"+item["Test_Execution_Id"]+"_"+item["Time_Stamp"].slice(4,8))
+         // setTotalCases(item["Total_Test_Cases"]);
+         // setTotalPass(item["Total_Test_Passed"]);
+         // setTotalFail(item["Total_Test_Failed"]);
+         // setX_label("PI "+item["PI"]+"_"+item["Sprint"]+"_"+item["Test_Execution_Id"]+"_"+item["Time_Stamp"].slice(4,8));
+   }
+   const r = Math.floor(Math.random() * 255);
+   const g = Math.floor(Math.random() * 255);
+   const b = Math.floor(Math.random() * 255);
+   background1.push('rgba('+r+', '+g+', '+b+', 0.8)');
+
+ })
+    
 
   const export_to_excel = (data, name) => {
     console.log(data);
+    if(data.length > 0){
     const worksheet = xlsx.utils.json_to_sheet(data);
     const workbook = xlsx.utils.book_new();
     xlsx.utils.book_append_sheet(workbook, worksheet, name);
     xlsx.write(workbook, {bookType : 'xlsx', type : "buffer"});
     xlsx.write(workbook,{bookType:"xlsx",type:"binary"});
     xlsx.writeFile(workbook,name+".xlsx");
+    }
+    else{
+      window.alert("Empty data cannot be exported !");
+    }
 
 }
+
+const [compareSprint, setCompareSprint] = useState( {
+  totalCases : [],
+  totalPass : [],
+  totalFail : [],
+})
+
+const Compare = async () => {
+  console.log(org,srt,pi,sol);
+  // try {
+    const resp = await httpClient.post("//localhost:5000/compare", {
+      org,
+      srt,
+      pi,
+      sol,
+    });
+    console.log(resp.data);
+    // console.log("Compare Data : "+resp.data);
+
+    setCompareData(resp.data);
+    // console.log("Compare Data : "+compareData);
+    // compareData.map((item, i) => {
+    //   {
+        //  totalCases.push(item["total"])
+        //  totalPass.push(item["totalPass"])
+        //  totalFail.push(item["totalFail"])
+        //  datetime.push(item["Time_Stamp"])
+        //  solutionstack.push(item["Solution_Stack"])
+        //  id.push(item["Id"])
+//         setCompareSprint(() => {
+//           compareSprint.totalCases.push(item["total"]);
+//           compareSprint.totalPass.push(item["totalPass"]);
+//           compareSprint.totalFail.push(item["totalFail"]);
+//         })
+//         //  x_label.push("PI "+item["PI"]+"_"+item["Sprint"])
+//         setX_label("PI ");
+//    }
+//    const r = Math.floor(Math.random() * 255);
+//    const g = Math.floor(Math.random() * 255);
+//    const b = Math.floor(Math.random() * 255);
+//    background2.push('rgba('+r+', '+g+', '+b+', 0.8)');
+//  })
+
+};
+
+//Filter
+
 
   const Filter = async () => {
     console.log(org,srt,pi,sprint,sol);
@@ -74,6 +139,9 @@ const Form = () => {
       });
       console.log(resp.data);
       setData(resp.data);
+      console.log("Data : "+data);
+   
+
   };
   const Organization = [ {id:0,label: "Select Organization", value: ""},
     {id : 1,label: "Banking Core", value: "Banking Core"}]
@@ -123,19 +191,19 @@ const Form = () => {
           console.log(org);
         }} >
             {Organization.map((Organization) => (
-          <option key={Organization.id} value={Organization.value}>{Organization.label}</option>
+          <option key={Organization.label} value={Organization.value}>{Organization.label}</option>
 
           ))}
         </select>
 
         <select name="srt" id="" onChange={(e)=>setSRT(e.target.value)}>
             {SRT.map((SRT) => (
-            <option key={SRT.id} value={SRT.value}>{SRT.label}</option>
+            <option key={SRT.label} value={SRT.value}>{SRT.label}</option>
             ))}
         </select>
         <select name="pi" id="" onChange={(e)=>setPI(e.target.value)}>
             {PI.map((PI) => (
-            <option key={PI.id} value={PI.value}>{PI.label}</option>
+            <option key={PI.label} value={PI.value}>{PI.label}</option>
             ))}
         </select>
 
@@ -145,7 +213,7 @@ const Form = () => {
         }
         }>
             {Sprint.map((Sprint) => (
-            <option key={Sprint.id} value={Sprint.value}>{Sprint.label}</option>
+            <option key={Sprint.label} value={Sprint.value}>{Sprint.label}</option>
             ))}
 
         </select>
@@ -155,11 +223,18 @@ const Form = () => {
           console.log(sol);
         }} >
             {Solution.map((Solution) => (
-            <option key={Solution.id} value={Solution.value}>{Solution.label}</option>
+            <option key={Solution.label} value={Solution.value}>{Solution.label}</option>
         ))}
         </select>
-        <button type="button" onClick={() => Filter()}>
+        <button type="button" onClick={() => {
+          setClick(true);
+          Filter()}}>
           Apply
+        </button>
+        <button type="button" onClick={() => {
+          setClick(true);
+          Compare()}}>
+          Compare
         </button>
 
       </form>
@@ -170,10 +245,10 @@ const Form = () => {
             <button onClick={() => {setChart("line")}}>Line Chart</button>
             <button onClick={() => {setChart("stackedbar")}}>StackedBar Chart</button>
             <div ref = {componentRef}>
-            {chart === "bar" && <Barchart x_label={x_label} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail} /> }
-            {chart === "totaltable" && <TotalTable data ={data}/>}
-            {chart === "line" && <Linechart x_label={x_label} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail} /> }
-            {chart === "stackedbar" && <StackedBarchart x_label={x_label} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail} background1={background1} /> }
+            {click === true && chart === "bar" && <Barchart x_label={x_label} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail} /> }
+            {click === true && chart === "totaltable" && <TotalTable data ={data}/>}
+            {click === true && chart === "line" && <Linechart x_label={x_label} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail} /> }
+            {click === true && chart === "stackedbar" && <StackedBarchart x_label={x_label} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail} background1={background1} /> }
             </div>
     </div>
 
