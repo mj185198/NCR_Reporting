@@ -1,18 +1,15 @@
-import React, { useState,useRef } from "react";
+import React, { useState, useRef } from "react";
 import httpClient from "../httpClient";
 import { Link } from "react-router-dom";
 import TagTable from "../Components/TagTable";
 import Barchart from "../Components/Barchart";
 import Linechart from "../Components/Linechart";
 import StackedBarchart from "../Components/StackedBarchart";
-import {useReactToPrint} from "react-to-print";
+import { useReactToPrint } from "react-to-print";
 
-
-const xlsx = require('xlsx');
-
+const xlsx = require("xlsx");
 
 const TagForm = () => {
-
   const componentRef = useRef();
   const handlePrint = useReactToPrint({
     content: () => componentRef.current,
@@ -20,7 +17,7 @@ const TagForm = () => {
   const [org, setOrg] = useState("");
   const [srt, setSRT] = useState("");
   const [pi, setPI] = useState(0);
-  const [sprint,setSprint]=useState('');
+  const [sprint, setSprint] = useState("");
   const [tagname, setTagname] = useState("");
   const [sol, setSol] = useState("");
   const [data, setData] = useState([]);
@@ -42,8 +39,17 @@ const TagForm = () => {
       totalFail.push(item["Total_Test_Failed"]);
       datetime.push(item["Time_Stamp"]);
       solutionstack.push(item["Solution_Stack"]);
-      x_label.push("PI "+item["PI"]+"_"+item["Sprint"]+"_"+item["Test_Execution_Id"]+"_"+item["Time_Stamp"].slice(4,8) );
-      
+      x_label.push(
+        "PI " +
+          item["PI"] +
+          "_" +
+          item["Sprint"] +
+          "_" +
+          item["Test_Execution_Id"] +
+          "_" +
+          item["Time_Stamp"].slice(4, 8)
+      );
+
       // +" ("+item["Total_Test_Cases"]+")"
     }
     const r = Math.floor(Math.random() * 255);
@@ -54,23 +60,21 @@ const TagForm = () => {
 
   const export_to_excel = (data, name) => {
     console.log(data);
-    if(data.length > 0){
-    const worksheet = xlsx.utils.json_to_sheet(data);
-    const workbook = xlsx.utils.book_new();
-    xlsx.utils.book_append_sheet(workbook, worksheet, name);
-    xlsx.write(workbook, {bookType : 'xlsx', type : "buffer"});
-    xlsx.write(workbook,{bookType:"xlsx",type:"binary"});
-    xlsx.writeFile(workbook,name+".xlsx");
-    }
-    else{
+    if (data.length > 0) {
+      const worksheet = xlsx.utils.json_to_sheet(data);
+      const workbook = xlsx.utils.book_new();
+      xlsx.utils.book_append_sheet(workbook, worksheet, name);
+      xlsx.write(workbook, { bookType: "xlsx", type: "buffer" });
+      xlsx.write(workbook, { bookType: "xlsx", type: "binary" });
+      xlsx.writeFile(workbook, name + ".xlsx");
+    } else {
       window.alert("Empty data cannot be exported !");
     }
+  };
 
-}
-
-const Compare = async () => {
-  console.log(org,srt,pi,sol);
-  // try {
+  const Compare = async () => {
+    console.log(org, srt, pi, sol);
+    // try {
     const resp = await httpClient.post("//localhost:5000/compare", {
       org,
       srt,
@@ -84,27 +88,26 @@ const Compare = async () => {
     // console.log("Compare Data : "+compareData);
     // compareData.map((item, i) => {
     //   {
-        //  totalCases.push(item["total"])
-        //  totalPass.push(item["totalPass"])
-        //  totalFail.push(item["totalFail"])
-        //  datetime.push(item["Time_Stamp"])
-        //  solutionstack.push(item["Solution_Stack"])
-        //  id.push(item["Id"])
-//         setCompareSprint(() => {
-//           compareSprint.totalCases.push(item["total"]);
-//           compareSprint.totalPass.push(item["totalPass"]);
-//           compareSprint.totalFail.push(item["totalFail"]);
-//         })
-//         //  x_label.push("PI "+item["PI"]+"_"+item["Sprint"])
-//         setX_label("PI ");
-//    }
-//    const r = Math.floor(Math.random() * 255);
-//    const g = Math.floor(Math.random() * 255);
-//    const b = Math.floor(Math.random() * 255);
-//    background2.push('rgba('+r+', '+g+', '+b+', 0.8)');
-//  })
-
-};
+    //  totalCases.push(item["total"])
+    //  totalPass.push(item["totalPass"])
+    //  totalFail.push(item["totalFail"])
+    //  datetime.push(item["Time_Stamp"])
+    //  solutionstack.push(item["Solution_Stack"])
+    //  id.push(item["Id"])
+    //         setCompareSprint(() => {
+    //           compareSprint.totalCases.push(item["total"]);
+    //           compareSprint.totalPass.push(item["totalPass"]);
+    //           compareSprint.totalFail.push(item["totalFail"]);
+    //         })
+    //         //  x_label.push("PI "+item["PI"]+"_"+item["Sprint"])
+    //         setX_label("PI ");
+    //    }
+    //    const r = Math.floor(Math.random() * 255);
+    //    const g = Math.floor(Math.random() * 255);
+    //    const b = Math.floor(Math.random() * 255);
+    //    background2.push('rgba('+r+', '+g+', '+b+', 0.8)');
+    //  })
+  };
 
   const Filter = async () => {
     console.log(org, srt, pi, tagname, sol);
@@ -148,13 +151,13 @@ const Compare = async () => {
     { id: 6, label: "EndDeposit", value: "EndDeposit" },
   ];
   const Sprint = [
-    {id:0,label: "Select Sprint", value: ""},
-      { id : 1,label: "S1", value: "S1" },
-      { id : 2,label: "S2", value: "S2" },
-      { id : 3,label: "S3", value: "S3" },
-      { id : 4,label: "S4", value: "S4" },
-      { id : 5,label: "S5", value: "S5" },
-      { id : 6,label: "S6", value: "S6" },
+    { id: 0, label: "Select Sprint", value: "" },
+    { id: 1, label: "S1", value: "S1" },
+    { id: 2, label: "S2", value: "S2" },
+    { id: 3, label: "S3", value: "S3" },
+    { id: 4, label: "S4", value: "S4" },
+    { id: 5, label: "S5", value: "S5" },
+    { id: 6, label: "S6", value: "S6" },
   ];
   const Solution = [
     { id: 0, label: "Select Solution", value: "" },
@@ -168,10 +171,17 @@ const Compare = async () => {
 
   return (
     <div>
-      <h2 style={{textAlign:"center"}}>Tag-wise Report</h2>
+      <h2 style={{ textAlign: "center" }}>Tag-wise Report</h2>
       <div className="print-button">
-          <button style={{float: "right"}} onClick={handlePrint}>Export to PDF</button>
-          <button style={{float: "right"}} onClick={() => export_to_excel(data,pi+"_"+sprint+"_"+sol)}>Export to Excel</button>
+        <button style={{ float: "right" }} onClick={handlePrint}>
+          Export to PDF
+        </button>
+        <button
+          style={{ float: "right" }}
+          onClick={() => export_to_excel(data, pi + "_" + sprint + "_" + sol)}
+        >
+          Export to Excel
+        </button>
       </div>
       <h3>Filter Options</h3>
       <form>
@@ -216,15 +226,20 @@ const Compare = async () => {
           ))}
         </select>
 
-        <select name="sprint" id="" onChange={(e)=>{
-          setSprint(e.target.value);
-          console.log(sprint);
-        }
-        }>{Sprint.map((Sprint) => (
-          <option key={Sprint.label} value={Sprint.value}>{Sprint.label}</option>
+        <select
+          name="sprint"
+          id=""
+          onChange={(e) => {
+            setSprint(e.target.value);
+            console.log(sprint);
+          }}
+        >
+          {Sprint.map((Sprint) => (
+            <option key={Sprint.label} value={Sprint.value}>
+              {Sprint.label}
+            </option>
           ))}
-
-      </select>
+        </select>
 
         <select
           name="tagname"
@@ -265,15 +280,18 @@ const Compare = async () => {
           Apply
         </button>
 
-        <button type="button" onClick={() => {
-          setClick(true);
-          Compare()}}>
+        <button
+          type="button"
+          onClick={() => {
+            setClick(true);
+            Compare();
+          }}
+        >
           Compare by sprint
         </button>
       </form>
 
       <div>
-        
         <button
           onClick={() => {
             setChart("bar");
@@ -295,27 +313,41 @@ const Compare = async () => {
         >
           Line Chart
         </button>
-        <button onClick={() => {setChart("stackedbar")}}>StackedBar Chart</button>
-        <div ref = {componentRef}>
-        {click === true && chart === "bar" && (
-          <Barchart
-            x_label={x_label}
-            totalCases={totalCases}
-            totalPass={totalPass}
-            totalFail={totalFail}
-          />
-        )}
-        {click === true && chart === "tagtable" && <TagTable data={data} />}
-       
-        {click === true && chart === "line" && (
-          <Linechart
-            x_label={x_label}
-            totalCases={totalCases}
-            totalPass={totalPass}
-            totalFail={totalFail}
-          />
-        )}
-        {click === true && chart === "stackedbar" && <StackedBarchart x_label={x_label} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail} background1={background1} /> }
+        <button
+          onClick={() => {
+            setChart("stackedbar");
+          }}
+        >
+          StackedBar Chart
+        </button>
+        <div ref={componentRef}>
+          {click === true && chart === "bar" && (
+            <Barchart
+              x_label={x_label}
+              totalCases={totalCases}
+              totalPass={totalPass}
+              totalFail={totalFail}
+            />
+          )}
+          {click === true && chart === "tagtable" && <TagTable data={data} />}
+
+          {click === true && chart === "line" && (
+            <Linechart
+              x_label={x_label}
+              totalCases={totalCases}
+              totalPass={totalPass}
+              totalFail={totalFail}
+            />
+          )}
+          {click === true && chart === "stackedbar" && (
+            <StackedBarchart
+              x_label={x_label}
+              totalCases={totalCases}
+              totalPass={totalPass}
+              totalFail={totalFail}
+              background1={background1}
+            />
+          )}
         </div>
       </div>
 
