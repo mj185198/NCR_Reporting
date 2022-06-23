@@ -128,8 +128,15 @@ const Compare = async () => {
 
 
   const Filter = async () => {
-    console.log(org,srt,pi,sprint,sol);
+
+    if(org === '' && srt === '' && pi === 0 && sprint === '' && sol === ''){
+      window.alert("Please select a filter before clicking apply !")
+    }
+
+
+    // console.log(org,srt,pi,sprint,sol);
     // try {
+    else{
       const resp = await httpClient.post("//localhost:5000/release", {
         org,
         srt,
@@ -146,9 +153,9 @@ const Compare = async () => {
       setData(resp.data);
       console.log("Data : "+String(data));
       }
+    }
 
    
-
   };
   const Organization = [ {id:0,label: "Select Organization", value: ""},
     {id : 1,label: "Banking Core", value: "Banking Core"}]
@@ -252,7 +259,7 @@ const Compare = async () => {
             <button onClick={() => {setChart("line")}}>Line Chart</button>
             <button onClick={() => {setChart("stackedbar")}}>StackedBar Chart</button>
             <div ref = {componentRef}>
-            {click === true && chart === "bar" && <Barchart x_label={x_label} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail} /> }
+            {totalCases.length > 0 && click === true && chart === "bar" && <Barchart x_label={x_label} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail} /> }
             {click === true && chart === "totaltable" && <TotalTable data ={data}/>}
             {click === true && chart === "line" && <Linechart x_label={x_label} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail} /> }
             {click === true && chart === "stackedbar" && <StackedBarchart x_label={x_label} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail} background1={background1} /> }

@@ -75,6 +75,10 @@ const TagForm = () => {
   const Compare = async () => {
     console.log(org, srt, pi, sol);
     // try {
+      if(org === '' && srt === '' && pi === 0 && sol === ''){
+        window.alert("Please select a filter before clicking apply !");
+      }
+      else{
     const resp = await httpClient.post("//localhost:5000/compare", {
       org,
       srt,
@@ -85,6 +89,7 @@ const TagForm = () => {
     // console.log("Compare Data : "+resp.data);
 
     setCompareData(resp.data);
+  }
     // console.log("Compare Data : "+compareData);
     // compareData.map((item, i) => {
     //   {
@@ -111,7 +116,12 @@ const TagForm = () => {
 
   const Filter = async () => {
     console.log(org, srt, pi, tagname, sol);
+
+    if(org === '' && srt === '' && pi === 0 && sprint === '' && sol === '' && tagname === ''){
+      window.alert("Please select a filter before clicking apply !");
+    }
     // try {
+    else{
     const resp = await httpClient.post("//localhost:5000/tag", {
       org,
       srt,
@@ -122,6 +132,7 @@ const TagForm = () => {
     });
     console.log(resp.data);
     setData(resp.data);
+  }
   };
   const Organization = [
     { id: 0, label: "Select Organization", value: "" },
@@ -186,7 +197,7 @@ const TagForm = () => {
       <h3>Filter Options</h3>
       <form>
         <select
-          required="true"
+          required={true}
           name="org"
           value={org?.value}
           onChange={(e) => {
@@ -205,7 +216,7 @@ const TagForm = () => {
           name="srt"
           id=""
           onChange={(e) => setSRT(e.target.value)}
-          required
+          // required = {true}
         >
           {SRT.map((SRT) => (
             <option key={SRT.label} value={SRT.value}>
@@ -217,7 +228,7 @@ const TagForm = () => {
           name="pi"
           id=""
           onChange={(e) => setPI(e.target.value)}
-          required
+          // required = {true}
         >
           {PI.map((PI) => (
             <option key={PI.label} value={PI.value}>
@@ -321,7 +332,7 @@ const TagForm = () => {
           StackedBar Chart
         </button>
         <div ref={componentRef}>
-          {click === true && chart === "bar" && (
+          {totalCases.length > 0 && click === true && chart === "bar" && (
             <Barchart
               x_label={x_label}
               totalCases={totalCases}
