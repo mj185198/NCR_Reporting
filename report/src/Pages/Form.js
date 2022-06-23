@@ -193,7 +193,7 @@ const Compare = async () => {
 
   return (
     <div>
-      <h2 style={{textAlign:"center"}}>Release-wise Report</h2>
+      <h2 style={{textAlign:"center"}}>Test Results</h2>
       <div className="print-button">
           <button style={{float: "right"}} onClick={handlePrint}>Export to PDF</button>
           <button style={{float: "right"}} onClick={() => export_to_excel(data,pi+"_"+sprint+"_"+sol)}>Export to Excel</button>
@@ -245,11 +245,11 @@ const Compare = async () => {
           Filter()}}>
           Apply
         </button>
-        <button type="button" onClick={() => {
+        {/* <button type="button" onClick={() => {
           setClick(true);
           Compare()}}>
           Compare by sprint
-        </button>
+        </button> */}
 
       </form>
 

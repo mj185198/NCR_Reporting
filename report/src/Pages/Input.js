@@ -9,7 +9,7 @@ const Input = () => {
     <div>
       <div>
         <button onClick={() => { setOption("total")
-        }}>Release</button>
+        }}>Test Results</button>
         <button onClick={() => { setOption("tag")
         }}>Tag</button>
         { option === "total" &&  <Form />}

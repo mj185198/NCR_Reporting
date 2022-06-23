@@ -291,7 +291,7 @@ const TagForm = () => {
           Apply
         </button>
 
-        <button
+        {/* <button
           type="button"
           onClick={() => {
             setClick(true);
@@ -299,7 +299,7 @@ const TagForm = () => {
           }}
         >
           Compare by sprint
-        </button>
+        </button> */}
       </form>
 
       <div>
