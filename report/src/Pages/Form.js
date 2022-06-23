@@ -138,8 +138,15 @@ const Compare = async () => {
         sol,
       });
       console.log(resp.data);
+
+      if(resp.data.length === 0){
+        window.alert("No data to show for the selected filters");
+      }
+      else{
       setData(resp.data);
-      console.log("Data : "+data);
+      console.log("Data : "+String(data));
+      }
+
    
 
   };
@@ -234,7 +241,7 @@ const Compare = async () => {
         <button type="button" onClick={() => {
           setClick(true);
           Compare()}}>
-          Compare
+          Compare by sprint
         </button>
 
       </form>

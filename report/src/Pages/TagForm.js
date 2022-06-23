@@ -26,6 +26,7 @@ const TagForm = () => {
   const [data, setData] = useState([]);
   const [chart, setChart] = useState("bar");
   const [click, setClick] = useState(false);
+  const [compareData, setCompareData] = useState([]);
 
   var totalCases = [];
   var totalPass = [];
@@ -66,6 +67,44 @@ const TagForm = () => {
     }
 
 }
+
+const Compare = async () => {
+  console.log(org,srt,pi,sol);
+  // try {
+    const resp = await httpClient.post("//localhost:5000/compare", {
+      org,
+      srt,
+      pi,
+      sol,
+    });
+    console.log(resp.data);
+    // console.log("Compare Data : "+resp.data);
+
+    setCompareData(resp.data);
+    // console.log("Compare Data : "+compareData);
+    // compareData.map((item, i) => {
+    //   {
+        //  totalCases.push(item["total"])
+        //  totalPass.push(item["totalPass"])
+        //  totalFail.push(item["totalFail"])
+        //  datetime.push(item["Time_Stamp"])
+        //  solutionstack.push(item["Solution_Stack"])
+        //  id.push(item["Id"])
+//         setCompareSprint(() => {
+//           compareSprint.totalCases.push(item["total"]);
+//           compareSprint.totalPass.push(item["totalPass"]);
+//           compareSprint.totalFail.push(item["totalFail"]);
+//         })
+//         //  x_label.push("PI "+item["PI"]+"_"+item["Sprint"])
+//         setX_label("PI ");
+//    }
+//    const r = Math.floor(Math.random() * 255);
+//    const g = Math.floor(Math.random() * 255);
+//    const b = Math.floor(Math.random() * 255);
+//    background2.push('rgba('+r+', '+g+', '+b+', 0.8)');
+//  })
+
+};
 
   const Filter = async () => {
     console.log(org, srt, pi, tagname, sol);
@@ -224,6 +263,12 @@ const TagForm = () => {
           }}
         >
           Apply
+        </button>
+
+        <button type="button" onClick={() => {
+          setClick(true);
+          Compare()}}>
+          Compare by sprint
         </button>
       </form>
 
