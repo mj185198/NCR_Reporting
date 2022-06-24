@@ -3,7 +3,7 @@ from flask import Flask,jsonify,request,render_template,redirect,url_for
 from flask_cors import CORS
 import pandas as pd
 import json
-import requests
+
 import pickle
 import pyodbc
 import sqlite3 as sq
@@ -86,9 +86,32 @@ def compare():
     PI = str(request.json["pi"])
     Solution = str(request.json["sol"])
 
-    res = pd.read_sql_query("select PI,Sprint,sum(Total_Test_Cases) as total, sum(Total_Test_Passed) as totalPass, sum(Total_Test_Failed) as totalFail from dbo.Report where Organization = '""" + Organization +"""' and SRT = '""" + SRT +"""' and PI = """ + PI +"""  and Solution = '""" + Solution +"""'  group by Sprint,PI""",conn)
+    res = pd.read_sql_query("select PI,Sprint,Solution,sum(Total_Test_Cases) as total, sum(Total_Test_Passed) as totalPass, sum(Total_Test_Failed) as totalFail from dbo.Report where Organization = '""" + Organization +"""' and SRT = '""" + SRT +"""' and PI = """ + PI +"""  and Solution = '""" + Solution +"""'  group by Sprint,PI,Solution""",conn)
     result = res.to_json(orient = 'records')
     return result
+
+
+
+@app.route("/tagcompare", methods = ['POST'])
+def tagcompare():
+    cur = conn.cursor()
+    Organization = str(request.json["org"])
+    SRT = str(request.json["srt"])
+    PI = str(request.json["pi"])
+    Tag_Name = str(request.json["tagname"])
+    res = pd.read_sql_query("SELECT r.PI,r.Sprint,t.Tag_Name,sum(t.Total_Test_Cases) as total, sum(t.Total_Test_Passed) as totalPass, sum(t.Total_Test_Failed) as totalFail from dbo.Report r,dbo.Statistics_By_Tag t where r.Time_Stamp=t.Time_Stamp and r.Organization = '""" + Organization +"""' and r.SRT = '""" + SRT +"""' and r.PI = """ + PI +""" and t.Tag_Name = '""" + Tag_Name +"""' group by r.PI,r.Sprint,t.Tag_Name """,conn)
+    result = res.to_json(orient = 'records')
+    return result
+
+
+
+
+
+
+
+
+
+
 
 @app.route("/tagstat")
 def tag_stat():

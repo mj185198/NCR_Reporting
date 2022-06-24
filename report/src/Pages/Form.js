@@ -2,6 +2,7 @@ import React, { useState,useRef } from "react";
 import httpClient from "../httpClient";
 import {Link} from 'react-router-dom';
 import TotalTable from '../Components/TotalTable';
+import CompareTable from '../Components/CompareTable';
 import Barchart from "../Components/Barchart";
 import Linechart from "../Components/Linechart";
 import StackedBarchart from "../Components/StackedBarchart";
@@ -26,6 +27,7 @@ const Form = () => {
     const [chart, setChart] = useState("bar");
     const [click , setClick] = useState(false);
     const [compareData, setCompareData] = useState([]);
+    const[button,setButton] = useState("");
     // const [totalCases, setTotalCases] = useState([]);
     // const [totalPass, setTotalPass] = useState([]);
     // const [totalFail, setTotalFail] = useState([]);
@@ -37,105 +39,91 @@ const Form = () => {
     var totalCases = [];
     var totalPass = [];
     var totalFail = [];
-    // var datetime = [];
-    // var id = [];
     var x_label = [];
-    // var solutionstack = [];
+
+    var total = [];
+    var pass = [];
+    var fail = [];
+    var xlabel = [];
+  
 
     data.map((item, i) => {
       {
          totalCases.push(item["Total_Test_Cases"]);
          totalPass.push(item["Total_Test_Passed"]);
          totalFail.push(item["Total_Test_Failed"]);
-         // datetime.push(item["Time_Stamp"])
-         // solutionstack.push(item["Solution_Stack"])
-         // id.push(item["Id"])
-         x_label.push("PI "+item["PI"]+"_"+item["Sprint"]+"_"+item["Test_Execution_Id"]+"_"+item["Time_Stamp"].slice(4,8))
-         // setTotalCases(item["Total_Test_Cases"]);
-         // setTotalPass(item["Total_Test_Passed"]);
-         // setTotalFail(item["Total_Test_Failed"]);
-         // setX_label("PI "+item["PI"]+"_"+item["Sprint"]+"_"+item["Test_Execution_Id"]+"_"+item["Time_Stamp"].slice(4,8));
-   }
-   const r = Math.floor(Math.random() * 255);
-   const g = Math.floor(Math.random() * 255);
-   const b = Math.floor(Math.random() * 255);
-   background1.push('rgba('+r+', '+g+', '+b+', 0.8)');
+         x_label.push("PI "+item["PI"]+"_"+item["Sprint"]+"_"+item["Test_Execution_Id"]+"_"+item["Time_Stamp"].slice(4,8));
+      }
+      const r = Math.floor(Math.random() * 255);
+      const g = Math.floor(Math.random() * 255);
+      const b = Math.floor(Math.random() * 255);
+      background1.push('rgba('+r+', '+g+', '+b+', 0.8)');
 
- })
+    })
+
+    compareData.map((item, i) => {
+      {
+         total.push(item["total"])
+         pass.push(item["totalPass"])
+         fail.push(item["totalFail"]) 
+        xlabel.push("PI "+item["PI"]+"_"+item["Sprint"])
+      }
+      const r = Math.floor(Math.random() * 255);
+      const g = Math.floor(Math.random() * 255);
+      const b = Math.floor(Math.random() * 255);
+      background2.push('rgba('+r+', '+g+', '+b+', 0.8)');
+    })
+
     
 
-  const export_to_excel = (data, name) => {
-    console.log(data);
-    if(data.length > 0){
-    const worksheet = xlsx.utils.json_to_sheet(data);
-    const workbook = xlsx.utils.book_new();
-    xlsx.utils.book_append_sheet(workbook, worksheet, name);
-    xlsx.write(workbook, {bookType : 'xlsx', type : "buffer"});
-    xlsx.write(workbook,{bookType:"xlsx",type:"binary"});
-    xlsx.writeFile(workbook,name+".xlsx");
+      const export_to_excel = (data, name) => {
+        console.log(data);
+        if(data.length > 0){
+        const worksheet = xlsx.utils.json_to_sheet(data);
+        const workbook = xlsx.utils.book_new();
+        xlsx.utils.book_append_sheet(workbook, worksheet, name);
+        xlsx.write(workbook, {bookType : 'xlsx', type : "buffer"});
+        xlsx.write(workbook,{bookType:"xlsx",type:"binary"});
+        xlsx.writeFile(workbook,name+".xlsx");
+        }
+        else{
+          window.alert("Empty data cannot be exported !");
+        }
+
     }
-    else{
-      window.alert("Empty data cannot be exported !");
-    }
 
-}
 
-const [compareSprint, setCompareSprint] = useState( {
-  totalCases : [],
-  totalPass : [],
-  totalFail : [],
-})
 
-const Compare = async () => {
-  console.log(org,srt,pi,sol);
-  // try {
-    const resp = await httpClient.post("//localhost:5000/compare", {
-      org,
-      srt,
-      pi,
-      sol,
-    });
-    console.log(resp.data);
-    // console.log("Compare Data : "+resp.data);
-
-    setCompareData(resp.data);
-    // console.log("Compare Data : "+compareData);
-    // compareData.map((item, i) => {
-    //   {
-        //  totalCases.push(item["total"])
-        //  totalPass.push(item["totalPass"])
-        //  totalFail.push(item["totalFail"])
-        //  datetime.push(item["Time_Stamp"])
-        //  solutionstack.push(item["Solution_Stack"])
-        //  id.push(item["Id"])
-//         setCompareSprint(() => {
-//           compareSprint.totalCases.push(item["total"]);
-//           compareSprint.totalPass.push(item["totalPass"]);
-//           compareSprint.totalFail.push(item["totalFail"]);
-//         })
-//         //  x_label.push("PI "+item["PI"]+"_"+item["Sprint"])
-//         setX_label("PI ");
-//    }
-//    const r = Math.floor(Math.random() * 255);
-//    const g = Math.floor(Math.random() * 255);
-//    const b = Math.floor(Math.random() * 255);
-//    background2.push('rgba('+r+', '+g+', '+b+', 0.8)');
-//  })
-
-};
+    const Compare = async () => {
+      console.log(org,srt,pi,sol);
+      if(org === '' && srt === '' && pi === 0  && sol === ''){
+        window.alert("Please select a filter before clicking apply !")
+      }
+      else{
+        const resp = await httpClient.post("//localhost:5000/compare", {
+          org,
+          srt,
+          pi,
+          sol,
+        });
+        console.log(resp.data);
+        if(resp.data.length === 0){
+          window.alert("No data to show for the selected filters");
+        }
+        else{
+        setCompareData(resp.data);
+        }
+      }
+    };
 
 //Filter
 
 
   const Filter = async () => {
-
+    console.log(org,srt,pi,sprint,sol);
     if(org === '' && srt === '' && pi === 0 && sprint === '' && sol === ''){
       window.alert("Please select a filter before clicking apply !")
     }
-
-
-    // console.log(org,srt,pi,sprint,sol);
-    // try {
     else{
       const resp = await httpClient.post("//localhost:5000/release", {
         org,
@@ -154,9 +142,8 @@ const Compare = async () => {
       console.log("Data : "+String(data));
       }
     }
-
-   
   };
+
   const Organization = [ {id:0,label: "Select Organization", value: ""},
     {id : 1,label: "Banking Core", value: "Banking Core"}]
         const SRT = [ {id:0,label: "Select SRT", value: ""},
@@ -241,15 +228,17 @@ const Compare = async () => {
         ))}
         </select>
         <button type="button" onClick={() => {
+          setButton("filter");
           setClick(true);
           Filter()}}>
           Apply
         </button>
-        {/* <button type="button" onClick={() => {
+        <button type="button" onClick={() => {
+          setButton("compare");
           setClick(true);
           Compare()}}>
           Compare by sprint
-        </button> */}
+        </button>
 
       </form>
 
@@ -259,10 +248,14 @@ const Compare = async () => {
             <button onClick={() => {setChart("line")}}>Line Chart</button>
             <button onClick={() => {setChart("stackedbar")}}>StackedBar Chart</button>
             <div ref = {componentRef}>
-            {totalCases.length > 0 && click === true && chart === "bar" && <Barchart x_label={x_label} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail} /> }
-            {click === true && chart === "totaltable" && <TotalTable data ={data}/>}
-            {click === true && chart === "line" && <Linechart x_label={x_label} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail} /> }
-            {click === true && chart === "stackedbar" && <StackedBarchart x_label={x_label} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail} background1={background1} /> }
+            {totalCases.length > 0 && button==="filter" && click === true && chart === "bar" && <Barchart x_label={x_label} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail} /> }
+            {click === true && button==="filter" && chart === "totaltable" && <TotalTable data ={data}/>}
+            {click === true && button==="filter" && chart === "line" && <Linechart x_label={x_label} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail} /> }
+            {click === true && button==="filter" && chart === "stackedbar" && <StackedBarchart x_label={x_label} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail} /> } 
+            {totalCases.length > 0 && button==="compare" && click === true && chart === "bar" && <Barchart x_label={xlabel} totalCases={total} totalPass={pass} totalFail={fail} /> }
+            {click === true && button==="compare" && chart === "totaltable" && <CompareTable compareData ={compareData}/>}
+            {click === true && button==="compare" && chart === "line" && <Linechart x_label={xlabel} totalCases={total} totalPass={pass} totalFail={fail} /> }
+            {click === true && button==="compare" && chart === "stackedbar" && <StackedBarchart x_label={xlabel} totalCases={total} totalPass={pass} totalFail={fail} /> }
             </div>
     </div>
 
