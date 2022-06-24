@@ -248,6 +248,8 @@ const Form = () => {
             <button onClick={() => {setChart("line")}}>Line Chart</button>
             <button onClick={() => {setChart("stackedbar")}}>StackedBar Chart</button>
             <div ref = {componentRef}>
+            
+              {click === true && data.length > 0 &&   <h1><center>Test Results for PI {pi} Sprint {sprint}</center></h1> }
             {totalCases.length > 0 && button==="filter" && click === true && chart === "bar" && <Barchart x_label={x_label} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail} /> }
             {click === true && button==="filter" && chart === "totaltable" && <TotalTable data ={data}/>}
             {click === true && button==="filter" && chart === "line" && <Linechart x_label={x_label} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail} /> }
@@ -266,6 +268,7 @@ const Form = () => {
 
     </div>
   );
+
 };
 
 export default Form;
