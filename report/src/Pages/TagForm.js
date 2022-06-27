@@ -26,6 +26,7 @@ const TagForm = () => {
   const [click, setClick] = useState(false);
   const [compareData, setCompareData] = useState([]);
   const[button,setButton] = useState("");
+  const [comment, setComment] = useState("");
 
   var totalCases = [];
   var totalPass = [];
@@ -400,6 +401,7 @@ const TagForm = () => {
           StackedBar Chart
         </button>
         <div ref={componentRef}>
+            {click === true && data.length > 0 &&   <h1><center>Tag-wise Results for PI {pi} Sprint {sprint}</center></h1> }
             {totalCases.length > 0 && button==="filter" && click === true && chart === "bar" && <Barchart x_label={x_label} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail} /> }
             {click === true && button==="filter" && chart === "tagtable" && <TagTable data ={data}/>}
             {click === true && button==="filter" && chart === "line" && <Linechart x_label={x_label} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail} /> }
@@ -408,6 +410,11 @@ const TagForm = () => {
             {click === true && button==="compare" && chart === "tagtable" && <CompareTagTable compareData ={compareData}/>}
             {click === true && button==="compare" && chart === "line" && <Linechart x_label={xlabel} totalCases={total} totalPass={pass} totalFail={fail} /> }
             {click === true && button==="compare" && chart === "stackedbar" && <StackedBarchart x_label={xlabel} totalCases={total} totalPass={pass} totalFail={fail} /> }
+            <br/> <br/>
+            {click === true && data.length > 0 && <p>{comment}</p>}
+            {click === true && data.length > 0 && <label for = "comment">Comments :</label> } <br /><br />
+            {click === true && data.length > 0 && <input type = "text" name = "comment" /> } 
+            {click === true && data.length > 0 && <input type = "button" name = "comment" /> } 
         </div>
       </div>
 

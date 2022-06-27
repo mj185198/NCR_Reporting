@@ -14,7 +14,7 @@ V 1.2 :
 
 
 
-- Comment option in PDF export
+- Comment option in PDF export (50%)
 - Label with count on (everybar)/X-axis
 - Scroll feature with good spacing for every graph ( container props )
 - stack Vijay's solution on top of reporting tool. (To find the exact details of pass/fail data)
