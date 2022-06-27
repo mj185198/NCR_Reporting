@@ -18,6 +18,8 @@ V 1.2 :
 - Label with count on (everybar)/X-axis
 - Scroll feature with good spacing for every graph ( container props )
 - stack Vijay's solution on top of reporting tool. (To find the exact details of pass/fail data)
+idea : user should be able to export only selected components.
+i.e., user should have choice over what to print and what not to print.
 
 
 
