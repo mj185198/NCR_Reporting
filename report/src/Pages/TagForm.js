@@ -9,11 +9,14 @@ import { useReactToPrint } from "react-to-print";
 
 const xlsx = require("xlsx");
 
-const TagForm = () => {
+const TagForm = (props) => {
   const componentRef = useRef();
   const handlePrint = useReactToPrint({
     content: () => componentRef.current,
   });
+
+  console.log(props.tagdata);
+
   const [org, setOrg] = useState("");
   const [srt, setSRT] = useState("");
   const [pi, setPI] = useState(0);
@@ -23,7 +26,16 @@ const TagForm = () => {
   const [data, setData] = useState([]);
   const [chart, setChart] = useState("bar");
   const [click, setClick] = useState(false);
+  const[solStack, setSolStack] = useState("");
   const [compareData, setCompareData] = useState([]);
+
+  var PI = [];
+  var Org = [];
+  var Srt = [];
+  var Sol = [];
+  var SolStack = [];
+  var Sprint = [];
+  var Tag = [];
 
   var totalCases = [];
   var totalPass = [];
@@ -141,52 +153,35 @@ const TagForm = () => {
     }
   }
   };
-  const Organization = [
-    { id: 0, label: "Select Organization", value: "" },
-    { id: 1, label: "Banking Core", value: "Banking Core" },
-  ];
-  const SRT = [
-    { id: 0, label: "Select SRT", value: "Select option" },
-    { id: 1, label: "EAB", value: "EAB" },
-    { id: 1, label: "ICE", value: "ICE" },
-  ];
-  const PI = [
-    { id: 0, label: "Select PI", value: "Select option" },
-    { id: 1, label: "21.1", value: 21.1 },
-    { id: 2, label: "21.2", value: 21.2 },
-    { id: 3, label: "21.3", value: 21.3 },
-    { id: 4, label: "21.4", value: 21.4 },
-    { id: 5, label: "22.1", value: 22.1 },
-    { id: 6, label: "22.2", value: 22.2 },
-  ];
-  const Tagname = [
-    { id: 0, label: "Select Tagname", value: "" },
-    { id: 1, label: "DynamicSubAccount", value: "DynamicSubAccount" },
-    { id: 2, label: "IB", value: "IB" },
-    { id: 3, label: "Fee", value: "Fee" },
-    { id: 4, label: "Withdrawal", value: "Withdrawal" },
-    { id: 5, label: "CashPayment", value: "CashPayment" },
-    { id: 6, label: "EndDeposit", value: "EndDeposit" },
-  ];
-  const Sprint = [
-    { id: 0, label: "Select Sprint", value: "" },
-    { id: 1, label: "S1", value: "S1" },
-    { id: 2, label: "S2", value: "S2" },
-    { id: 3, label: "S3", value: "S3" },
-    { id: 4, label: "S4", value: "S4" },
-    { id: 5, label: "S5", value: "S5" },
-    { id: 6, label: "S6", value: "S6" },
-  ];
-  const Solution = [
-    { id: 0, label: "Select Solution", value: "" },
-    { id: 1, label: "AE_CxM", value: "AE_CxM" },
-    { id: 2, label: "ESS_AE_CxTH_ISO", value: "ESS_AE_CxTH_ISO" },
-    { id: 3, label: "AE_IB", value: "AE_IB" },
-    { id: 4, label: "AE_CxTH-NDC", value: "AE_CxTH-NDC" },
-    { id: 5, label: "AE_NDCHOST", value: "AE_NDCHOST" },
-    { id: 6, label: "AE_CxTH-ISO", value: "AE_CxTH-ISO" },
-  ];
-
+  Org.push({ id : -1 , label : "Select Organization" , value : '' });
+  for(var i = 0; i < props.orgdata.length; i++){
+    Org.push({ id : i , label : props.orgdata[i][0] , value : props.orgdata[i][0] });
+}
+Srt.push({ id : -1 , label : "Select SRT" , value : '' });
+for( i = 0; i < props.srtdata.length; i++){
+  Srt.push({ id : i , label : props.srtdata[i][0] , value : props.srtdata[i][0] });
+}
+PI.push({ id : -1 , label : "Select PI" , value : '' });
+console.log(PI);
+for( i = 0; i < props.pidata.length; i++){
+  PI.push({ id : i , label : props.pidata[i][0] , value : props.pidata[i][0] });
+}
+Sprint.push({ id : -1 , label : "Select Sprint" , value : '' });
+for( i = 0; i < props.sprintdata.length; i++){
+  Sprint.push({ id : i , label : props.sprintdata[i][0] , value : props.sprintdata[i][0] });
+}
+Sol.push({ id : -1 , label : "Select Solution" , value : '' });
+for( i = 0; i < props.soldata.length; i++){
+  Sol.push({ id : i , label : props.soldata[i][0] , value : props.soldata[i][0] });
+}
+SolStack.push({ id : -1 , label : "Select Solution Stack" , value : '' });
+for( i = 0; i < props.solstackdata.length; i++){
+  SolStack.push({ id : i , label : props.solstackdata[i][0] , value : props.solstackdata[i][0] });
+}
+Tag.push({ id : -1 , label : "Select Tag Name" , value : '' });
+for( i = 0; i < props.tagdata.length; i++){
+  Tag.push({ id : i , label : props.tagdata[i][0] , value : props.tagdata[i][0] });
+}
   return (
     <div>
       <h2 style={{ textAlign: "center" }}>Tag-wise Report</h2>
@@ -212,9 +207,9 @@ const TagForm = () => {
             console.log(org);
           }}
         >
-          {Organization.map((Organization) => (
-            <option key={Organization.label} value={Organization.value}>
-              {Organization.label}
+          {Org.map((Org) => (
+            <option key={Org.label} value={Org.value}>
+              {Org.label}
             </option>
           ))}
         </select>
@@ -225,9 +220,9 @@ const TagForm = () => {
           onChange={(e) => setSRT(e.target.value)}
           // required = {true}
         >
-          {SRT.map((SRT) => (
-            <option key={SRT.label} value={SRT.value}>
-              {SRT.label}
+          {Srt.map((Srt) => (
+            <option key={Srt.label} value={Srt.value}>
+              {Srt.label}
             </option>
           ))}
         </select>
@@ -267,9 +262,9 @@ const TagForm = () => {
           }}
           required
         >
-          {Tagname.map((Tagname) => (
-            <option key={Tagname.label} value={Tagname.value}>
-              {Tagname.label}
+          {Tag.map((Tag) => (
+            <option key={Tag.label} value={Tag.value}>
+              {Tag.label}
             </option>
           ))}
         </select>
@@ -283,9 +278,24 @@ const TagForm = () => {
           }}
           required
         >
-          {Solution.map((Solution) => (
-            <option key={Solution.label} value={Solution.value}>
-              {Solution.label}
+          {Sol.map((Sol) => (
+            <option key={Sol.label} value={Sol.value}>
+              {Sol.label}
+            </option>
+          ))}
+        </select>
+        <select
+          name="sol"
+          id=""
+          onChange={(e) => {
+            setSolStack(e.target.value);
+            console.log(solStack);
+          }}
+          required
+        >
+          {SolStack.map((SolStack) => (
+            <option key={SolStack.label} value={SolStack.value}>
+              {SolStack.label}
             </option>
           ))}
         </select>

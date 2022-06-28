@@ -4,13 +4,41 @@ import {Link} from 'react-router-dom';
 import TotalTable from '../Components/TotalTable';
 import Barchart from "../Components/Barchart";
 import Linechart from "../Components/Linechart";
+import Input from "./Input";
 import StackedBarchart from "../Components/StackedBarchart";
 import {useReactToPrint} from "react-to-print";
 import axios from "axios";
+import AsyncSelect from "react-select"
+
+
+
 
 const xlsx = require('xlsx');
 
-const Form = () => {
+const Form = (props) => {  
+
+  const [org,setOrg]=useState('');
+const [srt,setSRT]=useState('');
+const [pi,setPI]=useState(0);
+const [sprint,setSprint]=useState('');
+const [sol,setSol]=useState('');
+const [solstack, setSolStack] = useState('');
+const [data, setData]=useState([]);
+const [chart, setChart] = useState("bar");
+const [click , setClick] = useState(false);
+
+const [compareData, setCompareData] = useState([]);
+
+var PI = [];
+var Org = [];
+var Srt = [];
+var Sol = [];
+var SolStack = [];
+var Sprint = []
+
+console.log(props.pidata);
+
+
 
   const componentRef = useRef();
   const handlePrint = useReactToPrint({
@@ -18,25 +46,8 @@ const Form = () => {
   });
 
 
-    const [org,setOrg]=useState('');
-    const [srt,setSRT]=useState('');
-    const [pi,setPI]=useState(0);
-    const [sprint,setSprint]=useState('');
-    const [sol,setSol]=useState('');
-    const [data, setData]=useState([]);
-    const [chart, setChart] = useState("bar");
-    const [click , setClick] = useState(false);
-    const [compareData, setCompareData] = useState([]);
-    const [pi_data, setPIData] = useState([])
-    let PI = [];
 
-
-
-    const PI_URL = "http://127.0.0.1:5000/getPI";
-    // const [totalCases, setTotalCases] = useState([]);
-    // const [totalPass, setTotalPass] = useState([]);
-    // const [totalFail, setTotalFail] = useState([]);
-    // const [x_label, setX_label] = useState([]);
+  
 
     const background1 = [];
     const background2 = [];
@@ -44,24 +55,18 @@ const Form = () => {
     var totalCases = [];
     var totalPass = [];
     var totalFail = [];
-    // var datetime = [];
-    // var id = [];
+
     var x_label = [];
-    // var solutionstack = [];
+
 
     data.map((item, i) => {
       {
          totalCases.push(item["Total_Test_Cases"]);
          totalPass.push(item["Total_Test_Passed"]);
          totalFail.push(item["Total_Test_Failed"]);
-         // datetime.push(item["Time_Stamp"])
-         // solutionstack.push(item["Solution_Stack"])
-         // id.push(item["Id"])
+        
          x_label.push("PI "+item["PI"]+"_"+item["Sprint"]+"_"+item["Test_Execution_Id"]+"_"+item["Time_Stamp"].slice(4,8))
-         // setTotalCases(item["Total_Test_Cases"]);
-         // setTotalPass(item["Total_Test_Passed"]);
-         // setTotalFail(item["Total_Test_Failed"]);
-         // setX_label("PI "+item["PI"]+"_"+item["Sprint"]+"_"+item["Test_Execution_Id"]+"_"+item["Time_Stamp"].slice(4,8));
+        
    }
    const r = Math.floor(Math.random() * 255);
    const g = Math.floor(Math.random() * 255);
@@ -72,19 +77,7 @@ const Form = () => {
 
 
 
-    // fetch PI data
-//     useEffect(() => {setPIData()}, []);
-//  useEffect(() => {fetchPIData()}, []);
-//   let promise = new Promise(function(fetchPIData){
-//       fetch(PI_URL)
-//       .then((res) =>res.json())
-//       .then((response) => {
-//         // console.log(response);
-//         setPIData(response);
-      
-//       })
-//     });
-// console.log(pi_data);
+
   const export_to_excel = (data, name) => {
     console.log(data);
     if(data.length > 0){
@@ -109,7 +102,6 @@ const [compareSprint, setCompareSprint] = useState( {
 
 const Compare = async () => {
   console.log(org,srt,pi,sol);
-  // try {
     const resp = await httpClient.post("//localhost:5000/compare", {
       org,
       srt,
@@ -117,31 +109,10 @@ const Compare = async () => {
       sol,
     });
     console.log(resp.data);
-    // console.log("Compare Data : "+resp.data);
+
 
     setCompareData(resp.data);
-    // console.log("Compare Data : "+compareData);
-    // compareData.map((item, i) => {
-    //   {
-        //  totalCases.push(item["total"])
-        //  totalPass.push(item["totalPass"])
-        //  totalFail.push(item["totalFail"])
-        //  datetime.push(item["Time_Stamp"])
-        //  solutionstack.push(item["Solution_Stack"])
-        //  id.push(item["Id"])
-//         setCompareSprint(() => {
-//           compareSprint.totalCases.push(item["total"]);
-//           compareSprint.totalPass.push(item["totalPass"]);
-//           compareSprint.totalFail.push(item["totalFail"]);
-//         })
-//         //  x_label.push("PI "+item["PI"]+"_"+item["Sprint"])
-//         setX_label("PI ");
-//    }
-//    const r = Math.floor(Math.random() * 255);
-//    const g = Math.floor(Math.random() * 255);
-//    const b = Math.floor(Math.random() * 255);
-//    background2.push('rgba('+r+', '+g+', '+b+', 0.8)');
-//  })
+
 
 };
 
@@ -164,6 +135,7 @@ const Compare = async () => {
         pi,
         sprint,
         sol,
+        solstack
       });
       console.log(resp.data);
 
@@ -179,102 +151,64 @@ const Compare = async () => {
 
    
   };
-  const Organization = [ {id:0,label: "Select Organization", value: ""},
-    {id : 1,label: "Banking Core", value: "Banking Core"}]
-        const SRT = [ {id:0,label: "Select SRT", value: ""},
-          {id : 1,label: "EAB", value: "EAB"},
-                 {id : 1,label: "ICE", value: "ICE"}
-                ]
-        
-        // PI = [
-        //   {id:0,label: "Select PI", value: ""},
-        //     { id : 1,label: "21.1", value: 21.1 },
-        //     { id : 2,label: "21.2", value: 21.2 },
-        //     { id : 3,label: "21.3", value: 21.3 },
-        //     { id : 4,label: "21.4", value: 21.4 },
-        //     { id : 5,label: "22.1", value: 22.1 },
-        //     { id : 6,label: "22.2", value: 22.2 },
-
-        // ];
+  // const Organization = [ {id:0,label: "Select Organization", value: ""},
+  //   {id : 1,label: "Banking Core", value: "Banking Core"}]
+  //       const SRT = [ {id:0,label: "Select SRT", value: ""},
+  //         {id : 1,label: "EAB", value: "EAB"},
+  //                {id : 1,label: "ICE", value: "ICE"}
+  //               ]
 
 
-        const fetchPIData = async() => {
+       
 
-            try {
-              const response = await axios(PI_URL);
-              console.log(response.data);
-              setPIData(response.data);
-            }
-            catch(error){
-              console.log(error.response);
-            }
+  
 
-        };
+  //       const Sprint = [
+  //         {id:0,label: "Select Sprint", value: ""},
+  //           { id : 1,label: "S1", value: "S1" },
+  //           { id : 2,label: "S2", value: "S2" },
+  //           { id : 3,label: "S3", value: "S3" },
+  //           { id : 4,label: "S4", value: "S4" },
+  //           { id : 5,label: "S5", value: "S5" },
+  //           { id : 6,label: "S6", value: "S6" },
+  //       ];
+  //       const Solution = [
+  //         {id:0,label: "Select Solution", value: ""},
+  //           { id : 1,label: "AE_CxM", value: "AE_CxM" },
+  //           { id : 2,label: "ESS_AE_CxTH_ISO", value: "ESS_AE_CxTH_ISO" },
+  //           { id : 3,label: "AE_IB", value: "AE_IB" },
+  //           { id : 4,label: "AE_CxTH-NDC", value: "AE_CxTH-NDC" },
+  //           { id : 5,label: "AE_NDCHOST", value: "AE_NDCHOST" },
+  //           { id : 6,label: "AE_CxTH-ISO", value: "AE_CxTH-ISO" },
+  //       ];
+  Org.push({ id : -1 , label : "Select Organization" , value : '' });
+  for(var i = 0; i < props.orgdata.length; i++){
+    Org.push({ id : i , label : props.orgdata[i][0] , value : props.orgdata[i][0] });
+}
+Srt.push({ id : -1 , label : "Select SRT" , value : '' });
+for(var i = 0; i < props.srtdata.length; i++){
+  Srt.push({ id : i , label : props.srtdata[i][0] , value : props.srtdata[i][0] });
+}
+PI.push({ id : -1 , label : "Select PI" , value : '' });
+console.log(PI);
+for(var i = 0; i < props.pidata.length; i++){
+  PI.push({ id : i , label : props.pidata[i][0] , value : props.pidata[i][0] });
+}
+Sprint.push({ id : -1 , label : "Select Sprint" , value : '' });
+for(var i = 0; i < props.sprintdata.length; i++){
+  Sprint.push({ id : i , label : props.sprintdata[i][0] , value : props.sprintdata[i][0] });
+}
+Sol.push({ id : -1 , label : "Select Solution" , value : '' });
+for(var i = 0; i < props.soldata.length; i++){
+  Sol.push({ id : i , label : props.soldata[i][0] , value : props.soldata[i][0] });
+}
+SolStack.push({ id : -1 , label : "Select Solution Stack" , value : '' });
+for(var i = 0; i < props.solstackdata.length; i++){
+  SolStack.push({ id : i , label : props.solstackdata[i][0] , value : props.solstackdata[i][0] });
+}
 
-        // class piClass{
-        //   id = 0;
-        //   label = "";
-        //   value = 0;
-        //   piClass(id, label , value){
-        //     this.id = id;
-        //     this.label = label;
-        //     this.value = value;
-        //   }
-
-        // };
-        
-        // pi_data["PI"].map((item ,i) => {
-          
-        //   PI.push(item[i]);
-          
-        // })
-        // console.log(pi_data["PI"][1]);
-        // PI.push({ id : 1,label: "21.1", value: 21.1 })
-        // console.log("PI = ");
-        // console.log(PI);
-        // console.log(pi_data["2"]);
-
-        // pi_data.map((item , i ) => {
-        //     PI.push(item["PI"])
-        // });
-        // fetchPIData();
-        console.log("PI data : " );
-        console.log(pi_data);
-
-        // console.log(Object.values(pi_data["PI"]));
-
-
-        const Sprint = [
-          {id:0,label: "Select Sprint", value: ""},
-            { id : 1,label: "S1", value: "S1" },
-            { id : 2,label: "S2", value: "S2" },
-            { id : 3,label: "S3", value: "S3" },
-            { id : 4,label: "S4", value: "S4" },
-            { id : 5,label: "S5", value: "S5" },
-            { id : 6,label: "S6", value: "S6" },
-        ];
-        const Solution = [
-          {id:0,label: "Select Solution", value: ""},
-            { id : 1,label: "AE_CxM", value: "AE_CxM" },
-            { id : 2,label: "ESS_AE_CxTH_ISO", value: "ESS_AE_CxTH_ISO" },
-            { id : 3,label: "AE_IB", value: "AE_IB" },
-            { id : 4,label: "AE_CxTH-NDC", value: "AE_CxTH-NDC" },
-            { id : 5,label: "AE_NDCHOST", value: "AE_NDCHOST" },
-            { id : 6,label: "AE_CxTH-ISO", value: "AE_CxTH-ISO" },
-        ];
-        // var array = Object.values(pi_data).map(item => pi_data[item]);
-        // console.log("array :");
-        // console.log(array);
-        // console.log(typeof(array));
-
-        var array = [];
-        console.log(pi_data.length);
-        for(var i = 0; i < pi_data.length; i++){
-          // let one_PI = new piClass(i,pi_data[i],pi_data[i]);
-          // let obj = { id : i , label : pi_data["PI"][i], value : pi_data["PI"][i]};
-          // PI.push({ id : i , label : pi_data["PI"][i] , value : pi_data["PI"][i] });
-          console.log(i);
-      }
+      console.log("PI[] :");
+      console.log(PI);
 
   return (
     <div>
@@ -285,28 +219,27 @@ const Compare = async () => {
       </div>
       <h3>Filter Options</h3>
       <form>
-        <select name="org" value={org?.value}  onChange={(e)=>{
+        <select name="org" value={org?.value}  onInput={(e)=>{
           setOrg(e.target.value);
           console.log(org);
         }} >
-            {Organization.map((Organization) => (
-          <option key={Organization.label} value={Organization.value}>{Organization.label}</option>
+            {Org.map((Org) => (
+          <option key={Org.label} value={Org.value}>{Org.label}</option>
 
           ))}
         </select>
 
-        <select name="srt" id="" onChange={(e)=>setSRT(e.target.value)}>
-            {SRT.map((SRT) => (
-            <option key={SRT.label} value={SRT.value}>{SRT.label}</option>
+        <select name="srt" id="" onInput={(e)=>setSRT(e.target.value)}>
+            {Srt.map((Srt) => (
+            <option key={Srt.label} value={Srt.value}>{Srt.label}</option>
             ))}
         </select>
-        <select name="pi" id="" onChange={(e)=>setPI(e.target.value)}>
-            {Object.values(pi_data).map((val) => (
-            <option key={val[3]} value={val[3]}>{val[3]}</option>
+        <select name="pi" id="" onInput={(e)=>setPI(e.target.value)}>
+            {PI.map((PI) => (
+            <option key={PI.label} value={PI.value}>{PI.label}</option>
             ))}
         </select>
-
-        <select name="sprint" id="" onChange={(e)=>{
+        <select name="sprint" id="" onInput={(e)=>{
           setSprint(e.target.value);
           console.log(sprint);
         }
@@ -317,24 +250,30 @@ const Compare = async () => {
 
         </select>
 
-        <select name = "sol" id="" onChange={(e)=>{
+        <select name = "sol" id="" onInput={(e)=>{
           setSol(e.target.value);
           console.log(sol);
         }} >
-            {Solution.map((Solution) => (
-            <option key={Solution.label} value={Solution.value}>{Solution.label}</option>
+            {Sol.map((Sol) => (
+            <option key={Sol.label} value={Sol.value}>{Sol.label}</option>
+        ))}
+        </select>
+
+        <select name = "solstack" id="" onInput ={(e)=>{
+          setSolStack(e.target.value);
+          console.log(solstack);
+        }} >
+            {SolStack.map((SolStack) => (
+            <option key={SolStack.label} value={SolStack.value}>{SolStack.label}</option>
         ))}
         </select>
         <button type="button" onClick={() => {
           setClick(true);
-          Filter()}}>
+          if(org != '' && srt != '' && sprint != '' && pi != '' && sol != '' && solstack != ''){Filter()}
+          else{ window.alert("Select all filters before applying !")}
+          }}>
           Apply
         </button>
-        {/* <button type="button" onClick={() => {
-          setClick(true);
-          Compare()}}>
-          Compare by sprint
-        </button> */}
 
       </form>
 
@@ -351,10 +290,7 @@ const Compare = async () => {
             </div>
     </div>
 
-      {/* <Link to={{
-      pathname: '/totalstat',
-      state: data
-      }} >See Release Statistics</Link> */}
+  
 
     </div>
   );
