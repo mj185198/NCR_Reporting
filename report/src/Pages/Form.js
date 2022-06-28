@@ -27,6 +27,7 @@ const [solstack, setSolStack] = useState('');
 const [data, setData]=useState([]);
 const [chart, setChart] = useState("bar");
 const [click , setClick] = useState(false);
+const [button, setButton] = useState("");
 
 const [compareData, setCompareData] = useState([]);
 
@@ -59,6 +60,10 @@ console.log(props.pidata);
 
     var x_label = [];
 
+    var total = [];
+  var pass = [];
+  var fail = [];
+  var xlabel = [];
 
     data.map((item, i) => {
       {
@@ -95,7 +100,7 @@ console.log(props.pidata);
 
     }
 
-}
+
 
 const [compareSprint, setCompareSprint] = useState( {
   totalCases : [],
@@ -103,18 +108,7 @@ const [compareSprint, setCompareSprint] = useState( {
   totalFail : [],
 })
 
-const Compare = async () => {
-  console.log(org,srt,pi,sol);
-    const resp = await httpClient.post("//localhost:5000/compare", {
-      org,
-      srt,
-      pi,
-      sol,
-    });
-    console.log(resp.data);
 
-
-    setCompareData(resp.data);
 
 
 
@@ -169,36 +163,7 @@ const Compare = async () => {
       }
     }
   };
-  // const Organization = [ {id:0,label: "Select Organization", value: ""},
-  //   {id : 1,label: "Banking Core", value: "Banking Core"}]
-  //       const SRT = [ {id:0,label: "Select SRT", value: ""},
-  //         {id : 1,label: "EAB", value: "EAB"},
-  //                {id : 1,label: "ICE", value: "ICE"}
-  //               ]
-
-
-       
-
   
-
-  //       const Sprint = [
-  //         {id:0,label: "Select Sprint", value: ""},
-  //           { id : 1,label: "S1", value: "S1" },
-  //           { id : 2,label: "S2", value: "S2" },
-  //           { id : 3,label: "S3", value: "S3" },
-  //           { id : 4,label: "S4", value: "S4" },
-  //           { id : 5,label: "S5", value: "S5" },
-  //           { id : 6,label: "S6", value: "S6" },
-  //       ];
-  //       const Solution = [
-  //         {id:0,label: "Select Solution", value: ""},
-  //           { id : 1,label: "AE_CxM", value: "AE_CxM" },
-  //           { id : 2,label: "ESS_AE_CxTH_ISO", value: "ESS_AE_CxTH_ISO" },
-  //           { id : 3,label: "AE_IB", value: "AE_IB" },
-  //           { id : 4,label: "AE_CxTH-NDC", value: "AE_CxTH-NDC" },
-  //           { id : 5,label: "AE_NDCHOST", value: "AE_NDCHOST" },
-  //           { id : 6,label: "AE_CxTH-ISO", value: "AE_CxTH-ISO" },
-  //       ];
   Org.push({ id : -1 , label : "Select Organization" , value : '' });
   for(var i = 0; i < props.orgdata.length; i++){
     Org.push({ id : i , label : props.orgdata[i][0] , value : props.orgdata[i][0] });
