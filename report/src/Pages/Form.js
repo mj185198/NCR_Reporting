@@ -1,33 +1,50 @@
-import React, { useState,useRef } from "react";
+import React, { useState,useRef,useEffect } from "react";
 import httpClient from "../httpClient";
 import TotalTable from '../Components/TotalTable';
 import CompareTable from '../Components/CompareTable';
 import Barchart from "../Components/Barchart";
 import Linechart from "../Components/Linechart";
+import Input from "./Input";
 import StackedBarchart from "../Components/StackedBarchart";
 import {useReactToPrint} from "react-to-print";
+import axios from "axios";
+import AsyncSelect from "react-select"
+
+
+
 
 
 const xlsx = require('xlsx');
 
-const Form = () => {
+const Form = (props) => {  
+
+  const [org,setOrg]=useState('');
+const [srt,setSRT]=useState('');
+const [pi,setPI]=useState(0);
+const [sprint,setSprint]=useState('');
+const [sol,setSol]=useState('');
+const [solstack, setSolStack] = useState('');
+const [data, setData]=useState([]);
+const [chart, setChart] = useState("bar");
+const [click , setClick] = useState(false);
+const [button, setButton] = useState("");
+const [compareData, setCompareData] = useState([]);
+
+var PI = [];
+var Org = [];
+var Srt = [];
+var Sol = [];
+var SolStack = [];
+var Sprint = []
+
+console.log(props.pidata);
+
+
 
   const componentRef = useRef();
   const handlePrint = useReactToPrint({
     content: () => componentRef.current,
   });
-
-
-    const [org,setOrg]=useState('');
-    const [srt,setSRT]=useState('');
-    const [pi,setPI]=useState(0);
-    const [sprint,setSprint]=useState('');
-    const [sol,setSol]=useState('');
-    const [data, setData]=useState([]);
-    const [chart, setChart] = useState("bar");
-    const [click , setClick] = useState(false);
-    const [compareData, setCompareData] = useState([]);
-    const[button,setButton] = useState("");
 
     var count = [];
     var comparecount = [];
@@ -36,13 +53,13 @@ const Form = () => {
     var totalCases = [];
     var totalPass = [];
     var totalFail = [];
+
     var x_label = [];
 
     var total = [];
-    var pass = [];
-    var fail = [];
-    var xlabel = [];
-  
+  var pass = [];
+  var fail = [];
+  var xlabel = [];
 
     data.map((item, i) => {
       {
@@ -65,8 +82,11 @@ const Form = () => {
         xlabel.push("PI "+item["PI"]+"_"+item["Sprint"])
       }
     })
+        
 
-    
+
+
+
 
       const export_to_excel = (data, name) => {
         console.log(data);
@@ -83,8 +103,6 @@ const Form = () => {
         }
 
     }
-
-
 
     const Compare = async () => {
       console.log(org,srt,pi,sol);
@@ -124,6 +142,7 @@ const Form = () => {
         pi,
         sprint,
         sol,
+        solstack,
       });
       console.log(resp.data);
 
@@ -132,44 +151,40 @@ const Form = () => {
       }
       else{
       setData(resp.data);
-      console.log("Data : "+String(data));
+      console.log("Data : ");
+      console.log(data);
       }
     }
   };
+  
+          Org.push({ id : -1 , label : "Select Organization" , value : '' });
+          for(var i = 0; i < props.orgdata.length; i++){
+            Org.push({ id : i , label : props.orgdata[i][0] , value : props.orgdata[i][0] });
+        }
+        Srt.push({ id : -1 , label : "Select SRT" , value : '' });
+        for(var i = 0; i < props.srtdata.length; i++){
+          Srt.push({ id : i , label : props.srtdata[i][0] , value : props.srtdata[i][0] });
+        }
+        PI.push({ id : -1 , label : "Select PI" , value : '' });
+        console.log(PI);
+        for(var i = 0; i < props.pidata.length; i++){
+          PI.push({ id : i , label : props.pidata[i][0] , value : props.pidata[i][0] });
+        }
+        Sprint.push({ id : -1 , label : "Select Sprint" , value : '' });
+        for(var i = 0; i < props.sprintdata.length; i++){
+          Sprint.push({ id : i , label : props.sprintdata[i][0] , value : props.sprintdata[i][0] });
+        }
+        Sol.push({ id : -1 , label : "Select Solution" , value : '' });
+        for(var i = 0; i < props.soldata.length; i++){
+          Sol.push({ id : i , label : props.soldata[i][0] , value : props.soldata[i][0] });
+        }
+        SolStack.push({ id : -1 , label : "Select Solution Stack" , value : '' });
+        for(var i = 0; i < props.solstackdata.length; i++){
+          SolStack.push({ id : i , label : props.solstackdata[i][0] , value : props.solstackdata[i][0] });
+        }
 
-  const Organization = [ {id:0,label: "Select Organization", value: ""},
-    {id : 1,label: "Banking Core", value: "Banking Core"}]
-        const SRT = [ {id:0,label: "Select SRT", value: ""},
-          {id : 1,label: "EAB", value: "EAB"},
-                 {id : 1,label: "ICE", value: "ICE"}
-                ]
-        const PI = [
-          {id:0,label: "Select PI", value: ""},
-            { id : 1,label: "21.1", value: 21.1 },
-            { id : 2,label: "21.2", value: 21.2 },
-            { id : 3,label: "21.3", value: 21.3 },
-            { id : 4,label: "21.4", value: 21.4 },
-            { id : 5,label: "22.1", value: 22.1 },
-            { id : 6,label: "22.2", value: 22.2 },
-        ];
-        const Sprint = [
-          {id:0,label: "Select Sprint", value: ""},
-            { id : 1,label: "S1", value: "S1" },
-            { id : 2,label: "S2", value: "S2" },
-            { id : 3,label: "S3", value: "S3" },
-            { id : 4,label: "S4", value: "S4" },
-            { id : 5,label: "S5", value: "S5" },
-            { id : 6,label: "S6", value: "S6" },
-        ];
-        const Solution = [
-          {id:0,label: "Select Solution", value: ""},
-            { id : 1,label: "AE_CxM", value: "AE_CxM" },
-            { id : 2,label: "ESS_AE_CxTH_ISO", value: "ESS_AE_CxTH_ISO" },
-            { id : 3,label: "AE_IB", value: "AE_IB" },
-            { id : 4,label: "AE_CxTH-NDC", value: "AE_CxTH-NDC" },
-            { id : 5,label: "AE_NDCHOST", value: "AE_NDCHOST" },
-            { id : 6,label: "AE_CxTH-ISO", value: "AE_CxTH-ISO" },
-        ];
+      console.log("PI[] :");
+      console.log(PI);
 
   return (
     <div>
@@ -180,28 +195,29 @@ const Form = () => {
       </div>
       <h3>Filter Options</h3>
       <form>
-        <select name="org" value={org?.value}  onChange={(e)=>{
+        <select name="org" value={org?.value}  onInput={(e)=>{
           setOrg(e.target.value);
           console.log(org);
         }} >
-            {Organization.map((Organization) => (
-          <option key={Organization.label} value={Organization.value}>{Organization.label}</option>
+            {Org.map((Org) => (
+          <option key={Org.label} value={Org.value}>{Org.label}</option>
 
           ))}
         </select>
 
-        <select name="srt" id="" onChange={(e)=>setSRT(e.target.value)}>
-            {SRT.map((SRT) => (
-            <option key={SRT.label} value={SRT.value}>{SRT.label}</option>
+        <select name="srt" id="" onInput={(e)=>setSRT(e.target.value)}>
+            {Srt.map((Srt) => (
+            <option key={Srt.label} value={Srt.value}>{Srt.label}</option>
             ))}
         </select>
-        <select name="pi" id="" onChange={(e)=>setPI(e.target.value)}>
+        <select name="pi" id="" onInput={(e)=>setPI(e.target.value)}>
             {PI.map((PI) => (
             <option key={PI.label} value={PI.value}>{PI.label}</option>
             ))}
         </select>
 
-        <select name="sprint" id="sprint" onChange={(e)=>{
+        <select name="sprint" id="sprint" onInput={(e)=>{
+
           setSprint(e.target.value);
           console.log(sprint);
         }
@@ -212,25 +228,38 @@ const Form = () => {
 
         </select>
 
-        <select name = "sol" id="" onChange={(e)=>{
+        <select name = "sol" id="" onInput={(e)=>{
           setSol(e.target.value);
           console.log(sol);
         }} >
-            {Solution.map((Solution) => (
-            <option key={Solution.label} value={Solution.value}>{Solution.label}</option>
+            {Sol.map((Sol) => (
+            <option key={Sol.label} value={Sol.value}>{Sol.label}</option>
+        ))}
+        </select>
+
+        <select name = "solstack" id="" onInput ={(e)=>{
+          setSolStack(e.target.value);
+          console.log(solstack);
+        }} >
+            {SolStack.map((SolStack) => (
+            <option key={SolStack.label} value={SolStack.value}>{SolStack.label}</option>
         ))}
         </select>
         <button type="button" onClick={() => {
           setButton("filter");
           setClick(true);
-          Filter()}}>
+          if(org != '' && srt != '' && sprint != '' && pi != '' && sol != '' && solstack != ''){Filter()}
+          else{ window.alert("Select all filters before applying !")}
+          }}>
           Apply
         </button>
         <button type="button" onClick={() => {
           setButton("compare");
           setClick(true);
-          Compare()}}>
-          Compare by sprint
+          if(org != '' && srt != '' && sprint != '' && pi != '' && sol != '' && solstack != ''){Compare()}
+          else{ window.alert("Select all filters before applying !")}
+          }}>
+          compare by sprint
         </button>
 
       </form>
@@ -241,7 +270,8 @@ const Form = () => {
             <button onClick={() => {setChart("line")}}>Line Chart</button>
             <button onClick={() => {setChart("stackedbar")}}>StackedBar Chart</button>
             <div ref = {componentRef}>
-            {totalCases.length > 0 && button==="filter" && click === true && chart === "bar" && <Barchart x_label={x_label} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail}/>}
+              {click === true && data.length > 0 &&   <h1><center>Test Results for PI {pi} Sprint {sprint}</center></h1> }
+            {totalCases.length > 0 && button==="filter" && click === true && chart === "bar" && <Barchart x_label={x_label} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail} /> }
             {click === true && button==="filter" && chart === "totaltable" && <TotalTable data ={data}/>}
             {click === true && button==="filter" && chart === "line" && <Linechart x_label={x_label} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail} /> }
             {click === true && button==="filter" && chart === "stackedbar" && <StackedBarchart x_label={x_label}  totalPass={count} totalFail={totalFail1} /> } 
@@ -253,6 +283,7 @@ const Form = () => {
     </div>
     </div>
   );
+
 };
 
 export default Form;
