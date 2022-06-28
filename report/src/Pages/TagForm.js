@@ -1,6 +1,5 @@
 import React, { useState, useRef } from "react";
 import httpClient from "../httpClient";
-import { Link } from "react-router-dom";
 import TagTable from "../Components/TagTable";
 import CompareTagTable from "../Components/CompareTagTable";
 import Barchart from "../Components/Barchart";
@@ -40,21 +39,19 @@ const TagForm = () => {
   var background1=[];
   var background2=[];
 
+  var count = [];
+  var comparecount = [];
+  var comparefail = [];
+  var totalFail1 = [];
+
   data.map((item, i) => {
     {
       totalCases.push(item["Total_Test_Cases"]);
       totalPass.push(item["Total_Test_Passed"]);
       totalFail.push(item["Total_Test_Failed"]);
-      x_label.push(
-        "PI " +
-          item["PI"] +
-          "_" +
-          item["Sprint"] +
-          "_" +
-          item["Test_Execution_Id"] +
-          "_" +
-          item["Time_Stamp"].slice(4, 8)
-      );
+      x_label.push(item["Time_Stamp"].slice(4,8)+"_"+item["Sprint"]+"_"+item["Test_Execution_Id"]+"__"+"PI "+item["PI"]+"_"+item["Id"]+"_"+item["Report_Id"]);
+      count.push(Math.round(((item["Total_Test_Passed"]*100)/item["Total_Test_Cases"])));
+      totalFail1.push(Math.round(((item["Total_Test_Failed"]*100)/item["Total_Test_Cases"])));
     }
     const r = Math.floor(Math.random() * 255);
     const g = Math.floor(Math.random() * 255);
@@ -64,9 +61,11 @@ const TagForm = () => {
 
   compareData.map((item, i) => {
     {
-   total.push(item["total"])
-   pass.push(item["totalPass"])
-   fail.push(item["totalFail"])
+   total.push(item["total"]);
+   pass.push(item["totalPass"]);
+   fail.push(item["totalFail"]);
+   comparecount.push(Math.round(((item["totalPass"]*100)/item["total"])));
+   comparefail.push(Math.round(((item["totalFail"]*100)/item["total"])));
    xlabel.push("PI "+item["PI"]+"_"+item["Sprint"])
           
      }
@@ -92,7 +91,11 @@ const TagForm = () => {
 
   const Compare = async () => {
     console.log(org, srt, pi, sol);
-    // try {
+    var elem = document.getElementById("sprint");
+    elem.style.display = 'none';
+    var elem1 = document.getElementById("sol");
+    elem1.style.display = 'none';
+
       if(org === '' && srt === '' && pi === 0 && tagname === ''){
         window.alert("Please select a filter before clicking apply !");
       }
@@ -113,7 +116,10 @@ const TagForm = () => {
 
   const Filter = async () => {
     console.log(org, srt, pi, tagname, sol);
-
+    var elem = document.getElementById("sprint");
+    elem.style.display = 'initial';
+    var elem1 = document.getElementById("sol");
+    elem1.style.display = 'initial';
     if(org === '' && srt === '' && pi === 0 && sprint === '' && sol === '' && tagname === ''){
       window.alert("Please select a filter before clicking apply !");
     }
@@ -280,7 +286,6 @@ const TagForm = () => {
           name="srt"
           id=""
           onChange={(e) => setSRT(e.target.value)}
-          // required = {true}
         >
           {SRT.map((SRT) => (
             <option key={SRT.label} value={SRT.value}>
@@ -292,7 +297,6 @@ const TagForm = () => {
           name="pi"
           id=""
           onChange={(e) => setPI(e.target.value)}
-          // required = {true}
         >
           {PI.map((PI) => (
             <option key={PI.label} value={PI.value}>
@@ -303,7 +307,7 @@ const TagForm = () => {
 
         <select
           name="sprint"
-          id=""
+          id="sprint"
           onChange={(e) => {
             setSprint(e.target.value);
             console.log(sprint);
@@ -333,7 +337,7 @@ const TagForm = () => {
 
         <select
           name="sol"
-          id=""
+          id="sol"
           onChange={(e) => {
             setSol(e.target.value);
             console.log(sol);
@@ -402,18 +406,13 @@ const TagForm = () => {
             {totalCases.length > 0 && button==="filter" && click === true && chart === "bar" && <Barchart x_label={x_label} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail} /> }
             {click === true && button==="filter" && chart === "tagtable" && <TagTable data ={data}/>}
             {click === true && button==="filter" && chart === "line" && <Linechart x_label={x_label} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail} /> }
-            {click === true && button==="filter" && chart === "stackedbar" && <StackedBarchart x_label={x_label} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail} /> } 
-            {totalCases.length > 0 && button==="compare" && click === true && chart === "bar" && <Barchart x_label={xlabel} totalCases={total} totalPass={pass} totalFail={fail} /> }
+            {click === true && button==="filter" && chart === "stackedbar" && <StackedBarchart x_label={x_label} totalPass={count} totalFail={totalFail1} /> } 
+            {totalCases.length > 0 && button==="compare" && click === true && chart === "bar" && <Barchart x_label={xlabel} totalPass={pass} totalFail={fail} /> }
             {click === true && button==="compare" && chart === "tagtable" && <CompareTagTable compareData ={compareData}/>}
             {click === true && button==="compare" && chart === "line" && <Linechart x_label={xlabel} totalCases={total} totalPass={pass} totalFail={fail} /> }
-            {click === true && button==="compare" && chart === "stackedbar" && <StackedBarchart x_label={xlabel} totalCases={total} totalPass={pass} totalFail={fail} /> }
+            {click === true && button==="compare" && chart === "stackedbar" && <StackedBarchart x_label={xlabel} totalPass={comparecount} totalFail={comparefail} /> }
         </div>
       </div>
-
-      {/* <Link to={{
-      pathname: '/totalstat',
-      state: data
-      }} >See Release Statistics</Link> */}
     </div>
   );
 };

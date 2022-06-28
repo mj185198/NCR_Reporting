@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import { Line } from 'react-chartjs-2';  
-import { Chart, registerables } from 'chart.js'
+import Plot from 'react-plotly.js';
 
-Chart.register(...registerables)
 
 export class Linechart extends Component {  
         constructor(props) {  
@@ -11,31 +9,34 @@ export class Linechart extends Component {
         render() {  
                 return (  
                         <div> 
-                            <Line
-                                data={{
-                                    labels:this.props.x_label,
-                                    datasets:[{
-                                    label:'Total Cases',
-                                    data:this.props.totalCases,
-                                    backgroundColor:'rgba(255, 99, 71,1)',
-                                    borderColor:'rgba(255, 165, 0,0.4)'
-                                    },
-                                    {
-                                    label:'Passed',
-                                    data:this.props.totalPass,
-                                    backgroundColor:'#007d18',
-                                    borderColor:'#00ff00'
-                                    },
-                                    {
-                                    label:'Failed',
-                                    data:this.props.totalFail,
-                                    backgroundColor:'rgba(255, 0, 0,1)',
-                                    borderColor:'rgba(255, 0, 0,0.3)'
-                                    }]
-                                }
-                                }
-                                >
-                            </Line>
+                        <Plot
+                            data={[
+                              {
+                                mode: "lines+markers",
+                                name:'Total Cases',
+                                x:this.props.x_label,
+                                y:this.props.totalCases,
+                                // text: this.props.totalCases.map(String)
+                              }, 
+                              {
+                                mode: "lines+markers",
+                                name:'Passed',
+                                x:this.props.x_label,
+                                y:this.props.totalPass,
+                                // text: this.props.totalPass.map(String)
+                                },
+                                {
+                                mode: "lines+markers",
+                                name:'Failed',
+                                x:this.props.x_label,
+                                y:this.props.totalFail,
+                                // text: this.props.totalFail.map(String)
+                                },
+                              
+                            ]}
+                            layout={{width: 1500, height: 500, title: "Graph Example", }}
+                        />
+                            
                         </div>  
                 )  
         }  

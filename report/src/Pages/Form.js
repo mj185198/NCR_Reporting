@@ -1,12 +1,12 @@
 import React, { useState,useRef } from "react";
 import httpClient from "../httpClient";
-import {Link} from 'react-router-dom';
 import TotalTable from '../Components/TotalTable';
 import CompareTable from '../Components/CompareTable';
 import Barchart from "../Components/Barchart";
 import Linechart from "../Components/Linechart";
 import StackedBarchart from "../Components/StackedBarchart";
 import {useReactToPrint} from "react-to-print";
+
 
 const xlsx = require('xlsx');
 
@@ -28,14 +28,11 @@ const Form = () => {
     const [click , setClick] = useState(false);
     const [compareData, setCompareData] = useState([]);
     const[button,setButton] = useState("");
-    // const [totalCases, setTotalCases] = useState([]);
-    // const [totalPass, setTotalPass] = useState([]);
-    // const [totalFail, setTotalFail] = useState([]);
-    // const [x_label, setX_label] = useState([]);
 
-    const background1 = [];
-    const background2 = [];
-    
+    var count = [];
+    var comparecount = [];
+    var comparefail = [];
+    var totalFail1 = [];
     var totalCases = [];
     var totalPass = [];
     var totalFail = [];
@@ -52,13 +49,10 @@ const Form = () => {
          totalCases.push(item["Total_Test_Cases"]);
          totalPass.push(item["Total_Test_Passed"]);
          totalFail.push(item["Total_Test_Failed"]);
-         x_label.push("PI "+item["PI"]+"_"+item["Sprint"]+"_"+item["Test_Execution_Id"]+"_"+item["Time_Stamp"].slice(4,8));
+         x_label.push(item["Time_Stamp"].slice(4,8)+"_"+item["Test_Execution_Id"]+"_"+item["Id"]);
+         count.push(Math.round(((item["Total_Test_Passed"]*100)/item["Total_Test_Cases"])));
+         totalFail1.push(Math.round(((item["Total_Test_Failed"]*100)/item["Total_Test_Cases"])));
       }
-      const r = Math.floor(Math.random() * 255);
-      const g = Math.floor(Math.random() * 255);
-      const b = Math.floor(Math.random() * 255);
-      background1.push('rgba('+r+', '+g+', '+b+', 0.8)');
-
     })
 
     compareData.map((item, i) => {
@@ -66,12 +60,10 @@ const Form = () => {
          total.push(item["total"])
          pass.push(item["totalPass"])
          fail.push(item["totalFail"]) 
+         comparecount.push(Math.round(((item["totalPass"]*100)/item["total"])));
+         comparefail.push(Math.round(((item["totalFail"]*100)/item["total"])));
         xlabel.push("PI "+item["PI"]+"_"+item["Sprint"])
       }
-      const r = Math.floor(Math.random() * 255);
-      const g = Math.floor(Math.random() * 255);
-      const b = Math.floor(Math.random() * 255);
-      background2.push('rgba('+r+', '+g+', '+b+', 0.8)');
     })
 
     
@@ -96,6 +88,8 @@ const Form = () => {
 
     const Compare = async () => {
       console.log(org,srt,pi,sol);
+      var elem = document.getElementById("sprint");
+      elem.style.display = 'none';
       if(org === '' && srt === '' && pi === 0  && sol === ''){
         window.alert("Please select a filter before clicking apply !")
       }
@@ -116,11 +110,10 @@ const Form = () => {
       }
     };
 
-//Filter
-
-
   const Filter = async () => {
     console.log(org,srt,pi,sprint,sol);
+    var elem = document.getElementById("sprint");
+    elem.style.display = 'initial';
     if(org === '' && srt === '' && pi === 0 && sprint === '' && sol === ''){
       window.alert("Please select a filter before clicking apply !")
     }
@@ -208,7 +201,7 @@ const Form = () => {
             ))}
         </select>
 
-        <select name="sprint" id="" onChange={(e)=>{
+        <select name="sprint" id="sprint" onChange={(e)=>{
           setSprint(e.target.value);
           console.log(sprint);
         }
@@ -242,28 +235,22 @@ const Form = () => {
 
       </form>
 
-      <div >
+      <div>
             <button onClick={() => {setChart("bar")}}>Bar Chart</button>
             <button onClick={() => {setChart("totaltable")}}>Table</button>
             <button onClick={() => {setChart("line")}}>Line Chart</button>
             <button onClick={() => {setChart("stackedbar")}}>StackedBar Chart</button>
             <div ref = {componentRef}>
-            {totalCases.length > 0 && button==="filter" && click === true && chart === "bar" && <Barchart x_label={x_label} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail} /> }
+            {totalCases.length > 0 && button==="filter" && click === true && chart === "bar" && <Barchart x_label={x_label} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail}/>}
             {click === true && button==="filter" && chart === "totaltable" && <TotalTable data ={data}/>}
             {click === true && button==="filter" && chart === "line" && <Linechart x_label={x_label} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail} /> }
-            {click === true && button==="filter" && chart === "stackedbar" && <StackedBarchart x_label={x_label} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail} /> } 
+            {click === true && button==="filter" && chart === "stackedbar" && <StackedBarchart x_label={x_label}  totalPass={count} totalFail={totalFail1} /> } 
             {totalCases.length > 0 && button==="compare" && click === true && chart === "bar" && <Barchart x_label={xlabel} totalCases={total} totalPass={pass} totalFail={fail} /> }
             {click === true && button==="compare" && chart === "totaltable" && <CompareTable compareData ={compareData}/>}
             {click === true && button==="compare" && chart === "line" && <Linechart x_label={xlabel} totalCases={total} totalPass={pass} totalFail={fail} /> }
-            {click === true && button==="compare" && chart === "stackedbar" && <StackedBarchart x_label={xlabel} totalCases={total} totalPass={pass} totalFail={fail} /> }
+            {click === true && button==="compare" && chart === "stackedbar" && <StackedBarchart x_label={xlabel}  totalPass={comparecount} totalFail={comparefail} /> }
             </div>
     </div>
-
-      {/* <Link to={{
-      pathname: '/totalstat',
-      state: data
-      }} >See Release Statistics</Link> */}
-
     </div>
   );
 };
