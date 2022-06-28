@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import httpClient from "../httpClient";
 import { Link } from "react-router-dom";
 import TagTable from "../Components/TagTable";
+import CompareTagTable from "../Components/CompareTagTable";
 import Barchart from "../Components/Barchart";
 import Linechart from "../Components/Linechart";
 import StackedBarchart from "../Components/StackedBarchart";
@@ -28,6 +29,8 @@ const TagForm = (props) => {
   const [click, setClick] = useState(false);
   const[solStack, setSolStack] = useState("");
   const [compareData, setCompareData] = useState([]);
+  const[button,setButton] = useState("");
+  const [comment, setComment] = useState("");
 
   var PI = [];
   var Org = [];
@@ -40,17 +43,21 @@ const TagForm = (props) => {
   var totalCases = [];
   var totalPass = [];
   var totalFail = [];
-  var datetime = [];
   var x_label = [];
-  var solutionstack = [];
-  const background1 = [];
+
+  var total = [];
+  var pass = [];
+  var fail = [];
+  var xlabel = [];
+
+  var background1=[];
+  var background2=[];
+
   data.map((item, i) => {
     {
       totalCases.push(item["Total_Test_Cases"]);
       totalPass.push(item["Total_Test_Passed"]);
       totalFail.push(item["Total_Test_Failed"]);
-      datetime.push(item["Time_Stamp"]);
-      solutionstack.push(item["Solution_Stack"]);
       x_label.push(
         "PI " +
           item["PI"] +
@@ -61,14 +68,26 @@ const TagForm = (props) => {
           "_" +
           item["Time_Stamp"].slice(4, 8)
       );
-
-      // +" ("+item["Total_Test_Cases"]+")"
     }
     const r = Math.floor(Math.random() * 255);
     const g = Math.floor(Math.random() * 255);
     const b = Math.floor(Math.random() * 255);
     background1.push("rgba(" + r + ", " + g + ", " + b + ", 0.8)");
   });
+
+  compareData.map((item, i) => {
+    {
+   total.push(item["total"])
+   pass.push(item["totalPass"])
+   fail.push(item["totalFail"])
+   xlabel.push("PI "+item["PI"]+"_"+item["Sprint"])
+          
+     }
+     const r = Math.floor(Math.random() * 255);
+     const g = Math.floor(Math.random() * 255);
+     const b = Math.floor(Math.random() * 255);
+     background2.push('rgba('+r+', '+g+', '+b+', 0.8)');
+   })
 
   const export_to_excel = (data, name) => {
     console.log(data);
@@ -87,43 +106,22 @@ const TagForm = (props) => {
   const Compare = async () => {
     console.log(org, srt, pi, sol);
     // try {
-      if(org === '' && srt === '' && pi === 0 && sol === ''){
+      if(org === '' && srt === '' && pi === 0 && tagname === ''){
         window.alert("Please select a filter before clicking apply !");
       }
       else{
-    const resp = await httpClient.post("//localhost:5000/compare", {
+    const resp = await httpClient.post("//localhost:5000/tagcompare", {
       org,
       srt,
       pi,
-      sol,
+      tagname,
     });
     console.log(resp.data);
-    // console.log("Compare Data : "+resp.data);
 
     setCompareData(resp.data);
   }
     // console.log("Compare Data : "+compareData);
-    // compareData.map((item, i) => {
-    //   {
-    //  totalCases.push(item["total"])
-    //  totalPass.push(item["totalPass"])
-    //  totalFail.push(item["totalFail"])
-    //  datetime.push(item["Time_Stamp"])
-    //  solutionstack.push(item["Solution_Stack"])
-    //  id.push(item["Id"])
-    //         setCompareSprint(() => {
-    //           compareSprint.totalCases.push(item["total"]);
-    //           compareSprint.totalPass.push(item["totalPass"]);
-    //           compareSprint.totalFail.push(item["totalFail"]);
-    //         })
-    //         //  x_label.push("PI "+item["PI"]+"_"+item["Sprint"])
-    //         setX_label("PI ");
-    //    }
-    //    const r = Math.floor(Math.random() * 255);
-    //    const g = Math.floor(Math.random() * 255);
-    //    const b = Math.floor(Math.random() * 255);
-    //    background2.push('rgba('+r+', '+g+', '+b+', 0.8)');
-    //  })
+    
   };
 
   const Filter = async () => {
@@ -302,6 +300,7 @@ for( i = 0; i < props.tagdata.length; i++){
         <button
           type="button"
           onClick={() => {
+            setButton("filter");
             setClick(true);
             Filter();
           }}
@@ -309,15 +308,16 @@ for( i = 0; i < props.tagdata.length; i++){
           Apply
         </button>
 
-        {/* <button
+        <button
           type="button"
           onClick={() => {
+            setButton("compare");
             setClick(true);
             Compare();
           }}
         >
           Compare by sprint
-        </button> */}
+        </button>
       </form>
 
       <div>
@@ -350,33 +350,20 @@ for( i = 0; i < props.tagdata.length; i++){
           StackedBar Chart
         </button>
         <div ref={componentRef}>
-          {totalCases.length > 0 && click === true && chart === "bar" && (
-            <Barchart
-              x_label={x_label}
-              totalCases={totalCases}
-              totalPass={totalPass}
-              totalFail={totalFail}
-            />
-          )}
-          {click === true && chart === "tagtable" && <TagTable data={data} />}
-
-          {click === true && chart === "line" && (
-            <Linechart
-              x_label={x_label}
-              totalCases={totalCases}
-              totalPass={totalPass}
-              totalFail={totalFail}
-            />
-          )}
-          {click === true && chart === "stackedbar" && (
-            <StackedBarchart
-              x_label={x_label}
-              totalCases={totalCases}
-              totalPass={totalPass}
-              totalFail={totalFail}
-              background1={background1}
-            />
-          )}
+            {click === true && data.length > 0 &&   <h1><center>Tag-wise Results for PI {pi} Sprint {sprint}</center></h1> }
+            {totalCases.length > 0 && button==="filter" && click === true && chart === "bar" && <Barchart x_label={x_label} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail} /> }
+            {click === true && button==="filter" && chart === "tagtable" && <TagTable data ={data}/>}
+            {click === true && button==="filter" && chart === "line" && <Linechart x_label={x_label} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail} /> }
+            {click === true && button==="filter" && chart === "stackedbar" && <StackedBarchart x_label={x_label} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail} /> } 
+            {totalCases.length > 0 && button==="compare" && click === true && chart === "bar" && <Barchart x_label={xlabel} totalCases={total} totalPass={pass} totalFail={fail} /> }
+            {click === true && button==="compare" && chart === "tagtable" && <CompareTagTable compareData ={compareData}/>}
+            {click === true && button==="compare" && chart === "line" && <Linechart x_label={xlabel} totalCases={total} totalPass={pass} totalFail={fail} /> }
+            {click === true && button==="compare" && chart === "stackedbar" && <StackedBarchart x_label={xlabel} totalCases={total} totalPass={pass} totalFail={fail} /> }
+            <br/> <br/>
+            {click === true && data.length > 0 && <p>{comment}</p>}
+            {click === true && data.length > 0 && <label for = "comment">Comments :</label> } <br /><br />
+            {click === true && data.length > 0 && <input type = "text" name = "comment" /> } 
+            {click === true && data.length > 0 && <input type = "button" name = "comment" /> } 
         </div>
       </div>
 

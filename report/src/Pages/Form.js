@@ -2,6 +2,7 @@ import React, { useState,useRef,useEffect } from "react";
 import httpClient from "../httpClient";
 import {Link} from 'react-router-dom';
 import TotalTable from '../Components/TotalTable';
+import CompareTable from '../Components/CompareTable';
 import Barchart from "../Components/Barchart";
 import Linechart from "../Components/Linechart";
 import Input from "./Input";
@@ -78,18 +79,20 @@ console.log(props.pidata);
 
 
 
-  const export_to_excel = (data, name) => {
-    console.log(data);
-    if(data.length > 0){
-    const worksheet = xlsx.utils.json_to_sheet(data);
-    const workbook = xlsx.utils.book_new();
-    xlsx.utils.book_append_sheet(workbook, worksheet, name);
-    xlsx.write(workbook, {bookType : 'xlsx', type : "buffer"});
-    xlsx.write(workbook,{bookType:"xlsx",type:"binary"});
-    xlsx.writeFile(workbook,name+".xlsx");
-    }
-    else{
-      window.alert("Empty data cannot be exported !");
+      const export_to_excel = (data, name) => {
+        console.log(data);
+        if(data.length > 0){
+        const worksheet = xlsx.utils.json_to_sheet(data);
+        const workbook = xlsx.utils.book_new();
+        xlsx.utils.book_append_sheet(workbook, worksheet, name);
+        xlsx.write(workbook, {bookType : 'xlsx', type : "buffer"});
+        xlsx.write(workbook,{bookType:"xlsx",type:"binary"});
+        xlsx.writeFile(workbook,name+".xlsx");
+        }
+        else{
+          window.alert("Empty data cannot be exported !");
+        }
+
     }
 
 }
@@ -114,20 +117,37 @@ const Compare = async () => {
     setCompareData(resp.data);
 
 
-};
+
+    const Compare = async () => {
+      console.log(org,srt,pi,sol);
+      if(org === '' && srt === '' && pi === 0  && sol === ''){
+        window.alert("Please select a filter before clicking apply !")
+      }
+      else{
+        const resp = await httpClient.post("//localhost:5000/compare", {
+          org,
+          srt,
+          pi,
+          sol,
+        });
+        console.log(resp.data);
+        if(resp.data.length === 0){
+          window.alert("No data to show for the selected filters");
+        }
+        else{
+        setCompareData(resp.data);
+        }
+      }
+    };
 
 //Filter
 
 
   const Filter = async () => {
-
+    console.log(org,srt,pi,sprint,sol);
     if(org === '' && srt === '' && pi === 0 && sprint === '' && sol === ''){
       window.alert("Please select a filter before clicking apply !")
     }
-
-
-    // console.log(org,srt,pi,sprint,sol);
-    // try {
     else{
       const resp = await httpClient.post("//localhost:5000/release", {
         org,
@@ -148,8 +168,6 @@ const Compare = async () => {
       console.log(data);
       }
     }
-
-   
   };
   // const Organization = [ {id:0,label: "Select Organization", value: ""},
   //   {id : 1,label: "Banking Core", value: "Banking Core"}]
@@ -268,6 +286,7 @@ for(var i = 0; i < props.solstackdata.length; i++){
         ))}
         </select>
         <button type="button" onClick={() => {
+          setButton("filter");
           setClick(true);
           if(org != '' && srt != '' && sprint != '' && pi != '' && sol != '' && solstack != ''){Filter()}
           else{ window.alert("Select all filters before applying !")}
@@ -283,10 +302,16 @@ for(var i = 0; i < props.solstackdata.length; i++){
             <button onClick={() => {setChart("line")}}>Line Chart</button>
             <button onClick={() => {setChart("stackedbar")}}>StackedBar Chart</button>
             <div ref = {componentRef}>
-            {totalCases.length > 0 && click === true && chart === "bar" && <Barchart x_label={x_label} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail} /> }
-            {click === true && chart === "totaltable" && <TotalTable data ={data}/>}
-            {click === true && chart === "line" && <Linechart x_label={x_label} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail} /> }
-            {click === true && chart === "stackedbar" && <StackedBarchart x_label={x_label} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail} background1={background1} /> }
+            
+              {click === true && data.length > 0 &&   <h1><center>Test Results for PI {pi} Sprint {sprint}</center></h1> }
+            {totalCases.length > 0 && button==="filter" && click === true && chart === "bar" && <Barchart x_label={x_label} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail} /> }
+            {click === true && button==="filter" && chart === "totaltable" && <TotalTable data ={data}/>}
+            {click === true && button==="filter" && chart === "line" && <Linechart x_label={x_label} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail} /> }
+            {click === true && button==="filter" && chart === "stackedbar" && <StackedBarchart x_label={x_label} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail} /> } 
+            {totalCases.length > 0 && button==="compare" && click === true && chart === "bar" && <Barchart x_label={xlabel} totalCases={total} totalPass={pass} totalFail={fail} /> }
+            {click === true && button==="compare" && chart === "totaltable" && <CompareTable compareData ={compareData}/>}
+            {click === true && button==="compare" && chart === "line" && <Linechart x_label={xlabel} totalCases={total} totalPass={pass} totalFail={fail} /> }
+            {click === true && button==="compare" && chart === "stackedbar" && <StackedBarchart x_label={xlabel} totalCases={total} totalPass={pass} totalFail={fail} /> }
             </div>
     </div>
 
@@ -294,6 +319,7 @@ for(var i = 0; i < props.solstackdata.length; i++){
 
     </div>
   );
+
 };
 
 export default Form;
