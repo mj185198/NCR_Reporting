@@ -6,6 +6,7 @@ import Barchart from "../Components/Barchart";
 import Linechart from "../Components/Linechart";
 import StackedBarchart from "../Components/StackedBarchart";
 import {useReactToPrint} from "react-to-print";
+import axios from "axios";
 
 const xlsx = require('xlsx');
 
@@ -72,17 +73,17 @@ const Form = () => {
 
 
     // fetch PI data
-    useEffect(() => {setPIData()}, []);
- useEffect(() => {fetchPIData()}, []);
-  let promise = new Promise(function(fetchPIData){
-      fetch(PI_URL)
-      .then((res) =>res.json())
-      .then((response) => {
-        // console.log(response);
-        setPIData(response);
+//     useEffect(() => {setPIData()}, []);
+//  useEffect(() => {fetchPIData()}, []);
+//   let promise = new Promise(function(fetchPIData){
+//       fetch(PI_URL)
+//       .then((res) =>res.json())
+//       .then((response) => {
+//         // console.log(response);
+//         setPIData(response);
       
-      })
-    });
+//       })
+//     });
 // console.log(pi_data);
   const export_to_excel = (data, name) => {
     console.log(data);
@@ -196,6 +197,20 @@ const Compare = async () => {
 
         // ];
 
+
+        const fetchPIData = async() => {
+
+            try {
+              const response = await axios(PI_URL);
+              console.log(response.data);
+              setPIData(response.data);
+            }
+            catch(error){
+              console.log(error.response);
+            }
+
+        };
+
         // class piClass{
         //   id = 0;
         //   label = "";
@@ -222,7 +237,7 @@ const Compare = async () => {
         // pi_data.map((item , i ) => {
         //     PI.push(item["PI"])
         // });
-
+        // fetchPIData();
         console.log("PI data : " );
         console.log(pi_data);
 
