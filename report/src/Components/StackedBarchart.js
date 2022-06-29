@@ -15,18 +15,34 @@ export class StackedBarchart extends Component {
                                 name:'Passed',
                                 x:this.props.x_label,
                                 y:this.props.totalPass,
-                                text: this.props.totalPass.map(String)
+                                text: this.props.totalPass.map(String),
+                                textfont: {
+                                    family:"Arial Black"
+                                  },
+                                marker: {
+                                    color: 'rgb(61,176,0)'
+                                  }
                                 },
                                 {
                                 type: "bar",
                                 name:'Failed',
                                 x:this.props.x_label,
                                 y:this.props.totalFail,
-                                text: this.props.totalFail.map(String)
+                                text: this.props.totalFail.map(String),
+                                textfont: {
+                                    family:"Arial Black"
+                                  },
+                                marker: {
+                                color: 'rgb(255,0,0)'
+                                    }
                                 },
                               
                             ]}
-                            layout={{ barmode: 'stack',width: 1500, height: 500, title: "Graph Example", }}
+                            layout={{ barmode: 'stack',xaxis: {
+                                tickmode: "array",
+                                tickvals:this.props.x_label,
+                                ticktext:this.props.x_label1,
+                              },width: 1500, height: 500,}}
                         />
                         </div>  
                 )  

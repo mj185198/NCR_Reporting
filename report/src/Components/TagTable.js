@@ -12,6 +12,7 @@ export default class TagTable extends Component {
                 <tr>
                      <th>Report_Id</th>
                      <th>Solution</th>
+                     <th>Solution_Stack</th>
                      <th>Sprint</th>
                      <th>Tag_Name</th>
                      <th>Total_Test_Cases</th>
@@ -24,6 +25,7 @@ export default class TagTable extends Component {
                  {this.props.data.map((item, i) => (
                     <tr key={i} >
                         <td>{item.Report_Id}</td>
+                        <td>{item.Solution}</td>
                         <td>{item.Solution_Stack}</td>
                         <td>{item.Sprint}</td>
                         <td>{item.Tag_Name}</td>
@@ -31,13 +33,6 @@ export default class TagTable extends Component {
                         <td>{item.Total_Test_Passed}</td>
                         <td>{item.Total_Test_Failed}</td>
                         <td>{item.Time_Stamp}</td>
-                        {/* <td>{this.props.id}</td>
-                        <td>{this.props.solutionstack}</td>
-                        <td>{item.Sprint}</td>
-                        <td>{this.props.totalCases}</td>
-                        <td>{this.props.totalPass}</td>
-                        <td>{this.props.totalFail}</td>
-                        <td>{this.props.datetime}</td> */}
                     </tr>
                 ))}
             </tbody>

@@ -1,5 +1,5 @@
 from unicodedata import name
-from flask import Flask,jsonify,request,render_template,redirect,url_for
+from flask import Flask,request
 from flask_cors import CORS
 import pandas as pd
 import pyodbc
@@ -46,7 +46,7 @@ def tag():
         Tag_Name = str(request.json["tagname"])
         Solution = str(request.json["sol"])
         # Time_Stamp = str(request.json["date"]).replace('-','')
-        res = pd.read_sql_query("SELECT r.Id,t.Report_Id,r.Solution_Stack,r.PI,r.Sprint,t.Tag_Name,t.Total_Test_Cases,t.Total_Test_Passed,t.Total_Test_Failed,t.Time_Stamp,r.Test_Execution_Id from dbo.Report r,dbo.Statistics_By_Tag t where r.Time_Stamp=t.Time_Stamp and r.Organization = '""" + Organization +"""' and r.SRT = '""" + SRT +"""' and r.PI = """ + PI +""" and Sprint = '""" + Sprint +"""' and t.Tag_Name = '""" + Tag_Name +"""' and r.Solution = '""" + Solution +"""'  """,conn)
+        res = pd.read_sql_query("SELECT r.Id,t.Report_Id,r.Solution,r.Solution_Stack,r.PI,r.Sprint,t.Tag_Name,t.Total_Test_Cases,t.Total_Test_Passed,t.Total_Test_Failed,t.Time_Stamp,r.Test_Execution_Id from dbo.Report r,dbo.Statistics_By_Tag t where r.Time_Stamp=t.Time_Stamp and r.Organization = '""" + Organization +"""' and r.SRT = '""" + SRT +"""' and r.PI = """ + PI +""" and Sprint = '""" + Sprint +"""' and t.Tag_Name = '""" + Tag_Name +"""' and r.Solution = '""" + Solution +"""'  """,conn)
         result = res.to_json(orient = 'records')
         return result
     except :

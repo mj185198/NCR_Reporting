@@ -23,18 +23,26 @@ export class Linechart extends Component {
                                 name:'Passed',
                                 x:this.props.x_label,
                                 y:this.props.totalPass,
-                                // text: this.props.totalPass.map(String)
+                                marker: {
+                                    color: 'rgb(61,176,0)'
+                                  }
                                 },
                                 {
                                 mode: "lines+markers",
                                 name:'Failed',
                                 x:this.props.x_label,
                                 y:this.props.totalFail,
-                                // text: this.props.totalFail.map(String)
+                                marker: {
+                                color: 'rgb(255,0,0)'
+                                    }
                                 },
                               
                             ]}
-                            layout={{width: 1500, height: 500, title: "Graph Example", }}
+                            layout={{xaxis: {
+                                tickmode: "array",
+                                tickvals:this.props.x_label,
+                                ticktext:this.props.x_label1,
+                              },width: 1500, height: 500,}}
                         />
                             
                         </div>  

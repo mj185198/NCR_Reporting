@@ -43,6 +43,7 @@ const TagForm = (props) => {
   var totalPass = [];
   var totalFail = [];
   var x_label = [];
+  var x_label1 = [];
 
   var total = [];
   var pass = [];
@@ -62,7 +63,8 @@ const TagForm = (props) => {
       totalCases.push(item["Total_Test_Cases"]);
       totalPass.push(item["Total_Test_Passed"]);
       totalFail.push(item["Total_Test_Failed"]);
-      x_label.push(item["Time_Stamp"].slice(4,8)+"_"+item["Sprint"]+"_"+item["Test_Execution_Id"]+"__"+"PI "+item["PI"]+"_"+item["Id"]+"_"+item["Report_Id"]);
+      x_label.push(item["Test_Execution_Id"]+"_"+item["Time_Stamp"].slice(4,8)+"_"+item["Id"]+"_"+item["Report_Id"]);
+      x_label1.push(item["Test_Execution_Id"]+"_"+item["Time_Stamp"].slice(4,8));
       count.push(Math.round(((item["Total_Test_Passed"]*100)/item["Total_Test_Cases"])));
       totalFail1.push(Math.round(((item["Total_Test_Failed"]*100)/item["Total_Test_Cases"])));
     }
@@ -108,6 +110,8 @@ const TagForm = (props) => {
     elem.style.display = 'none';
     var elem1 = document.getElementById("sol");
     elem1.style.display = 'none';
+    var elem2 = document.getElementById("solstack");
+    elem2.style.display = 'none';
 
       if(org === '' && srt === '' && pi === 0 && tagname === ''){
         window.alert("Please select a filter before clicking apply !");
@@ -133,6 +137,8 @@ const TagForm = (props) => {
     elem.style.display = 'initial';
     var elem1 = document.getElementById("sol");
     elem1.style.display = 'initial';
+    var elem2 = document.getElementById("solstack");
+    elem2.style.display = 'initial';
     if(org === '' && srt === '' && pi === 0 && sprint === '' && sol === '' && tagname === ''){
       window.alert("Please select a filter before clicking apply !");
     }
@@ -287,8 +293,8 @@ for( i = 0; i < props.tagdata.length; i++){
           ))}
         </select>
         <select
-          name="sol"
-          id=""
+          name="solstack"
+          id="solstack"
           onChange={(e) => {
             setSolStack(e.target.value);
             console.log(solStack);
@@ -354,11 +360,12 @@ for( i = 0; i < props.tagdata.length; i++){
           StackedBar Chart
         </button>
         <div ref={componentRef}>
-            {click === true && data.length > 0 &&   <h1><center>Tag-wise Results for PI {pi} Sprint {sprint}</center></h1> }
-            {totalCases.length > 0 && button==="filter" && click === true && chart === "bar" && <Barchart x_label={x_label} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail} /> }
+            {click === true && data.length > 0 && button==="filter" &&   <h1><center>Tag-wise Results for PI {pi} Sprint {sprint} Tag - {tagname}</center></h1> }
+            {click === true && data.length > 0 && button==="compare" && <h1><center>Tag-wise Results for PI {pi} Tag - {tagname}</center></h1> }
+            {totalCases.length > 0 && button==="filter" && click === true && chart === "bar" && <Barchart x_label={x_label} x_label1={x_label1} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail} /> }
             {click === true && button==="filter" && chart === "tagtable" && <TagTable data ={data}/>}
-            {click === true && button==="filter" && chart === "line" && <Linechart x_label={x_label} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail} /> }
-            {click === true && button==="filter" && chart === "stackedbar" && <StackedBarchart x_label={x_label} totalPass={count} totalFail={totalFail1} /> } 
+            {click === true && button==="filter" && chart === "line" && <Linechart x_label={x_label} x_label1={x_label1} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail} /> }
+            {click === true && button==="filter" && chart === "stackedbar" && <StackedBarchart x_label={x_label} x_label1={x_label1} totalPass={count} totalFail={totalFail1} /> }
             {totalCases.length > 0 && button==="compare" && click === true && chart === "bar" && <Barchart x_label={xlabel} totalPass={pass} totalFail={fail} /> }
             {click === true && button==="compare" && chart === "tagtable" && <CompareTagTable compareData ={compareData}/>}
             {click === true && button==="compare" && chart === "line" && <Linechart x_label={xlabel} totalCases={total} totalPass={pass} totalFail={fail} /> }
