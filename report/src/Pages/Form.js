@@ -29,6 +29,14 @@ const [chart, setChart] = useState("bar");
 const [click , setClick] = useState(false);
 const [button, setButton] = useState("");
 const [compareData, setCompareData] = useState([]);
+const [noteButtonClick, setNoteButtonClick] = useState(false);
+
+const [note, setNote] = useState("");
+
+const [addNoteButton, setAddNoteButton] = useState(false);
+
+// const [filter, setFilter] = useState("")
+var filter = "";
 
 var PI = [];
 var Org = [];
@@ -60,6 +68,71 @@ console.log(props.pidata);
   var pass = [];
   var fail = [];
   var xlabel = [];
+
+  const fetchNoteFromDb = async() => {
+    
+    filter = org+srt+pi+sprint+sol+solstack;
+
+    console.log(filter);
+
+    const db_note = await httpClient.post("//localhost:5000/getNote", {
+
+      filter
+
+    });
+
+    console.log("DB_Note :")
+
+    console.log(db_note.data);
+    setNote(db_note.data);
+
+  }
+  const fetchNote = async () => {
+
+    // console.log(org,srt,pi,sol);
+
+    // if(org === '' && srt === '' && pi === 0  && sol === ''){
+
+    const tarea = document.getElementById("addNoteArea");
+
+    tarea.setAttribute("value","");
+
+    //   window.alert("Please select a filter before clicking apply !")
+    filter = org+srt+pi+sprint+sol+solstack;
+
+    console.log(filter);
+
+    // }
+
+    // else{
+      // setFilter(org+srt+pi+sprint+sol+solstack);
+      console.log("fetchNote parameters :")
+
+      console.log(filter,note)
+
+      const note_resp = await httpClient.post("//localhost:5000/addNote", {
+
+        filter,
+
+        note,
+
+      });
+
+      console.log("note_resp :")
+
+      console.log(note_resp.data);
+
+      // if(resp.data.length === 0){
+
+      //   window.alert("No data to show for the selected filters");
+
+      // }
+
+      // else{
+
+      setNote(note_resp.data);
+
+  };
 
     data.map((item, i) => {
       {
@@ -129,13 +202,20 @@ console.log(props.pidata);
     };
 
   const Filter = async () => {
+    console.log(filter)
+    // setNote(" ");
+    // document.getElementById(viewNotes).click();
+    fetchNoteFromDb();
     console.log(org,srt,pi,sprint,sol);
     var elem = document.getElementById("sprint");
     elem.style.display = 'initial';
+    // setNote(" ");
     if(org === '' && srt === '' && pi === 0 && sprint === '' && sol === ''){
       window.alert("Please select a filter before clicking apply !")
     }
     else{
+      
+
       const resp = await httpClient.post("//localhost:5000/release", {
         org,
         srt,
@@ -146,8 +226,9 @@ console.log(props.pidata);
       });
       console.log(resp.data);
 
-      if(resp.data.length === 0){
+      if(resp.data.length === 0 || resp.data === null){
         window.alert("No data to show for the selected filters");
+        setNote(" ");
       }
       else{
       setData(resp.data);
@@ -157,6 +238,7 @@ console.log(props.pidata);
     }
   };
   
+
           Org.push({ id : -1 , label : "Select Organization" , value : '' });
           for(var i = 0; i < props.orgdata.length; i++){
             Org.push({ id : i , label : props.orgdata[i][0] , value : props.orgdata[i][0] });
@@ -198,6 +280,7 @@ console.log(props.pidata);
         <select name="org" value={org?.value}  onInput={(e)=>{
           setOrg(e.target.value);
           console.log(org);
+          // setFilter(org+srt+pi+sprint+sol+solstack);            
         }} >
             {Org.map((Org) => (
           <option key={Org.label} value={Org.value}>{Org.label}</option>
@@ -205,12 +288,16 @@ console.log(props.pidata);
           ))}
         </select>
 
-        <select name="srt" id="" onInput={(e)=>setSRT(e.target.value)}>
+        <select name="srt" id="" onInput={(e)=>{setSRT(e.target.value);
+          // setFilter(org+srt+pi+sprint+sol+solstack);
+                      }}>
             {Srt.map((Srt) => (
             <option key={Srt.label} value={Srt.value}>{Srt.label}</option>
             ))}
         </select>
-        <select name="pi" id="" onInput={(e)=>setPI(e.target.value)}>
+        <select name="pi" id="" onInput={(e)=>{setPI(e.target.value);
+          // setFilter(org+srt+pi+sprint+sol+solstack);
+          }}>
             {PI.map((PI) => (
             <option key={PI.label} value={PI.value}>{PI.label}</option>
             ))}
@@ -220,6 +307,7 @@ console.log(props.pidata);
 
           setSprint(e.target.value);
           console.log(sprint);
+          // setFilter(org+srt+pi+sprint+sol+solstack);            
         }
         }>
             {Sprint.map((Sprint) => (
@@ -231,6 +319,7 @@ console.log(props.pidata);
         <select name = "sol" id="" onInput={(e)=>{
           setSol(e.target.value);
           console.log(sol);
+          // setFilter(org+srt+pi+sprint+sol+solstack);            
         }} >
             {Sol.map((Sol) => (
             <option key={Sol.label} value={Sol.value}>{Sol.label}</option>
@@ -240,17 +329,24 @@ console.log(props.pidata);
         <select name = "solstack" id="" onInput ={(e)=>{
           setSolStack(e.target.value);
           console.log(solstack);
+          // setFilter(org+srt+pi+sprint+sol+solstack);            
         }} >
             {SolStack.map((SolStack) => (
             <option key={SolStack.label} value={SolStack.value}>{SolStack.label}</option>
         ))}
         </select>
         <button type="button" onClick={() => {
-          setButton("filter");
-          setClick(true);
-          if(org != '' && srt != '' && sprint != '' && pi != '' && sol != '' && solstack != ''){Filter()}
-          else{ window.alert("Select all filters before applying !")}
-          }}>
+          if(org != '' && srt != '' && sprint != '' && pi != '' && sol != '' && solstack != ''){
+
+            setAddNoteButton(false);
+
+            // setFilter(org+srt+pi+sprint+sol+solstack);            
+  
+            setButton("filter");
+            
+            setClick(true);Filter()}
+  
+            else{ window.alert("Select all filters before applying !")}}}>
           Apply
         </button>
         <button type="button" onClick={() => {
@@ -280,7 +376,21 @@ console.log(props.pidata);
             {click === true && button==="compare" && chart === "totaltable" && <CompareTable compareData ={compareData}/>}
             {click === true && button==="compare" && chart === "line" && <Linechart x_label={xlabel} totalCases={total} totalPass={pass} totalFail={fail} /> }
             {click === true && button==="compare" && chart === "stackedbar" && <StackedBarchart x_label={xlabel}  totalPass={comparecount} totalFail={comparefail} /> }
+            {<p>{note}</p>}
             </div>
+            <br/><br/>
+
+            {/* {click === true && data.length > 0 && <button id="viewNotes" onClick={() => {fetchNoteFromDb();}}> View notes</button>} */}
+
+            {noteButtonClick === false && addNoteButton === false && click === true && data.length > 0  && <button id="note" onClick={() => {setNoteButtonClick(true)}} >Add note</button>}<br/>
+
+            {noteButtonClick === true &&  <textarea placeholder="Add a note here" id="addNoteArea" onInput={(e)=> {setNote(e.target.value)} }/>}<br/>
+
+            {click === true && data.length > 0 && noteButtonClick === true && <button id="addNote" onClick={() => {setAddNoteButton(true); fetchNote();
+            // var textarea = document.getElementById(addNoteArea);
+            }} >Set note</button>}
+
+            {click === true && data.length > 0 && noteButtonClick === true && <button name="cancel" id="cancel" onClick = {() => {fetchNoteFromDb(); setNoteButtonClick(false);}} >Cancel</button>}
     </div>
     </div>
   );
