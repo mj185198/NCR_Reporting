@@ -1,0 +1,4 @@
+axios,
+react-to-print,
+react-plotly.js plotly.js,
+xlsx,

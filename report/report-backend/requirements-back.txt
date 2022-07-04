@@ -1,7 +1,5 @@
-flask,
-flask_cors,
-pandas,
-json,
-pickle,
-pyodbc,
-sqlite3,
+flask 
+flask_cors 
+pandas 
+pyodbc 
+python-dotenv 
