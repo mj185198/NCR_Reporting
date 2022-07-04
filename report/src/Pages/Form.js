@@ -27,7 +27,7 @@ const [solstack, setSolStack] = useState('');
 const [data, setData]=useState([]);
 const [chart, setChart] = useState("bar");
 const [click , setClick] = useState(false);
-const [button, setButton] = useState("");
+// const [button, setButton] = useState("");
 const [compareData, setCompareData] = useState([]);
 const [noteButtonClick, setNoteButtonClick] = useState(false);
 
@@ -37,7 +37,7 @@ const [addNoteButton, setAddNoteButton] = useState(false);
 
 // const [filter, setFilter] = useState("")
 var filter = "";
-
+var button = "";
 var PI = [];
 var Org = [];
 var Srt = [];
@@ -178,6 +178,7 @@ console.log(props.pidata);
     }
 
     const Compare = async () => {
+      fetchNoteFromDb();
       console.log(org,srt,pi,sol);
       var elem = document.getElementById("sprint");
       elem.style.display = 'none';
@@ -342,7 +343,8 @@ console.log(props.pidata);
 
             // setFilter(org+srt+pi+sprint+sol+solstack);            
   
-            setButton("filter");
+            // setButton("filter");
+            button = "filter";
             
             setClick(true);Filter()}
   
@@ -350,7 +352,8 @@ console.log(props.pidata);
           Apply
         </button>
         <button type="button" onClick={() => {
-          setButton("compare");
+          // setButton("compare");
+          button = "compare";
           setClick(true);
           if(org != '' && srt != '' && sprint != '' && pi != '' && sol != '' && solstack != ''){Compare()}
           else{ window.alert("Select all filters before applying !")}
@@ -366,8 +369,8 @@ console.log(props.pidata);
             <button onClick={() => {setChart("line")}}>Line Chart</button>
             <button onClick={() => {setChart("stackedbar")}}>StackedBar Chart</button>
             <div ref = {componentRef}>
-              {click === true && data.length > 0 && button==="filter" &&   <h1><center>Test Results for PI {pi} Sprint {sprint}</center></h1> }
-              {click === true && data.length > 0 && button==="compare" &&   <h1><center>Test Results for PI {pi} </center></h1> }
+              {click === true && data.length > 0 && button==="filter" &&   <h1><center>Test Results for PI {pi} Sprint {sprint} - {solstack}</center></h1> }
+              {click === true && data.length > 0 && button==="compare" &&   <h1><center>Test Results for PI {pi} - {solstack} </center></h1> }
             {totalCases.length > 0 && button==="filter" && click === true && chart === "bar" && <Barchart x_label={x_label} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail} /> }
             {click === true && button==="filter" && chart === "totaltable" && <TotalTable data ={data}/>}
             {click === true && button==="filter" && chart === "line" && <Linechart x_label={x_label} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail} /> }
@@ -387,7 +390,9 @@ console.log(props.pidata);
             {noteButtonClick === true &&  <textarea placeholder="Add a note here" id="addNoteArea" onInput={(e)=> {setNote(e.target.value)} }/>}<br/>
 
             {click === true && data.length > 0 && noteButtonClick === true && <button id="addNote" onClick={() => {setAddNoteButton(true); fetchNote();
-            // var textarea = document.getElementById(addNoteArea);
+
+            document.getElementById("addNoteArea").value = "";
+            
             }} >Set note</button>}
 
             {click === true && data.length > 0 && noteButtonClick === true && <button name="cancel" id="cancel" onClick = {() => {fetchNoteFromDb(); setNoteButtonClick(false);}} >Cancel</button>}

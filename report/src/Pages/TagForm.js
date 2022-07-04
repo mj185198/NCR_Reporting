@@ -29,8 +29,14 @@ const TagForm = (props) => {
   const[solStack, setSolStack] = useState("");
   const [compareData, setCompareData] = useState([]);
   const[button,setButton] = useState("");
-  const [comment, setComment] = useState("");
+  // const [comment, setComment] = useState("");
+  const [noteButtonClick, setNoteButtonClick] = useState(false);
 
+const [note, setNote] = useState("");
+
+const [addNoteButton, setAddNoteButton] = useState(false);
+
+  var filter = "";
   var PI = [];
   var Org = [];
   var Srt = [];
@@ -57,6 +63,79 @@ const TagForm = (props) => {
   var comparecount = [];
   var comparefail = [];
   var totalFail1 = [];
+
+  const fetchNoteFromDb = async() => {
+    if(button === "filter"){
+    filter = org+srt+pi+sprint+sol+solStack;}
+    else{
+      filter = org+srt+pi+sol;
+    }
+
+    console.log(filter);
+
+    const db_note = await httpClient.post("//localhost:5000/getNote", {
+
+      filter
+
+    });
+
+    console.log("DB_Note :")
+
+    console.log(db_note.data);
+    setNote(db_note.data);
+
+  }
+  const fetchNote = async () => {
+
+    // console.log(org,srt,pi,sol);
+
+    // if(org === '' && srt === '' && pi === 0  && sol === ''){
+
+    const tarea = document.getElementById("addNoteArea");
+
+    tarea.setAttribute("value","");
+
+    //   window.alert("Please select a filter before clicking apply !")
+    // filter = org+srt+pi+sprint+sol+solStack;
+    if(button === "filter"){
+      filter = org+srt+pi+sprint+sol+solStack;}
+      else{
+        filter = org+srt+pi+sol;
+      }
+
+    console.log(filter);
+
+    // }
+
+    // else{
+      // setFilter(org+srt+pi+sprint+sol+solstack);
+      console.log("fetchNote parameters :")
+
+      console.log(filter,note)
+
+      const note_resp = await httpClient.post("//localhost:5000/addNote", {
+
+        filter,
+
+        note,
+
+      });
+
+      console.log("note_resp :")
+
+      console.log(note_resp.data);
+
+      // if(resp.data.length === 0){
+
+      //   window.alert("No data to show for the selected filters");
+
+      // }
+
+      // else{
+
+      setNote(note_resp.data);
+
+  };
 
   data.map((item, i) => {
     {
@@ -105,6 +184,7 @@ const TagForm = (props) => {
   };
 
   const Compare = async () => {
+    fetchNoteFromDb();
     console.log(org, srt, pi, sol);
     var elem = document.getElementById("sprint");
     elem.style.display = 'none';
@@ -132,6 +212,7 @@ const TagForm = (props) => {
   };
 
   const Filter = async () => {
+    fetchNoteFromDb();
     console.log(org, srt, pi, tagname, sol);
     var elem = document.getElementById("sprint");
     elem.style.display = 'initial';
@@ -370,11 +451,19 @@ for( i = 0; i < props.tagdata.length; i++){
             {click === true && button==="compare" && chart === "tagtable" && <CompareTagTable compareData ={compareData}/>}
             {click === true && button==="compare" && chart === "line" && <Linechart x_label={xlabel} totalCases={total} totalPass={pass} totalFail={fail} /> }
             {click === true && button==="compare" && chart === "stackedbar" && <StackedBarchart x_label={xlabel} totalPass={comparecount} totalFail={comparefail} /> }
+            {<p>{note}</p>}
             <br/> <br/>
-            {click === true && data.length > 0 && <p>{comment}</p>}
-            {click === true && data.length > 0 && <label for = "comment">Comments :</label> } <br /><br />
-            {click === true && data.length > 0 && <input type = "text" name = "comment" /> } 
-            {click === true && data.length > 0 && <input type = "button" name = "comment" /> }
+            {noteButtonClick === false && addNoteButton === false && click === true && data.length > 0  && <button id="note" onClick={() => {setNoteButtonClick(true)}} >Add note</button>}<br/>
+
+            {noteButtonClick === true &&  <textarea placeholder="Add a note here" id="addNoteArea" onInput={(e)=> {setNote(e.target.value)} }/>}<br/>
+
+            {click === true && data.length > 0 && noteButtonClick === true && <button id="addNote" onClick={() => {setAddNoteButton(true); fetchNote();
+
+            document.getElementById("addNoteArea").value = "";
+            
+            }} >Set note</button>}
+
+            {click === true && data.length > 0 && noteButtonClick === true && <button name="cancel" id="cancel" onClick = {() => {fetchNoteFromDb(); setNoteButtonClick(false);}} >Cancel</button>}
         </div>
       </div>
     </div>
