@@ -27,7 +27,7 @@ const [solstack, setSolStack] = useState('');
 const [data, setData]=useState([]);
 const [chart, setChart] = useState("bar");
 const [click , setClick] = useState(false);
-// const [button, setButton] = useState("");
+const [button, setButton] = useState("");
 const [compareData, setCompareData] = useState([]);
 const [noteButtonClick, setNoteButtonClick] = useState(false);
 
@@ -37,7 +37,7 @@ const [addNoteButton, setAddNoteButton] = useState(false);
 
 // const [filter, setFilter] = useState("")
 var filter = "";
-var button = "";
+// var button = "";
 var PI = [];
 var Org = [];
 var Srt = [];
@@ -69,15 +69,17 @@ console.log(props.pidata);
   var fail = [];
   var xlabel = [];
 
-  const fetchNoteFromDb = async() => {
+  const fetchNoteFromDb = async(fil) => {
     
-    filter = org+srt+pi+sprint+sol+solstack;
+    // filter = org+srt+pi+sprint+sol+solstack;
+
+    filter = fil;
 
     console.log(filter);
 
     const db_note = await httpClient.post("//localhost:5000/getNote", {
 
-      filter
+      filter,
 
     });
 
@@ -87,7 +89,7 @@ console.log(props.pidata);
     setNote(db_note.data);
 
   }
-  const fetchNote = async () => {
+  const fetchNote = async (fil) => {
 
     // console.log(org,srt,pi,sol);
 
@@ -98,7 +100,8 @@ console.log(props.pidata);
     tarea.setAttribute("value","");
 
     //   window.alert("Please select a filter before clicking apply !")
-    filter = org+srt+pi+sprint+sol+solstack;
+    // filter = org+srt+pi+sprint+sol+solstack;
+    filter = fil;
 
     console.log(filter);
 
@@ -178,10 +181,12 @@ console.log(props.pidata);
     }
 
     const Compare = async () => {
-      fetchNoteFromDb();
+      fetchNoteFromDb(org+srt+pi+sol);
       console.log(org,srt,pi,sol);
       var elem = document.getElementById("sprint");
       elem.style.display = 'none';
+      var elem1 = document.getElementById("solstack");
+      elem1.style.display = 'none';
       if(org === '' && srt === '' && pi === 0  && sol === ''){
         window.alert("Please select a filter before clicking apply !")
       }
@@ -203,13 +208,15 @@ console.log(props.pidata);
     };
 
   const Filter = async () => {
-    console.log(filter)
+    console.log(filter);
     // setNote(" ");
     // document.getElementById(viewNotes).click();
-    fetchNoteFromDb();
+    fetchNoteFromDb(org+srt+pi+sprint+sol+solstack);
     console.log(org,srt,pi,sprint,sol);
     var elem = document.getElementById("sprint");
     elem.style.display = 'initial';
+    var elem1 = document.getElementById("solstack");
+    elem1.style.display = 'initial';
     // setNote(" ");
     if(org === '' && srt === '' && pi === 0 && sprint === '' && sol === ''){
       window.alert("Please select a filter before clicking apply !")
@@ -327,7 +334,7 @@ console.log(props.pidata);
         ))}
         </select>
 
-        <select name = "solstack" id="" onInput ={(e)=>{
+        <select name = "solstack" id="solstack" onInput ={(e)=>{
           setSolStack(e.target.value);
           console.log(solstack);
           // setFilter(org+srt+pi+sprint+sol+solstack);            
@@ -343,17 +350,21 @@ console.log(props.pidata);
 
             // setFilter(org+srt+pi+sprint+sol+solstack);            
   
-            // setButton("filter");
-            button = "filter";
+            setButton("filter");
+            // button = "filter";
             
-            setClick(true);Filter()}
+            // fetchNoteFromDb();
+
+            setClick(true);
+            
+            Filter();}
   
             else{ window.alert("Select all filters before applying !")}}}>
           Apply
         </button>
         <button type="button" onClick={() => {
-          // setButton("compare");
-          button = "compare";
+          setButton("compare");
+          // button = "compare";
           setClick(true);
           if(org != '' && srt != '' && sprint != '' && pi != '' && sol != '' && solstack != ''){Compare()}
           else{ window.alert("Select all filters before applying !")}
@@ -370,29 +381,34 @@ console.log(props.pidata);
             <button onClick={() => {setChart("stackedbar")}}>StackedBar Chart</button>
             <div ref = {componentRef}>
               {click === true && data.length > 0 && button==="filter" &&   <h1><center>Test Results for PI {pi} Sprint {sprint} - {solstack}</center></h1> }
-              {click === true && data.length > 0 && button==="compare" &&   <h1><center>Test Results for PI {pi} - {solstack} </center></h1> }
-            {totalCases.length > 0 && button==="filter" && click === true && chart === "bar" && <Barchart x_label={x_label} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail} /> }
-            {click === true && button==="filter" && chart === "totaltable" && <TotalTable data ={data}/>}
-            {click === true && button==="filter" && chart === "line" && <Linechart x_label={x_label} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail} /> }
-            {click === true && button==="filter" && chart === "stackedbar" && <StackedBarchart x_label={x_label}  totalPass={count} totalFail={totalFail1} /> } 
-            {totalCases.length > 0 && button==="compare" && click === true && chart === "bar" && <Barchart x_label={xlabel} totalCases={total} totalPass={pass} totalFail={fail} /> }
-            {click === true && button==="compare" && chart === "totaltable" && <CompareTable compareData ={compareData}/>}
-            {click === true && button==="compare" && chart === "line" && <Linechart x_label={xlabel} totalCases={total} totalPass={pass} totalFail={fail} /> }
-            {click === true && button==="compare" && chart === "stackedbar" && <StackedBarchart x_label={xlabel}  totalPass={comparecount} totalFail={comparefail} /> }
-            {<p>{note}</p>}
+              {click === true && data.length > 0 && button==="compare" &&   <h1><center>Test Results for PI {pi} - {sol}</center></h1> }
+              {totalCases.length > 0 && button==="filter" && click === true && chart === "bar" && <Barchart x_label={x_label} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail} /> }
+              {click === true && button==="filter" && chart === "totaltable" && <TotalTable data ={data}/>}
+              {click === true && button==="filter" && chart === "line" && <Linechart x_label={x_label} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail} /> }
+              {click === true && button==="filter" && chart === "stackedbar" && <StackedBarchart x_label={x_label}  totalPass={count} totalFail={totalFail1} /> } 
+              {totalCases.length > 0 && button==="compare" && click === true && chart === "bar" && <Barchart x_label={xlabel} totalCases={total} totalPass={pass} totalFail={fail} /> }
+              {click === true && button==="compare" && chart === "totaltable" && <CompareTable compareData ={compareData}/>}
+              {click === true && button==="compare" && chart === "line" && <Linechart x_label={xlabel} totalCases={total} totalPass={pass} totalFail={fail} /> }
+              {click === true && button==="compare" && chart === "stackedbar" && <StackedBarchart x_label={xlabel}  totalPass={comparecount} totalFail={comparefail} /> }
+              {<p>{note}</p>}
             </div>
             <br/><br/>
 
             {/* {click === true && data.length > 0 && <button id="viewNotes" onClick={() => {fetchNoteFromDb();}}> View notes</button>} */}
 
-            {noteButtonClick === false && addNoteButton === false && click === true && data.length > 0  && <button id="note" onClick={() => {setNoteButtonClick(true)}} >Add note</button>}<br/>
+            {noteButtonClick === false && addNoteButton === false && click === true && data.length > 0  && <button id="note" onClick={() => {setNoteButtonClick(true)}} >Add/Edit note</button>}<br/>
 
             {noteButtonClick === true &&  <textarea placeholder="Add a note here" id="addNoteArea" onInput={(e)=> {setNote(e.target.value)} }/>}<br/>
 
-            {click === true && data.length > 0 && noteButtonClick === true && <button id="addNote" onClick={() => {setAddNoteButton(true); fetchNote();
+            {button === "filter" && click === true && data.length > 0 && noteButtonClick === true && <button id="addNote" onClick={() => {setAddNoteButton(true); fetchNote(org+srt+pi+sprint+sol+solstack);
 
             document.getElementById("addNoteArea").value = "";
             
+            }} >Set note</button>}
+            {button === "compare" && click === true && data.length > 0 && noteButtonClick === true && <button id="addNote" onClick={() => {setAddNoteButton(true); fetchNote(org+srt+pi+sol);
+
+            document.getElementById("addNoteArea").value = "";
+
             }} >Set note</button>}
 
             {click === true && data.length > 0 && noteButtonClick === true && <button name="cancel" id="cancel" onClick = {() => {fetchNoteFromDb(); setNoteButtonClick(false);}} >Cancel</button>}

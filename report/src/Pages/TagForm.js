@@ -64,18 +64,18 @@ const [addNoteButton, setAddNoteButton] = useState(false);
   var comparefail = [];
   var totalFail1 = [];
 
-  const fetchNoteFromDb = async() => {
-    if(button === "filter"){
-    filter = org+srt+pi+sprint+sol+solStack;}
-    else{
-      filter = org+srt+pi+sol;
-    }
-
+  const fetchNoteFromDb = async(fil) => {
+    // if(button === "filter"){
+    // filter = org+srt+pi+sprint+sol+solStack;}
+    // else{
+    //   filter = org+srt+pi+sol;
+    // }
+    filter = fil;
     console.log(filter);
 
     const db_note = await httpClient.post("//localhost:5000/getNote", {
 
-      filter
+      filter,
 
     });
 
@@ -85,7 +85,7 @@ const [addNoteButton, setAddNoteButton] = useState(false);
     setNote(db_note.data);
 
   }
-  const fetchNote = async () => {
+  const fetchNote = async (fil) => {
 
     // console.log(org,srt,pi,sol);
 
@@ -97,12 +97,12 @@ const [addNoteButton, setAddNoteButton] = useState(false);
 
     //   window.alert("Please select a filter before clicking apply !")
     // filter = org+srt+pi+sprint+sol+solStack;
-    if(button === "filter"){
-      filter = org+srt+pi+sprint+sol+solStack;}
-      else{
-        filter = org+srt+pi+sol;
-      }
-
+    // if(button === "filter"){
+    //   filter = org+srt+pi+sprint+sol+solStack;}
+    //   else{
+    //     filter = org+srt+pi+sol;
+    //   }
+    filter = fil;
     console.log(filter);
 
     // }
@@ -183,9 +183,10 @@ const [addNoteButton, setAddNoteButton] = useState(false);
     }
   };
 
-  const Compare = async () => {
-    fetchNoteFromDb();
-    console.log(org, srt, pi, sol);
+  const Compare = async (fil) => {
+    console.log(fil);
+    fetchNoteFromDb(fil);
+    console.log(org, srt, pi, tagname);
     var elem = document.getElementById("sprint");
     elem.style.display = 'none';
     var elem1 = document.getElementById("sol");
@@ -211,8 +212,9 @@ const [addNoteButton, setAddNoteButton] = useState(false);
     
   };
 
-  const Filter = async () => {
-    fetchNoteFromDb();
+  const Filter = async (fil) => {
+    console.log(fil);
+    fetchNoteFromDb(fil);
     console.log(org, srt, pi, tagname, sol);
     var elem = document.getElementById("sprint");
     elem.style.display = 'initial';
@@ -231,6 +233,7 @@ const [addNoteButton, setAddNoteButton] = useState(false);
       sprint,
       tagname,
       sol,
+      solStack,
     });
     console.log(resp.data);
     if(resp.data.length === 0){
@@ -391,9 +394,12 @@ for( i = 0; i < props.tagdata.length; i++){
         <button
           type="button"
           onClick={() => {
+            setAddNoteButton(false);
             setButton("filter");
             setClick(true);
-            Filter();
+            
+            var val = org+srt+pi+sprint+tagname+sol+solStack;
+            Filter(val);
           }}
         >
           Apply
@@ -404,7 +410,8 @@ for( i = 0; i < props.tagdata.length; i++){
           onClick={() => {
             setButton("compare");
             setClick(true);
-            Compare();
+            var val2 = org+srt+pi+tagname;
+            Compare(val2);
           }}
         >
           Compare by sprint
@@ -441,7 +448,7 @@ for( i = 0; i < props.tagdata.length; i++){
           StackedBar Chart
         </button>
         <div ref={componentRef}>
-            {click === true && data.length > 0 && button==="filter" &&   <h1><center>Tag-wise Results for PI {pi} Sprint {sprint} Tag - {tagname}</center></h1> }
+            {click === true && data.length > 0 && button==="filter" &&   <h1><center>Tag-wise Results for PI {pi} Sprint {sprint} - {tagname}</center></h1> }
             {click === true && data.length > 0 && button==="compare" && <h1><center>Tag-wise Results for PI {pi} Tag - {tagname}</center></h1> }
             {totalCases.length > 0 && button==="filter" && click === true && chart === "bar" && <Barchart x_label={x_label} x_label1={x_label1} totalCases={totalCases} totalPass={totalPass} totalFail={totalFail} /> }
             {click === true && button==="filter" && chart === "tagtable" && <TagTable data ={data}/>}
@@ -453,18 +460,24 @@ for( i = 0; i < props.tagdata.length; i++){
             {click === true && button==="compare" && chart === "stackedbar" && <StackedBarchart x_label={xlabel} totalPass={comparecount} totalFail={comparefail} /> }
             {<p>{note}</p>}
             <br/> <br/>
-            {noteButtonClick === false && addNoteButton === false && click === true && data.length > 0  && <button id="note" onClick={() => {setNoteButtonClick(true)}} >Add note</button>}<br/>
+            
+        </div>
+        {noteButtonClick === false && addNoteButton === false && click === true && data.length > 0  && <button id="note" onClick={() => {setNoteButtonClick(true)}} >Add/Edit note</button>}<br/>
 
             {noteButtonClick === true &&  <textarea placeholder="Add a note here" id="addNoteArea" onInput={(e)=> {setNote(e.target.value)} }/>}<br/>
 
-            {click === true && data.length > 0 && noteButtonClick === true && <button id="addNote" onClick={() => {setAddNoteButton(true); fetchNote();
+            {button === "filter" && click === true && data.length > 0 && noteButtonClick === true && <button id="addNote" onClick={() => {setAddNoteButton(true); fetchNote(org+srt+pi+sprint+tagname+sol+solStack);
 
             document.getElementById("addNoteArea").value = "";
             
             }} >Set note</button>}
+            {button === "compare" && click === true && data.length > 0 && noteButtonClick === true && <button id="addNote" onClick={() => {setAddNoteButton(true); fetchNote(org+srt+pi+tagname);
+
+            document.getElementById("addNoteArea").value = "";
+
+            }} >Set note</button>}
 
             {click === true && data.length > 0 && noteButtonClick === true && <button name="cancel" id="cancel" onClick = {() => {fetchNoteFromDb(); setNoteButtonClick(false);}} >Cancel</button>}
-        </div>
       </div>
     </div>
   );

@@ -18,6 +18,7 @@ export class Barchart extends Component {
                                 x:this.props.x_label,
                                 y:this.props.totalPass,
                                 text: this.props.totalPass.map(String),
+                                textangle: 0,
                                 textfont: {
                                     family:"Arial Black"
                                   },
@@ -31,6 +32,7 @@ export class Barchart extends Component {
                                 x:this.props.x_label,
                                 y:this.props.totalFail,
                                 text: this.props.totalFail.map(String),
+                                textangle: 0,
                                 textfont: {
                                     family:"Arial Black"
                                   },
