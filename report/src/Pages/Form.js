@@ -7,8 +7,7 @@ import Linechart from "../Components/Linechart";
 import Input from "./Input";
 import StackedBarchart from "../Components/StackedBarchart";
 import {useReactToPrint} from "react-to-print";
-import axios from "axios";
-import AsyncSelect from "react-select"
+
 
 
 
